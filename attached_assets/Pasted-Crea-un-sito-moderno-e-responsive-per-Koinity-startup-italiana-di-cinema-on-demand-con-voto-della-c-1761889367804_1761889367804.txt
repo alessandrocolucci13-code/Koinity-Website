@@ -1,0 +1,179 @@
+Crea un sito moderno e responsive per Koinity (startup italiana di cinema on-demand con voto della community). Usa Next.js + TypeScript + Tailwind CSS e struttura a componenti. Imposta un design dark “cinema” con accenti arancioni, forte leggibilità e micro-animazioni.
+
+Obiettivo & messaggio chiave
+
+Koinity permette alle persone di votare i film da vedere in sala (anche titoli non in distribuzione) e coordinare proiezioni on-demand con i cinema locali.
+
+Gli sconti sono solo un supporto: il core è la programmazione guidata dalla community.
+
+Guideline visual
+
+Palette: sfondo very-dark (#0B0B0F), testo #EDEDED, accento arancione #FF6B00, secondario #6F7787, bordi #1C1F26.
+
+Font: Inter (UI), Playfair Display per titoli/citazioni.
+
+Stile: card con angoli “2xl”, ombre morbide, spacing generoso, layout a griglia.
+
+Micro-animazioni su hover/focus (Framer Motion opzionale).
+
+Pagine richieste
+
+Home (/)
+
+Hero con headline forte, sottotitolo, CTA doppia: “Unisciti alla community” e “Proponi un film”. Mockup di sala/locandine in griglia.
+
+Sezione “Come funziona” in 4 step (icone):
+
+Proponi o cerca un film; 2) Vota/Pre-prenota; 3) Sblocca la proiezione; 4) Vai in sala con gli amici.
+
+“Perché Koinity”: 3 pillar (Community-led, On-Demand, Conversazione & Coordinamento).
+
+“In evidenza vicino a te” (lista fittizia di proposte con progress bar di voti).
+
+Social proof: numeri/quote (placeholder).
+
+Proponi un Film (/proponi)
+
+Form con: Titolo, Link trailer, Città/Quartiere, Sale preferite (campo libero), Finestra date, Durata, Note su diritti (se note), Tag, Upload immagine.
+
+Al submit mostra toast di successo e salva in uno store locale (mock) con validazione.
+
+Vota & Partecipa (/vota)
+
+Griglia di proposte con card: poster, città, data target, stato licenze (se noto), progress bar verso soglia, contatore voti/pre-impegni, CTA “Vota / Pre-prenota”.
+
+Filtro per città, data, genere; ricerca testuale.
+
+Pagina dettaglio proposta (/vota/[slug]): poster grande, sinossi (placeholder), conversazione light (thread mock), timeline sblocco sconti (tier).
+
+Community (/community)
+
+Spiega community, regole base, link a canali esterni (placeholder), form “Diventa ambassador”.
+
+Per i Cinema (/cinema)
+
+Spiega valore per esercenti: domanda locale, programmazione mirata, eventi speciali.
+
+CTA “Richiedi una demo” (form lead).
+
+Chi Siamo (/chi-siamo)
+
+Mission, storia breve, team (placeholder), press kit (placeholder).
+
+Blog / Aggiornamenti (/blog)
+
+Lista articoli (MDX o markdown mock). Pagina post.
+
+Contatti (/contatti)
+
+Form contatto (nome, email, messaggio) + mappa embed (placeholder).
+
+Legal (/privacy, /termini)
+
+Pagine placeholder conformi (testo fittizio).
+
+Componenti chiave
+
+Navbar sticky con logo Koinity (testuale), link primari e CTA “Proponi un film”.
+
+Footer con newsletter signup, link rapidi, social, copyright.
+
+Card Proposta (riutilizzabile): poster, titolo, città, tag, soglia voti (progress), CTA.
+
+ProgressBar accessibile (aria), percentuale e numeri.
+
+Badge “Non in distribuzione” se rightsStatus === "unknown" o “special”.
+
+Stepper “Come funziona” con icone (lucide-react).
+
+Modal conferma pre-prenotazione (mock).
+
+Toast (shadcn/ui).
+
+Contenuti (copy IT pronti all’uso)
+
+Usa questi testi dove indicato:
+
+Hero H1:
+“Il cinema lo scegli tu.”
+Hero sub:
+“Koinity è la piattaforma di cinema on-demand dove la community vota cosa vedere in sala—anche titoli fuori distribuzione.”
+CTA primarie: “Unisciti alla community” / “Proponi un film”
+
+Sezione “Come funziona” (titolo + descrizioni brevi):
+
+Proponi: “Segnala un film, aggiungi trailer e città.”
+
+Vota: “Partecipa al voto o pre-impegnati al biglietto.”
+
+Sblocca: “Al raggiungimento della soglia, la proiezione si conferma.”
+
+Vai in sala: “Esperienza condivisa, conversazioni e—se si sbloccano—sconti.”
+
+Pillar (“Perché Koinity”)
+
+Community-led: “La programmazione parte dalle persone.”
+
+On-Demand: “Schermi pieni grazie a domanda reale.”
+
+Conversazione: “Thread leggeri per coordinarsi e invitare amici.”
+
+Sezione Cinema (B2B):
+“Porta in sala ciò che il tuo pubblico vuole davvero. Eventi speciali, classici, festival: domanda chiara, rischio ridotto.”
+
+Dati mock & stato
+
+Implementa uno store mock (es. Zustand o semplice array in memoria) con 8–10 proposte demo.
+Campi: id, slug, title, city, venueHint, targetDate, votes, goal, rightsStatus ("known"|"unknown"), posterUrl, tags: string[].
+
+Calcola percentuale votes/goal per la progress bar.
+
+“Pre-prenota” incrementa votes nel mock e mostra toast di successo.
+
+Accessibilità & performance
+
+Semantica corretta, contrasti AA, focus states visibili, aria-label su icone/progress.
+
+Immagini ottimizzate, lazy loading, metadata Open Graph.
+
+SEO & analytics
+
+Next SEO: title/description uniche per pagina.
+
+Sitemap e robots.txt.
+
+Placeholder per Plausible o Google Analytics (commentato, con TODO).
+
+Form & integrazioni (placeholder)
+
+Tutti i form salvano in locale e mostrano toast; aggiungi // TODO: connect API dove opportuno.
+
+Newsletter: input email con validazione base.
+
+Struttura progetto
+
+/app router di Next.js.
+
+/components (CardProposta.tsx, ProgressBar.tsx, Stepper.tsx, Navbar.tsx, Footer.tsx, Filters.tsx, ModalPreprenota.tsx...).
+
+/lib/mock.ts (seed dati).
+
+/styles/globals.css (Tailwind).
+
+/content/blog/*.mdx (2–3 post demo).
+
+Extra richiesti
+
+Tema scuro di default con toggle light/dark.
+
+Skeleton loaders per liste/griglie.
+
+404 personalizzata “Pellicola non trovata 🎞️”.
+
+Consegna
+
+Progetto avviabile con npm run dev.
+
+Nessun backend reale; tutto mock ma facilmente sostituibile.
+
+Codice pulito, tipizzato, commenti TODO dove integrare API reali.
