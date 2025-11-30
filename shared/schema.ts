@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, integer, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, integer, timestamp, boolean } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -39,6 +39,27 @@ export const insertProposalSchema = createInsertSchema(proposals).omit({
 export type InsertProposal = z.infer<typeof insertProposalSchema>;
 export type Proposal = typeof proposals.$inferSelect;
 
+// User Votes Tracking Schema
+export const userVotes = pgTable("user_votes", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  userId: varchar("user_id").notNull(),
+  proposalId: varchar("proposal_id").notNull(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+export type UserVote = typeof userVotes.$inferSelect;
+
+// Pre-bookings Schema
+export const preBookings = pgTable("pre_bookings", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  userId: varchar("user_id").notNull(),
+  proposalId: varchar("proposal_id").notNull(),
+  email: text("email").notNull(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+export type PreBooking = typeof preBookings.$inferSelect;
+
 // Blog Posts Schema
 export const blogPosts = pgTable("blog_posts", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
@@ -47,6 +68,7 @@ export const blogPosts = pgTable("blog_posts", {
   excerpt: text("excerpt").notNull(),
   content: text("content").notNull(),
   imageUrl: text("image_url"),
+  coverImage: text("cover_image"),
   publishedAt: timestamp("published_at").notNull().defaultNow(),
 });
 
@@ -95,16 +117,21 @@ export const newsletterSchema = z.object({
 
 export type Newsletter = z.infer<typeof newsletterSchema>;
 
-// User schema (keep existing for potential future auth)
+// User schema
 export const users = pgTable("users", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   username: text("username").notNull().unique(),
   password: text("password").notNull(),
+  email: text("email"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
+}).extend({
+  username: z.string().min(3, "Username deve avere almeno 3 caratteri"),
+  password: z.string().min(6, "Password deve avere almeno 6 caratteri"),
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
