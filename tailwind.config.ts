@@ -7,9 +7,9 @@ export default {
     extend: {
       borderRadius: {
         "2xl": "1rem",
-        lg: ".5625rem",
-        md: ".375rem",
-        sm: ".1875rem",
+        lg: "22px",
+        md: "12px",
+        sm: "6px",
       },
       colors: {
         // Flat / base colors (regular buttons)
