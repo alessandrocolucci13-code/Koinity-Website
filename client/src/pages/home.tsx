@@ -44,7 +44,7 @@ export default function Home() {
                 </Button>
               </Link>
               <Link href="/proponi">
-                <Button size="lg" variant="outline" className="text-base px-8" data-testid="button-hero-proponi">
+                <Button size="lg" variant="outline" className="text-base px-8 !border-yellow-border !border-2" data-testid="button-hero-proponi">
                   Proponi un film
                 </Button>
               </Link>
