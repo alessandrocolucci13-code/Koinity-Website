@@ -284,7 +284,7 @@ export default function Home() {
                 Inizia a votare i film che vuoi vedere in sala e contribuisci a
                 creare esperienze cinematografiche uniche.
               </p>
-              <a href="https://t.me/koinity" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/+9G_y3W8Lt_g4ZTg0" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="gap-2" data-testid="button-telegram-group">
                   <Send className="h-4 w-4" />
                   Entra nel gruppo
