@@ -1,0 +1,189 @@
+STEP 2: Redesign Completo Sezione "La nostra storia"
+Obiettivo
+Trasformare la timeline in una sezione più moderna, pulita e visivamente accattivante, eliminando l'aspetto "troppo tecnico" della timeline attuale.
+Modifiche da implementare:
+1. Nuovo Layout - Card Storytelling
+Invece della timeline verticale con linea gialla, creare card narrative sovrapposte con effetto "storia che si sviluppa":
+Struttura proposta:
+┌─────────────────────────────────────┐
+│  🎬  2024 - L'inizio                │
+│  [Breve testo emozionale]           │
+└─────────────────────────────────────┘
+      ┌─────────────────────────────────────┐
+      │  💡  Sviluppo - La piattaforma      │
+      │  [Breve testo emozionale]           │
+      └─────────────────────────────────────┘
+            ┌─────────────────────────────────────┐
+            │  🚀  Oggi - La crescita             │
+            │  [Breve testo emozionale]           │
+            └─────────────────────────────────────┘
+2. Styling delle Card Storia
+Card Design:
+css/* Ogni card con stile unico */
+.story-card {
+  background: linear-gradient(135deg, 
+    rgba(255,255,255,0.08) 0%, 
+    rgba(255,214,0,0.05) 100%);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Effetto "glass morphism" */
+.story-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, 
+    transparent 30%, 
+    rgba(255,214,0,0.1) 50%, 
+    transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.story-card:hover::before {
+  opacity: 1;
+}
+3. Layout Alternato (Zigzag)
+
+2024: Allineato a sinistra, larghezza 60%, margin-right: auto
+Sviluppo: Allineato a destra, larghezza 60%, margin-left: auto
+Oggi: Allineato a sinistra, larghezza 60%, margin-right: auto
+
+Mobile: tutte le card full-width centrate
+4. Typography Migliorata
+css/* Anno/Fase */
+.story-year {
+  font-size: 48px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #FFD600, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Emoji/Icona grande */
+.story-icon {
+  font-size: 40px;
+  filter: drop-shadow(0 0 10px rgba(255,214,0,0.5));
+}
+
+/* Testo descrittivo */
+.story-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.9);
+}
+5. Animazioni Progressive
+css/* Entrata card con fade + slide */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Applicare con Intersection Observer */
+.story-card.animate-left {
+  animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.story-card.animate-right {
+  animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+6. Connettori Visivi Sottili
+Invece della linea gialla verticale spessa, aggiungere dots decorativi tra le card:
+css.story-connector {
+  width: 8px;
+  height: 8px;
+  background: #FFD600;
+  border-radius: 50%;
+  margin: -20px auto;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(255,214,0,0.6);
+}
+7. Hover Effects Sofisticati
+css.story-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(255,214,0,0.4);
+  box-shadow: 
+    0 20px 40px rgba(0,0,0,0.3),
+    0 0 30px rgba(255,214,0,0.2);
+}
+8. Spacing e Ritmo
+css.story-section {
+  padding: 80px 20px;
+}
+
+.story-card + .story-card {
+  margin-top: 60px;
+}
+Struttura HTML Proposta:
+html<section class="story-section">
+  <h2 class="section-title">La nostra storia</h2>
+  
+  <div class="story-timeline">
+    <!-- Card 1 - Sinistra -->
+    <div class="story-card align-left">
+      <div class="story-year">
+        <span class="story-icon">🎬</span>
+        2024
+      </div>
+      <p class="story-text">
+        Koinity nasce dall'idea di un gruppo di cinefili...
+      </p>
+    </div>
+    
+    <div class="story-connector"></div>
+    
+    <!-- Card 2 - Destra -->
+    <div class="story-card align-right">
+      <div class="story-year">
+        <span class="story-icon">💡</span>
+        Sviluppo
+      </div>
+      <p class="story-text">
+        Abbiamo deciso di costruire una piattaforma...
+      </p>
+    </div>
+    
+    <div class="story-connector"></div>
+    
+    <!-- Card 3 - Sinistra -->
+    <div class="story-card align-left">
+      <div class="story-year">
+        <span class="story-icon">🚀</span>
+        Oggi
+      </div>
+      <p class="story-text">
+        Koinity sta crescendo in tutta Italia...
+      </p>
+    </div>
+  </div>
+</section>

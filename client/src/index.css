@@ -632,89 +632,161 @@
   filter: drop-shadow(0 0 12px rgba(255, 214, 0, 0.6));
 }
 
-/* Timeline Section */
-.timeline-container {
+/* Story Section - Card Storytelling */
+.story-section {
+  padding: 80px 20px;
+}
+
+.story-timeline {
   position: relative;
-  animation: missionSlideIn 0.7s ease-out forwards;
-  opacity: 0;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.timeline-container.visible {
-  opacity: 1;
-}
-
-.timeline-item {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 32px;
-  animation: missionSlideIn 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-.timeline-item.visible {
-  opacity: 1;
-}
-
-.timeline-item:nth-child(1).visible {
-  animation-delay: 0.1s;
-}
-
-.timeline-item:nth-child(2).visible {
-  animation-delay: 0.2s;
-}
-
-.timeline-item:nth-child(3).visible {
-  animation-delay: 0.3s;
-}
-
-.timeline-year {
-  min-width: 80px;
-  font-weight: 700;
-  font-size: 20px;
-  color: hsl(var(--primary));
-  position: relative;
-}
-
-.timeline-year::after {
-  content: '';
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: hsl(var(--primary));
-  border-radius: 50%;
-  top: 6px;
-  left: -40px;
-  box-shadow: 0 0 12px rgba(255, 107, 53, 0.6);
-}
-
-.timeline-line {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--yellow)));
-  transform: scaleY(0);
-  transform-origin: top;
-  animation: scaleUp 0.8s ease-out 0.2s forwards;
-}
-
-@keyframes scaleUp {
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
   to {
-    transform: scaleY(1);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-.timeline-content {
-  flex: 1;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  transition: all 0.3s ease;
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.timeline-item:hover .timeline-content {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 214, 0, 0.3);
+.story-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 214, 0, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 60px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.story-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 214, 0, 0.1) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+
+.story-card:hover::before {
+  opacity: 1;
+}
+
+.story-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(255, 214, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 214, 0, 0.2);
+}
+
+.story-card.align-left {
+  margin-right: auto;
+  width: 60%;
+  animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+}
+
+.story-card.align-right {
+  margin-left: auto;
+  width: 60%;
+  animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+}
+
+.story-card.visible {
+  opacity: 1;
+}
+
+.story-card:nth-child(1).visible {
+  animation-delay: 0.1s;
+}
+
+.story-card:nth-child(3).visible {
+  animation-delay: 0.2s;
+}
+
+.story-card:nth-child(5).visible {
+  animation-delay: 0.3s;
+}
+
+.story-year {
+  font-size: 48px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #FFD600, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.story-icon {
+  font-size: 40px;
+  filter: drop-shadow(0 0 10px rgba(255, 214, 0, 0.5));
+}
+
+.story-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.story-connector {
+  width: 8px;
+  height: 8px;
+  background: #FFD600;
+  border-radius: 50%;
+  margin: -20px auto;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(255, 214, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  .story-card.align-left,
+  .story-card.align-right {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .story-year {
+    font-size: 32px;
+  }
+
+  .story-text {
+    font-size: 16px;
+  }
+
+  .story-section {
+    padding: 60px 20px;
+  }
+
+  .story-card {
+    padding: 32px;
+  }
 }

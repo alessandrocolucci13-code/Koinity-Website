@@ -103,50 +103,49 @@ export default function ChiSiamo() {
           </div>
         </div>
 
-        <div ref={timelineRef} className={`timeline-container mb-12 p-12 rounded-2xl ${visibleTimeline ? 'visible' : ''}`} style={{background: 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,214,0,0.05))', border: '1px solid rgba(255,214,0,0.3)'}}>
-          <h2 className="font-serif text-2xl md:text-3xl font-bold mb-8 text-center">
+        <section ref={timelineRef} className={`story-section ${visibleTimeline ? '' : ''}`}>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-12 text-center">
             La nostra storia
           </h2>
-          <div className="relative pl-20">
-            <div className="timeline-line"></div>
-            
-            <div className={`timeline-item ${visibleTimeline ? 'visible' : ''}`}>
-              <div className="timeline-year flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
+          <div className="story-timeline">
+            {/* Card 1 - 2024 - Sinistra */}
+            <div className={`story-card align-left ${visibleTimeline ? 'visible' : ''}`}>
+              <div className="story-year">
+                <span className="story-icon">🎬</span>
                 2024
               </div>
-              <div className="timeline-content">
-                <p className="text-muted-foreground leading-relaxed">
-                  Koinity nasce dall'idea di un gruppo di cinefili frustrati dall'impossibilità di vedere certi film in sala. Dopo aver organizzato manualmente alcune proiezioni private, ci siamo resi conto che c'era una domanda enorme per questo tipo di esperienza.
-                </p>
-              </div>
+              <p className="story-text">
+                Koinity nasce dall'idea di un gruppo di cinefili frustrati dall'impossibilità di vedere certi film in sala. Dopo aver organizzato manualmente alcune proiezioni private, ci siamo resi conto che c'era una domanda enorme per questo tipo di esperienza.
+              </p>
             </div>
 
-            <div className={`timeline-item ${visibleTimeline ? 'visible' : ''}`}>
-              <div className="timeline-year flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
+            <div className="story-connector"></div>
+
+            {/* Card 2 - Sviluppo - Destra */}
+            <div className={`story-card align-right ${visibleTimeline ? 'visible' : ''}`}>
+              <div className="story-year">
+                <span className="story-icon">💡</span>
                 Sviluppo
               </div>
-              <div className="timeline-content">
-                <p className="text-muted-foreground leading-relaxed">
-                  Abbiamo deciso di costruire una piattaforma che potesse scalare questa idea, permettendo a chiunque di proporre e votare film, coordinando automaticamente con i cinema quando la domanda è sufficiente.
-                </p>
-              </div>
+              <p className="story-text">
+                Abbiamo deciso di costruire una piattaforma che potesse scalare questa idea, permettendo a chiunque di proporre e votare film, coordinando automaticamente con i cinema quando la domanda è sufficiente.
+              </p>
             </div>
 
-            <div className={`timeline-item ${visibleTimeline ? 'visible' : ''}`}>
-              <div className="timeline-year flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
+            <div className="story-connector"></div>
+
+            {/* Card 3 - Oggi - Sinistra */}
+            <div className={`story-card align-left ${visibleTimeline ? 'visible' : ''}`}>
+              <div className="story-year">
+                <span className="story-icon">🚀</span>
                 Oggi
               </div>
-              <div className="timeline-content">
-                <p className="text-muted-foreground leading-relaxed">
-                  Koinity sta crescendo in tutta Italia, portando film straordinari nelle sale e creando esperienze cinematografiche uniche guidate dalla community.
-                </p>
-              </div>
+              <p className="story-text">
+                Koinity sta crescendo in tutta Italia, portando film straordinari nelle sale e creando esperienze cinematografiche uniche guidate dalla community.
+              </p>
             </div>
           </div>
-        </div>
+        </section>
 
         <Card className="mb-12">
           <CardContent className="p-8 md:p-12">
