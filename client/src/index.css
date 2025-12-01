@@ -832,7 +832,6 @@
 /* Team Section - Flip Effect Cards */
 .team-section {
   padding: 100px 40px;
-  background: linear-gradient(180deg, rgba(0, 0, 80, 0.3) 0%, transparent 100%);
 }
 
 .team-grid {
