@@ -40,12 +40,12 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/community">
-                <Button size="lg" className="hero-button text-base px-8" data-testid="button-hero-community">
+                <Button size="lg" className="hero-button text-base px-8 min-h-12" data-testid="button-hero-community">
                   Unisciti alla community
                 </Button>
               </Link>
               <Link href="/chi-siamo">
-                <Button size="lg" variant="outline" className="hero-button text-base px-8 !border-yellow-border !border-2" data-testid="button-hero-proponi">
+                <Button size="lg" variant="outline" className="hero-button text-base px-8 !border-yellow-border !border-2 min-h-12" data-testid="button-hero-proponi">
                   Chi siamo
                 </Button>
               </Link>

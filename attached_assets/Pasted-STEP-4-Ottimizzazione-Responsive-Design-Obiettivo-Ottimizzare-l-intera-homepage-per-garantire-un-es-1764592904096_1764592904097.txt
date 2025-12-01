@@ -1,0 +1,153 @@
+STEP 4: Ottimizzazione Responsive Design
+Obiettivo
+Ottimizzare l'intera homepage per garantire un'esperienza perfetta su tutti i dispositivi (mobile, tablet, desktop large).
+Modifiche da implementare:
+1. Breakpoints Standard
+Definire i breakpoints seguenti:
+css/* Mobile Small */
+@media (max-width: 480px)
+
+/* Mobile */
+@media (max-width: 768px)
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px)
+
+/* Desktop */
+@media (min-width: 1025px) and (max-width: 1440px)
+
+/* Desktop Large */
+@media (min-width: 1441px)
+2. Hero Section Responsive
+
+Mobile:
+
+Font-size headline: 36px (invece di 64px)
+Padding laterale ridotto: 20px
+Stack dei bottoni CTA in verticale (100% width)
+Spacing tra i bottoni: 16px
+
+
+Tablet:
+
+Font-size headline: 48px
+Bottoni affiancati ma con width ridotto
+
+
+Desktop Large:
+
+Max-width container: 1200px centrato
+Font-size aumentato: 72px
+
+
+
+3. Sezione "Come funziona" Responsive
+
+Mobile:
+
+Grid a 1 colonna
+Card full-width con padding 24px
+Icone dimensione ridotta (60px)
+
+
+Tablet:
+
+Grid a 2 colonne (2x2)
+Gap: 24px
+
+
+Desktop:
+
+Grid a 4 colonne (attuale)
+Gap: 32px
+
+
+
+4. Card Film Responsive
+
+Mobile:
+
+1 colonna
+Immagine aspect-ratio 16:9
+Font-size ridotto per titoli
+
+
+Tablet:
+
+2 colonne
+Gap: 20px
+
+
+Desktop:
+
+3 colonne
+Gap: 24px
+
+
+Desktop Large:
+
+Possibilità di 4 colonne se lo spazio lo permette
+
+
+
+5. Navigation Header Responsive
+
+Mobile:
+
+Hamburger menu (☰) al posto del menu completo
+Logo dimensione ridotta
+CTA "Iscriviti ora" compatto o icona utente
+
+
+Tablet/Desktop:
+
+Menu completo orizzontale
+
+
+
+6. Sezione FAQ "Ti suona familiare?" Responsive
+
+Mobile:
+
+Immagine sopra, contenuto sotto (stack verticale)
+Padding ridotto
+
+
+Tablet/Desktop:
+
+Layout a 2 colonne (50/50)
+
+
+
+7. Footer Responsive
+
+Mobile:
+
+Colonne impilate verticalmente
+Link centrati
+Newsletter input full-width
+
+
+Tablet/Desktop:
+
+Grid multi-colonna orizzontale
+
+
+
+8. Touch Targets Mobile
+
+Tutti i bottoni e link devono avere minimo 44x44px di area cliccabile
+Spacing aumentato tra elementi interattivi su mobile
+
+9. Typography Responsive
+
+Implementare clamp() per fluid typography:
+
+css     font-size: clamp(1rem, 2vw, 1.5rem);
+
+Ridurre line-height su mobile per occupare meno spazio verticale
+
+10. Images Optimization
+
+Implementare srcset per immagini responsive
+Lazy loading: loading="lazy" su tutte le immagini non above-the-fold
