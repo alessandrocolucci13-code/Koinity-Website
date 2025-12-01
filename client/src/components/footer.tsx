@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Film, Facebook, Twitter, Instagram } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import koinityLogo from "@assets/Logo_Koinity-removebg-preview_1764564269821.png";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -34,8 +35,7 @@ export function Footer() {
           <div>
             <Link href="/">
               <a className="flex items-center gap-2 mb-4">
-                <Film className="h-6 w-6 text-primary" />
-                <span className="font-serif text-xl font-bold">Koinity</span>
+                <img src={koinityLogo} alt="Koinity" className="h-8 w-auto" />
               </a>
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
