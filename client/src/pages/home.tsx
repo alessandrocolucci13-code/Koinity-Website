@@ -220,7 +220,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <Link href="/vota">
+              <Link href="/chi-siamo">
                 <Button size="lg" className="w-full md:w-auto mt-10" data-testid="button-community-cta">
                   Scopri la nostra soluzione
                 </Button>
