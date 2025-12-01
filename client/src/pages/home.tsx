@@ -39,7 +39,7 @@ export default function Home() {
               cosa vedere in sala—anche titoli fuori distribuzione.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/vota">
+              <Link href="/community">
                 <Button size="lg" className="text-base px-8" data-testid="button-hero-community">
                   Unisciti alla community
                 </Button>
