@@ -15,7 +15,6 @@ export function Navbar() {
     { href: "/cinema", label: "Per i Cinema" },
     { href: "/blog", label: "Blog" },
     { href: "/contatti", label: "Contatti" },
-    { href: "/proponi", label: "Proponi un film" },
   ];
 
   return (
@@ -47,6 +46,12 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
+            <Link href="/proponi">
+              <Button data-testid="button-proponi-nav" className="gap-2">
+                <Film className="h-4 w-4" />
+                Proponi un Film
+              </Button>
+            </Link>
           </div>
 
           <div className="md:hidden flex items-center gap-2">
@@ -85,6 +90,16 @@ export function Navbar() {
                 </a>
               </Link>
             ))}
+            <Link href="/proponi">
+              <Button
+                className="w-full gap-2"
+                onClick={() => setMobileMenuOpen(false)}
+                data-testid="button-proponi-mobile"
+              >
+                <Film className="h-4 w-4" />
+                Proponi un Film
+              </Button>
+            </Link>
           </div>
         </div>
       )}
