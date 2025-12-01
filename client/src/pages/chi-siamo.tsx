@@ -1,15 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Target, Users, Calendar } from "lucide-react";
+import { Heart, Target, Users } from "lucide-react";
 import { SEO } from "@/components/seo";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "wouter";
 
 export default function ChiSiamo() {
   const missionRef = useRef<HTMLDivElement>(null);
   const valuesRef = useRef<HTMLDivElement>(null);
-  const timelineRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [visibleMission, setVisibleMission] = useState(false);
   const [visibleValues, setVisibleValues] = useState(false);
-  const [visibleTimeline, setVisibleTimeline] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -17,7 +18,6 @@ export default function ChiSiamo() {
         if (entry.isIntersecting) {
           if (entry.target === missionRef.current) setVisibleMission(true);
           if (entry.target === valuesRef.current) setVisibleValues(true);
-          if (entry.target === timelineRef.current) setVisibleTimeline(true);
           observer.unobserve(entry.target);
         }
       },
@@ -26,10 +26,35 @@ export default function ChiSiamo() {
 
     if (missionRef.current) observer.observe(missionRef.current);
     if (valuesRef.current) observer.observe(valuesRef.current);
-    if (timelineRef.current) observer.observe(timelineRef.current);
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (containerRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
+        const progress = (scrollLeft / (scrollWidth - clientWidth)) * 100;
+        setScrollProgress(Math.min(progress, 100));
+      }
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (containerRef.current) {
+      const scrollAmount = 420;
+      containerRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <>
@@ -103,46 +128,64 @@ export default function ChiSiamo() {
           </div>
         </div>
 
-        <section ref={timelineRef} className={`story-section ${visibleTimeline ? '' : ''}`}>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-12 text-center">
-            La nostra storia
-          </h2>
-          <div className="story-timeline">
-            {/* Card 1 - 2024 - Sinistra */}
-            <div className={`story-card align-left ${visibleTimeline ? 'visible' : ''}`}>
-              <div className="story-year">
+        <section className="story-section">
+          <h2 className="section-title">La nostra storia</h2>
+          <p className="section-subtitle">
+            Un viaggio che parte dalla passione e arriva nelle sale di tutta Italia
+          </p>
+
+          <div className="story-wrapper">
+            <button className="story-nav story-nav-left" onClick={() => scroll('left')} data-testid="button-scroll-left">←</button>
+            <button className="story-nav story-nav-right" onClick={() => scroll('right')} data-testid="button-scroll-right">→</button>
+
+            <div className="story-container" ref={containerRef}>
+              {/* Card 1: 2024 */}
+              <div className="story-card">
                 <span className="story-icon">🎬</span>
-                2024
+                <h3 className="story-year">2024</h3>
+                <p className="story-label">L'Inizio</p>
+                <p className="story-text">
+                  Koinity nasce dall'idea di un gruppo di cinefili frustrati dall'impossibilità di vedere certi film in sala. Una domanda enorme per un'esperienza unica.
+                </p>
               </div>
-              <p className="story-text">
-                Koinity nasce dall'idea di un gruppo di cinefili frustrati dall'impossibilità di vedere certi film in sala. Dopo aver organizzato manualmente alcune proiezioni private, ci siamo resi conto che c'era una domanda enorme per questo tipo di esperienza.
-              </p>
-            </div>
 
-            <div className="story-connector"></div>
-
-            {/* Card 2 - Sviluppo - Destra */}
-            <div className={`story-card align-right ${visibleTimeline ? 'visible' : ''}`}>
-              <div className="story-year">
+              {/* Card 2: Sviluppo */}
+              <div className="story-card">
                 <span className="story-icon">💡</span>
-                Sviluppo
+                <h3 className="story-year">2024</h3>
+                <p className="story-label">Sviluppo</p>
+                <p className="story-text">
+                  Abbiamo deciso di costruire una piattaforma che potesse scalare questa idea, coordinando automaticamente con i cinema quando la domanda è sufficiente.
+                </p>
               </div>
-              <p className="story-text">
-                Abbiamo deciso di costruire una piattaforma che potesse scalare questa idea, permettendo a chiunque di proporre e votare film, coordinando automaticamente con i cinema quando la domanda è sufficiente.
-              </p>
+
+              {/* Card 3: Oggi */}
+              <div className="story-card">
+                <span className="story-icon">🚀</span>
+                <h3 className="story-year">2025</h3>
+                <p className="story-label">Oggi</p>
+                <p className="story-text">
+                  Koinity sta crescendo in tutta Italia, portando film straordinari nelle sale e creando esperienze cinematografiche uniche guidate dalla community.
+                </p>
+              </div>
+
+              {/* Card 4: Futuro (CTA) */}
+              <div className="story-card story-card-cta">
+                <span className="story-icon">✨</span>
+                <h3 className="story-year">?</h3>
+                <p className="story-label">Il Futuro</p>
+                <p className="story-text">
+                  La prossima storia la scriviamo insieme. Unisciti e porta il cinema che ami nella tua città.
+                </p>
+                <Link href="/proponi">
+                  <button className="cta-button" data-testid="button-join-us">Unisciti a Noi</button>
+                </Link>
+              </div>
             </div>
 
-            <div className="story-connector"></div>
-
-            {/* Card 3 - Oggi - Sinistra */}
-            <div className={`story-card align-left ${visibleTimeline ? 'visible' : ''}`}>
-              <div className="story-year">
-                <span className="story-icon">🚀</span>
-                Oggi
-              </div>
-              <p className="story-text">
-                Koinity sta crescendo in tutta Italia, portando film straordinari nelle sale e creando esperienze cinematografiche uniche guidate dalla community.
-              </p>
+            {/* Progress Bar */}
+            <div className="timeline-progress">
+              <div className="timeline-progress-fill" style={{ width: `${scrollProgress}%` }}></div>
             </div>
           </div>
         </section>
