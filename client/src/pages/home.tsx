@@ -221,8 +221,8 @@ export default function Home() {
               </div>
               
               <Link href="/vota">
-                <Button size="lg" className="w-full md:w-auto" data-testid="button-community-cta">
-                  Scopri Koinity
+                <Button size="lg" className="w-full md:w-auto mt-10" data-testid="button-community-cta">
+                  Scopri la nostra soluzione
                 </Button>
               </Link>
             </div>
@@ -231,7 +231,7 @@ export default function Home() {
               <img 
                 src={friendsImage} 
                 alt="Amici che parlano" 
-                className="w-full rounded-lg shadow-lg"
+                className="w-3/4 rounded-lg shadow-lg"
               />
             </div>
           </div>
