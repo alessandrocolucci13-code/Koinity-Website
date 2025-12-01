@@ -135,24 +135,24 @@ export default function Home() {
             <div className="space-y-6">
               {/* Dialog Messages */}
               <div className="space-y-4">
-                {/* Maria message */}
+                {/* Maria message 1 */}
                 <div className="flex gap-3 items-start">
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-xs font-bold text-primary-foreground">
                     M
                   </div>
                   <div className="flex-1">
                     <p className="text-muted-foreground text-sm">
-                      "Ehi, vuoi andare al cinema? C'è quel nuovo film di Hayao Miyazaki che mi muore di voglia di vedere..."
+                      "Ehi Giulia, stasera cinema? C'è quel nuovo film d'azione di cui tutti parlano."
                     </p>
                   </div>
                 </div>
                 
-                {/* Giorgio message */}
+                {/* Giulia message 1 */}
                 <div className="flex gap-3 items-start justify-end">
                   <div className="flex-1">
                     <div className="bg-primary/20 rounded-lg p-3 ml-auto max-w-xs">
                       <p className="text-muted-foreground text-sm">
-                        "Mah... non esce nelle sale qui. Mi sa che non lo vedremo al cinema."
+                        "Mmh… non so. L'ultimo che abbiamo visto mi ha deluso, e poi stasera sono tutti impegnati."
                       </p>
                     </div>
                   </div>
@@ -161,24 +161,24 @@ export default function Home() {
                   </div>
                 </div>
                 
-                {/* Maria message */}
+                {/* Maria message 2 */}
                 <div className="flex gap-3 items-start">
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-xs font-bold text-primary-foreground">
                     M
                   </div>
                   <div className="flex-1">
                     <p className="text-muted-foreground text-sm">
-                      "Che peccato... sempre film di serie B nelle sale. Chi decide cosa proiettare?"
+                      "Eh, stessa storia per me. Alla fine andarci da solo non ha senso… e i biglietti costano sempre di più."
                     </p>
                   </div>
                 </div>
                 
-                {/* Giorgio message */}
+                {/* Giulia message 2 */}
                 <div className="flex gap-3 items-start justify-end">
                   <div className="flex-1">
                     <div className="bg-primary/20 rounded-lg p-3 ml-auto max-w-xs">
                       <p className="text-muted-foreground text-sm">
-                        "E se potessimo decidere noi? Su Koinity voti i film che vuoi vedere e se raggiungono la soglia, il cinema li proietta."
+                        "Già. Se ci fosse un modo per andarci in gruppo, magari con uno sconto, sarebbe perfetto."
                       </p>
                     </div>
                   </div>
@@ -187,14 +187,40 @@ export default function Home() {
                   </div>
                 </div>
                 
-                {/* Maria message */}
+                {/* Maria message 3 */}
                 <div className="flex gap-3 items-start">
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-xs font-bold text-primary-foreground">
                     M
                   </div>
                   <div className="flex-1">
                     <p className="text-muted-foreground text-sm">
-                      "Davvero? Allora registriamoci subito e proponiamo il film di Miyazaki!"
+                      "O meglio ancora: se potessimo scegliere noi quale film proiettano, tipo una community di cinefili veri."
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Giulia message 3 */}
+                <div className="flex gap-3 items-start justify-end">
+                  <div className="flex-1">
+                    <div className="bg-primary/20 rounded-lg p-3 ml-auto max-w-xs">
+                      <p className="text-muted-foreground text-sm">
+                        "Sarebbe un sogno! Invece finisce sempre così: io, tu e Netflix."
+                      </p>
+                    </div>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 text-xs font-bold">
+                    G
+                  </div>
+                </div>
+                
+                {/* Maria message 4 */}
+                <div className="flex gap-3 items-start">
+                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-xs font-bold text-primary-foreground">
+                    M
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-muted-foreground text-sm">
+                      "Il cinema meriterebbe di più."
                     </p>
                   </div>
                 </div>
