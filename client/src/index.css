@@ -138,7 +138,7 @@
 
   --foreground: 0deg 0% 100%;
 
-  --border: 234.09deg 91.67% 28.24%;
+  --border: 46.64deg 84.06% 50.78%;
 
   --card: 234.07deg 91.49% 36.86%;
 
@@ -184,12 +184,12 @@
 
   --accent-foreground: 0 0% 100%;
 
-  --destructive: 0 84% 45%;
+  --destructive: 0deg 0% 100%;
 
   --destructive-foreground: 0 10% 98%;
 
   --input: 0deg 0% 100%;
-  --ring: 234.09deg 91.67% 28.24%;
+  --ring: 0deg 0% 100%;
   --chart-1: 18 100% 65%;
   --chart-2: 217 100% 70%;
   --chart-3: 44 100% 70%;
@@ -215,6 +215,7 @@
   --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
   --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
   --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --radius: 1rem;
 }
 
 @layer base {

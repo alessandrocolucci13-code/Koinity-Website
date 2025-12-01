@@ -8,6 +8,7 @@ import { Users, Zap, MessageCircle } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { SEO } from "@/components/seo";
 import type { Proposal } from "@shared/schema";
+import cinemaSeatsImage from "@assets/generated_images/empty_cinema_theater_seats.png";
 
 export default function Home() {
   const { data: proposals, isLoading } = useQuery<Proposal[]>({
@@ -23,7 +24,8 @@ export default function Home() {
         description="Koinity è la piattaforma di cinema on-demand dove la community vota cosa vedere in sala—anche titoli fuori distribuzione. Proponi, vota e porta i film che ami al cinema."
       />
       <div className="flex flex-col">
-      <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background/95 to-background">
+      <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background/95 to-background" style={{backgroundImage: `url(${cinemaSeatsImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/80 to-background"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
