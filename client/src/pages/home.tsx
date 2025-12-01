@@ -120,6 +120,53 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold" data-testid="text-community-section-title">
+                Crea esperienze uniche con i tuoi amici
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Su Koinity non è solo questione di votare film: è una comunità dove puoi coordinarti con gli amici, scoprire cosa vogliono vedere gli altri e insieme portare i vostri film preferiti al cinema.
+              </p>
+              <div className="space-y-3">
+                <div className="flex gap-3">
+                  <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-xs text-primary-foreground font-bold">✓</span>
+                  </div>
+                  <p className="text-muted-foreground">Coordina con la tua community locale</p>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-xs text-primary-foreground font-bold">✓</span>
+                  </div>
+                  <p className="text-muted-foreground">Invita gli amici a votare insieme</p>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-xs text-primary-foreground font-bold">✓</span>
+                  </div>
+                  <p className="text-muted-foreground">Vedi quali film sono più votati nella tua città</p>
+                </div>
+              </div>
+              <Link href="/vota">
+                <Button size="lg" data-testid="button-community-cta">
+                  Scopri la community
+                </Button>
+              </Link>
+            </div>
+            <div className="hidden md:block">
+              <img 
+                src={friendsImage} 
+                alt="Amici che parlano" 
+                className="w-full rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
