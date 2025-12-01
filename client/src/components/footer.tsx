@@ -63,7 +63,7 @@ export function Footer() {
                   <Linkedin className="h-4 w-4" />
                 </Button>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/koinity/" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   size="icon"
