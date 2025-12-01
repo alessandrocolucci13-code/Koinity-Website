@@ -555,3 +555,166 @@
     margin: 0 auto;
   }
 }
+
+/* Mission Card Animation */
+@keyframes missionSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mission-card {
+  animation: missionSlideIn 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+.mission-card.visible {
+  opacity: 1;
+}
+
+.mission-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.mission-paragraph {
+  line-height: 1.8;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mission-paragraph + .mission-paragraph {
+  margin-top: 24px;
+}
+
+/* Value Cards Animation */
+.value-card {
+  animation: missionSlideIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.value-card.visible {
+  opacity: 1;
+}
+
+.value-card:nth-child(1).visible {
+  animation-delay: 0.1s;
+}
+
+.value-card:nth-child(2).visible {
+  animation-delay: 0.2s;
+}
+
+.value-card:nth-child(3).visible {
+  animation-delay: 0.3s;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 24px rgba(255, 214, 0, 0.2) !important;
+}
+
+.value-icon {
+  width: 64px;
+  height: 64px;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover .value-icon {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 0 12px rgba(255, 214, 0, 0.6));
+}
+
+/* Timeline Section */
+.timeline-container {
+  position: relative;
+  animation: missionSlideIn 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+.timeline-container.visible {
+  opacity: 1;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  animation: missionSlideIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+}
+
+.timeline-item:nth-child(1).visible {
+  animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(2).visible {
+  animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(3).visible {
+  animation-delay: 0.3s;
+}
+
+.timeline-year {
+  min-width: 80px;
+  font-weight: 700;
+  font-size: 20px;
+  color: hsl(var(--primary));
+  position: relative;
+}
+
+.timeline-year::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: hsl(var(--primary));
+  border-radius: 50%;
+  top: 6px;
+  left: -40px;
+  box-shadow: 0 0 12px rgba(255, 107, 53, 0.6);
+}
+
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--yellow)));
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: scaleUp 0.8s ease-out 0.2s forwards;
+}
+
+@keyframes scaleUp {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.timeline-content {
+  flex: 1;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 214, 0, 0.3);
+}

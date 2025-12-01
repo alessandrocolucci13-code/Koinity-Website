@@ -1,8 +1,36 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Target, Users } from "lucide-react";
+import { Heart, Target, Users, Calendar } from "lucide-react";
 import { SEO } from "@/components/seo";
+import { useEffect, useRef, useState } from "react";
 
 export default function ChiSiamo() {
+  const missionRef = useRef<HTMLDivElement>(null);
+  const valuesRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const [visibleMission, setVisibleMission] = useState(false);
+  const [visibleValues, setVisibleValues] = useState(false);
+  const [visibleTimeline, setVisibleTimeline] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (entry.target === missionRef.current) setVisibleMission(true);
+          if (entry.target === valuesRef.current) setVisibleValues(true);
+          if (entry.target === timelineRef.current) setVisibleTimeline(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (missionRef.current) observer.observe(missionRef.current);
+    if (valuesRef.current) observer.observe(valuesRef.current);
+    if (timelineRef.current) observer.observe(timelineRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <SEO
@@ -21,95 +49,104 @@ export default function ChiSiamo() {
           </p>
         </div>
 
-        <Card className="mb-12 bg-gradient-to-br from-primary/10 to-primary/5 border-yellow-border border-2">
-          <CardContent className="p-8 md:p-12">
-            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6">
-              La nostra mission
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Koinity nasce dalla passione per il cinema e dalla convinzione che
-              le persone dovrebbero poter scegliere cosa vedere sul grande
-              schermo. Troppi film straordinari non raggiungono mai le sale
-              italiane, o vengono proiettati solo in poche città.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              La nostra piattaforma permette alla community di votare i film che
-              desidera vedere in sala e, quando la domanda è sufficiente,
-              coordiniamo proiezioni on-demand con i cinema locali. Non si tratta
-              solo di sconti—anche se quelli aiutano—ma di restituire il potere
-              di programmazione nelle mani degli spettatori.
-            </p>
-          </CardContent>
-        </Card>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <Card className="hover-elevate transition-all duration-300">
-            <CardContent className="pt-8 pb-8 text-center space-y-3">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                <Heart className="h-7 w-7 text-primary" />
-              </div>
-              <h3 className="font-bold text-lg">Passione</h3>
-              <p className="text-sm text-muted-foreground">
-                Crediamo nel potere del cinema di ispirare, emozionare e unire le
-                persone.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="hover-elevate transition-all duration-300">
-            <CardContent className="pt-8 pb-8 text-center space-y-3">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                <Target className="h-7 w-7 text-primary" />
-              </div>
-              <h3 className="font-bold text-lg">Innovazione</h3>
-              <p className="text-sm text-muted-foreground">
-                Usiamo la tecnologia per rendere il cinema più accessibile e
-                democratico.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="hover-elevate transition-all duration-300">
-            <CardContent className="pt-8 pb-8 text-center space-y-3">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                <Users className="h-7 w-7 text-primary" />
-              </div>
-              <h3 className="font-bold text-lg">Community</h3>
-              <p className="text-sm text-muted-foreground">
-                La forza della nostra piattaforma è nella sua community
-                appassionata.
-              </p>
-            </CardContent>
-          </Card>
+        <div ref={missionRef} className={`mission-card mb-12 p-12 rounded-2xl transition-all duration-300 ${visibleMission ? 'visible' : ''}`} style={{background: 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,214,0,0.05))', border: '1px solid rgba(255,214,0,0.3)'}}>
+          <h2 className="mission-title font-serif mb-8 text-center">
+            La nostra mission
+          </h2>
+          <p className="mission-paragraph text-muted-foreground">
+            Koinity nasce dalla passione per il cinema e dalla convinzione che
+            le persone dovrebbero poter scegliere cosa vedere sul grande
+            schermo. Troppi film straordinari non raggiungono mai le sale
+            italiane, o vengono proiettati solo in poche città.
+          </p>
+          <p className="mission-paragraph text-muted-foreground">
+            La nostra piattaforma permette alla community di votare i film che
+            desidera vedere in sala e, quando la domanda è sufficiente,
+            coordiniamo proiezioni on-demand con i cinema locali. Non si tratta
+            solo di sconti—anche se quelli aiutano—ma di restituire il potere
+            di programmazione nelle mani degli spettatori.
+          </p>
         </div>
 
-        <Card className="mb-12">
-          <CardContent className="p-8 md:p-12">
-            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6">
-              La nostra storia
-            </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                Koinity è nata nel 2024 dall'idea di un gruppo di cinefili
-                frustrati dall'impossibilità di vedere certi film in sala. Dopo
-                aver organizzato manualmente alcune proiezioni private, ci siamo
-                resi conto che c'era una domanda enorme per questo tipo di
-                esperienza.
-              </p>
-              <p>
-                Abbiamo deciso di costruire una piattaforma che potesse scalare
-                questa idea, permettendo a chiunque di proporre e votare film,
-                coordinando automaticamente con i cinema quando la domanda è
-                sufficiente.
-              </p>
-              <p>
-                Oggi, Koinity sta crescendo in tutta Italia, portando film
-                straordinari nelle sale e creando esperienze cinematografiche
-                uniche guidate dalla community.
-              </p>
+        <div ref={valuesRef} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 ${visibleValues ? '' : ''}`}>
+          <div className={`value-card p-8 rounded-2xl transition-all duration-300 ${visibleValues ? 'visible' : ''}`} style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)'}}>
+            <div className="value-icon flex items-center justify-center mx-auto mb-4">
+              <Heart className="h-8 w-8 text-primary" />
             </div>
-          </CardContent>
-        </Card>
+            <h3 className="font-bold text-lg mb-3">Passione</h3>
+            <p className="text-sm text-muted-foreground">
+              Crediamo nel potere del cinema di ispirare, emozionare e unire le
+              persone.
+            </p>
+          </div>
+
+          <div className={`value-card p-8 rounded-2xl transition-all duration-300 ${visibleValues ? 'visible' : ''}`} style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)'}}>
+            <div className="value-icon flex items-center justify-center mx-auto mb-4">
+              <Target className="h-8 w-8 text-primary" />
+            </div>
+            <h3 className="font-bold text-lg mb-3">Innovazione</h3>
+            <p className="text-sm text-muted-foreground">
+              Usiamo la tecnologia per rendere il cinema più accessibile e
+              democratico.
+            </p>
+          </div>
+
+          <div className={`value-card p-8 rounded-2xl transition-all duration-300 ${visibleValues ? 'visible' : ''}`} style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)'}}>
+            <div className="value-icon flex items-center justify-center mx-auto mb-4">
+              <Users className="h-8 w-8 text-primary" />
+            </div>
+            <h3 className="font-bold text-lg mb-3">Community</h3>
+            <p className="text-sm text-muted-foreground">
+              La forza della nostra piattaforma è nella sua community
+              appassionata.
+            </p>
+          </div>
+        </div>
+
+        <div ref={timelineRef} className={`timeline-container mb-12 p-12 rounded-2xl ${visibleTimeline ? 'visible' : ''}`} style={{background: 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,214,0,0.05))', border: '1px solid rgba(255,214,0,0.3)'}}>
+          <h2 className="font-serif text-2xl md:text-3xl font-bold mb-8 text-center">
+            La nostra storia
+          </h2>
+          <div className="relative pl-20">
+            <div className="timeline-line"></div>
+            
+            <div className={`timeline-item ${visibleTimeline ? 'visible' : ''}`}>
+              <div className="timeline-year flex items-center gap-2">
+                <Calendar className="h-5 w-5" />
+                2024
+              </div>
+              <div className="timeline-content">
+                <p className="text-muted-foreground leading-relaxed">
+                  Koinity nasce dall'idea di un gruppo di cinefili frustrati dall'impossibilità di vedere certi film in sala. Dopo aver organizzato manualmente alcune proiezioni private, ci siamo resi conto che c'era una domanda enorme per questo tipo di esperienza.
+                </p>
+              </div>
+            </div>
+
+            <div className={`timeline-item ${visibleTimeline ? 'visible' : ''}`}>
+              <div className="timeline-year flex items-center gap-2">
+                <Calendar className="h-5 w-5" />
+                Sviluppo
+              </div>
+              <div className="timeline-content">
+                <p className="text-muted-foreground leading-relaxed">
+                  Abbiamo deciso di costruire una piattaforma che potesse scalare questa idea, permettendo a chiunque di proporre e votare film, coordinando automaticamente con i cinema quando la domanda è sufficiente.
+                </p>
+              </div>
+            </div>
+
+            <div className={`timeline-item ${visibleTimeline ? 'visible' : ''}`}>
+              <div className="timeline-year flex items-center gap-2">
+                <Calendar className="h-5 w-5" />
+                Oggi
+              </div>
+              <div className="timeline-content">
+                <p className="text-muted-foreground leading-relaxed">
+                  Koinity sta crescendo in tutta Italia, portando film straordinari nelle sale e creando esperienze cinematografiche uniche guidate dalla community.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <Card className="mb-12">
           <CardContent className="p-8 md:p-12">
