@@ -12,7 +12,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Heart, MessageSquare, Share2 } from "lucide-react";
+import { Users, Heart, MessageSquare, Share2, Send, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/seo";
 import { ambassadorFormSchema, type AmbassadorForm } from "@shared/schema";
@@ -158,7 +158,7 @@ export default function Community() {
           </CardContent>
         </Card>
 
-        <Card className="mb-12 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+        <Card className="mb-12 bg-gradient-to-br from-primary/10 to-primary/5" style={{borderColor: 'hsl(var(--yellow))'}}>
           <CardContent className="pt-8 pb-8">
             <h3 className="font-serif text-2xl font-bold mb-3">Canali Community</h3>
             <p className="text-muted-foreground mb-6">
@@ -166,15 +166,18 @@ export default function Community() {
               partecipare alle discussioni.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button variant="outline" data-testid="button-discord">
-                Discord
-              </Button>
-              <Button variant="outline" data-testid="button-telegram">
-                Telegram
-              </Button>
-              <Button variant="outline" data-testid="button-instagram">
-                Instagram
-              </Button>
+              <a href="https://t.me/+9G_y3W8Lt_g4ZTg0" target="_blank" rel="noopener noreferrer">
+                <Button data-testid="button-telegram" className="gap-2" style={{backgroundColor: 'hsl(var(--yellow))', color: '#000'}}>
+                  <Send className="h-4 w-4" />
+                  Telegram
+                </Button>
+              </a>
+              <a href="https://www.instagram.com/koinity/" target="_blank" rel="noopener noreferrer">
+                <Button data-testid="button-instagram" className="gap-2" style={{backgroundColor: 'hsl(var(--yellow))', color: '#000'}}>
+                  <Instagram className="h-4 w-4" />
+                  Instagram
+                </Button>
+              </a>
             </div>
           </CardContent>
         </Card>
