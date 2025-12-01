@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Film, Facebook, Twitter, Instagram } from "lucide-react";
+import { Film, Send, Linkedin, Instagram } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import koinityLogo from "@assets/Logo_Koinity-removebg-preview_1764564269821.png";
@@ -43,30 +43,36 @@ export function Footer() {
               vedere in sala.
             </p>
             <div className="flex gap-3">
-              <Button
-                variant="ghost"
-                size="icon"
-                data-testid="button-social-facebook"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                data-testid="button-social-twitter"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                data-testid="button-social-instagram"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-4 w-4" />
-              </Button>
+              <a href="https://t.me/+9G_y3W8Lt_g4ZTg0" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  data-testid="button-social-telegram"
+                  aria-label="Telegram"
+                >
+                  <Send className="h-4 w-4" />
+                </Button>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  data-testid="button-social-linkedin"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </Button>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  data-testid="button-social-instagram"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-4 w-4" />
+                </Button>
+              </a>
             </div>
           </div>
 
