@@ -4,7 +4,7 @@ import { Stepper } from "@/components/stepper";
 import { ProposalCard } from "@/components/proposal-card";
 import { SkeletonProposalCard } from "@/components/skeleton-proposal-card";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Zap, MessageCircle } from "lucide-react";
+import { Users, Zap, MessageCircle, Send } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { SEO } from "@/components/seo";
 import type { Proposal } from "@shared/schema";
@@ -284,16 +284,12 @@ export default function Home() {
                 Inizia a votare i film che vuoi vedere in sala e contribuisci a
                 creare esperienze cinematografiche uniche.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/vota">
-                  <Button size="lg">Esplora le proposte</Button>
-                </Link>
-                <Link href="/proponi">
-                  <Button size="lg" variant="outline">
-                    Proponi un film
-                  </Button>
-                </Link>
-              </div>
+              <a href="https://t.me/koinity" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="gap-2" data-testid="button-telegram-group">
+                  <Send className="h-4 w-4" />
+                  Entra nel gruppo
+                </Button>
+              </a>
             </CardContent>
           </Card>
         </div>
