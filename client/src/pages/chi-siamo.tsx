@@ -289,19 +289,6 @@ export default function ChiSiamo() {
               </div>
             </div>
 
-            {/* Join Us Card */}
-            <div className="team-card">
-              <div className="team-card-inner">
-                <div className="team-card-front">
-                  <div className="team-avatar" style={{ background: 'rgba(255,255,255,0.1)' }}>
-                    <span className="team-avatar-icon">❓</span>
-                  </div>
-                  <h3 className="team-name">Unisciti a Noi</h3>
-                  <p className="team-role">Stiamo Cercando Talenti</p>
-                  <p className="team-tagline">Vuoi far parte della rivoluzione del cinema?</p>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
