@@ -9,6 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 import { SEO } from "@/components/seo";
 import type { Proposal } from "@shared/schema";
 import cinemaSeatsImage from "@assets/image_1764560979384.png";
+import friendsImage from "@assets/generated_images/two_friends_talking_together.png";
 
 export default function Home() {
   const { data: proposals, isLoading } = useQuery<Proposal[]>({
