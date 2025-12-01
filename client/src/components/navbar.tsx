@@ -1,5 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Film, Menu, X } from "lucide-react";
 import { useState } from "react";
 
@@ -46,6 +47,7 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             <Link href="/proponi">
               <Button data-testid="button-proponi-nav" className="gap-2">
                 <Film className="h-4 w-4" />
@@ -55,6 +57,7 @@ export function Navbar() {
           </div>
 
           <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
