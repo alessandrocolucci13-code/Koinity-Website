@@ -14,15 +14,15 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  --background: 240 3% 97%;
+  --background: 234.09deg 91.67% 28.24%;
 
-  --foreground: 240 8% 12%;
+  --foreground: 0deg 0% 100%;
 
-  --border: 240 4% 88%;
+  --border: 46.64deg 84.06% 50.78%;
 
-  --card: 240 3% 95%;
+  --card: 234.07deg 91.49% 36.86%;
 
-  --card-foreground: 240 8% 12%;
+  --card-foreground: 0deg 0% 100%;
 
   --card-border: 240 4% 86%;
 
@@ -42,34 +42,34 @@
 
   --sidebar-ring: 18 100% 60%;
 
-  --popover: 240 4% 90%;
+  --popover: 0deg 0% 100%;
 
-  --popover-foreground: 240 8% 12%;
+  --popover-foreground: 0deg 0% 100%;
 
   --popover-border: 240 4% 82%;
 
-  --primary: 18 100% 60%;
+  --primary: 46.64deg 84.06% 50.78%;
 
   --primary-foreground: 18 10% 98%;
 
-  --secondary: 240 4% 85%;
+  --secondary: 46.64deg 84.06% 50.78%;
 
-  --secondary-foreground: 240 8% 12%;
+  --secondary-foreground: 0deg 0% 100%;
 
-  --muted: 240 5% 88%;
+  --muted: 46.64deg 84.06% 50.78%;
 
-  --muted-foreground: 240 6% 35%;
+  --muted-foreground: 0deg 0% 100%;
 
-  --accent: 240 6% 90%;
+  --accent: 0deg 0% 100%;
 
-  --accent-foreground: 240 8% 12%;
+  --accent-foreground: 0deg 0% 100%;
 
-  --destructive: 0 84% 45%;
+  --destructive: 0deg 0% 100%;
 
   --destructive-foreground: 0 10% 98%;
 
-  --input: 240 8% 65%;
-  --ring: 18 100% 60%;
+  --input: 0deg 0% 100%;
+  --ring: 0deg 0% 100%;
   --yellow: 44 100% 64%;
   --yellow-border: 44 100% 50%;
   --dialog-light: #2A38C8;
@@ -174,7 +174,7 @@
 
   --primary: 46.64deg 84.06% 50.78%;
 
-  --primary-foreground: 18 10% 98%;
+  --primary-foreground: 60deg 9.09% 97.84%;
 
   --secondary: 46.64deg 84.06% 50.78%;
 
