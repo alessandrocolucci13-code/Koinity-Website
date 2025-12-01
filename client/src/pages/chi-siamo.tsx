@@ -8,6 +8,7 @@ export default function ChiSiamo() {
   const missionRef = useRef<HTMLDivElement>(null);
   const valuesRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const teamGridRef = useRef<HTMLDivElement>(null);
   const [visibleMission, setVisibleMission] = useState(false);
   const [visibleValues, setVisibleValues] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -28,6 +29,25 @@ export default function ChiSiamo() {
     if (valuesRef.current) observer.observe(valuesRef.current);
 
     return () => observer.disconnect();
+  }, []);
+
+  // Team cards animation
+  useEffect(() => {
+    const teamObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    const teamCards = teamGridRef.current?.querySelectorAll('.team-card');
+    teamCards?.forEach((card) => teamObserver.observe(card));
+
+    return () => teamObserver.disconnect();
   }, []);
 
   useEffect(() => {
@@ -190,29 +210,100 @@ export default function ChiSiamo() {
           </div>
         </section>
 
-        <Card className="mb-12">
-          <CardContent className="p-8 md:p-12">
-            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6">
-              Il team
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Siamo un team appassionato di cinema, tecnologia e community
-              building, dedicato a rendere il cinema più accessibile e
-              democratico.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="text-center">
-                  <div className="w-24 h-24 rounded-full bg-muted mx-auto mb-3 flex items-center justify-center">
-                    <Users className="h-10 w-10 text-muted-foreground" />
+        <section className="team-section">
+          <h2 className="section-title">Il team</h2>
+          <p className="section-subtitle">
+            Siamo un team appassionato di cinema, tecnologia e community building
+          </p>
+
+          <div className="team-grid" ref={teamGridRef}>
+            {/* Team Member 1: Marco Rossi */}
+            <div className="team-card">
+              <div className="team-card-inner">
+                <div className="team-card-front">
+                  <div className="team-avatar">
+                    <span className="team-avatar-icon">👨‍💻</span>
+                    <span className="team-badge">CEO</span>
                   </div>
-                  <h4 className="font-semibold">Team Member</h4>
-                  <p className="text-sm text-muted-foreground">Role</p>
+                  <h3 className="team-name">Marco Rossi</h3>
+                  <p className="team-role">Co-Founder & CEO</p>
+                  <p className="team-tagline">"Il cinema è democrazia"</p>
                 </div>
-              ))}
+                <div className="team-card-back">
+                  <p className="team-bio">
+                    Con 10+ anni di esperienza nel settore tech e una passione sfrenata per il cinema, Marco guida la visione strategica di Koinity.
+                  </p>
+                  <div className="team-social">
+                    <a href="https://linkedin.com" className="social-link" data-testid="link-marco-linkedin">🔗</a>
+                    <a href="https://twitter.com" className="social-link" data-testid="link-marco-twitter">𝕏</a>
+                  </div>
+                </div>
+              </div>
             </div>
-          </CardContent>
-        </Card>
+
+            {/* Team Member 2: Laura Bianchi */}
+            <div className="team-card">
+              <div className="team-card-inner">
+                <div className="team-card-front">
+                  <div className="team-avatar">
+                    <span className="team-avatar-icon">👩‍💻</span>
+                    <span className="team-badge">CTO</span>
+                  </div>
+                  <h3 className="team-name">Laura Bianchi</h3>
+                  <p className="team-role">Co-Founder & CTO</p>
+                  <p className="team-tagline">"La tecnologia al servizio dell'arte"</p>
+                </div>
+                <div className="team-card-back">
+                  <p className="team-bio">
+                    Ex ingegnere software in Silicon Valley, Laura ha portato la sua expertise tecnica per costruire una piattaforma scalabile e innovativa.
+                  </p>
+                  <div className="team-social">
+                    <a href="https://linkedin.com" className="social-link" data-testid="link-laura-linkedin">🔗</a>
+                    <a href="https://github.com" className="social-link" data-testid="link-laura-github">💻</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Team Member 3: Andrea Verdi */}
+            <div className="team-card">
+              <div className="team-card-inner">
+                <div className="team-card-front">
+                  <div className="team-avatar">
+                    <span className="team-avatar-icon">🎬</span>
+                    <span className="team-badge">CMO</span>
+                  </div>
+                  <h3 className="team-name">Andrea Verdi</h3>
+                  <p className="team-role">Community Manager</p>
+                  <p className="team-tagline">"Ogni film merita il suo pubblico"</p>
+                </div>
+                <div className="team-card-back">
+                  <p className="team-bio">
+                    Critico cinematografico e community builder, Andrea coltiva le relazioni con cinefili e sale cinematografiche in tutta Italia.
+                  </p>
+                  <div className="team-social">
+                    <a href="https://instagram.com" className="social-link" data-testid="link-andrea-instagram">📷</a>
+                    <a href="https://twitter.com" className="social-link" data-testid="link-andrea-twitter">𝕏</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Join Us Card */}
+            <div className="team-card">
+              <div className="team-card-inner">
+                <div className="team-card-front">
+                  <div className="team-avatar" style={{ background: 'rgba(255,255,255,0.1)' }}>
+                    <span className="team-avatar-icon">❓</span>
+                  </div>
+                  <h3 className="team-name">Unisciti a Noi</h3>
+                  <p className="team-role">Stiamo Cercando Talenti</p>
+                  <p className="team-tagline">Vuoi far parte della rivoluzione del cinema?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <Card>
           <CardContent className="p-8 md:p-12 text-center">
