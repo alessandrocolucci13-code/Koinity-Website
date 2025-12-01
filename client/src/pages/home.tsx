@@ -8,7 +8,7 @@ import { Users, Zap, MessageCircle } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { SEO } from "@/components/seo";
 import type { Proposal } from "@shared/schema";
-import cinemaSeatsImage from "@assets/image_1764560885247.png";
+import cinemaSeatsImage from "@assets/image_1764560979384.png";
 
 export default function Home() {
   const { data: proposals, isLoading } = useQuery<Proposal[]>({
