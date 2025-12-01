@@ -122,40 +122,91 @@ export default function Home() {
 
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center mb-2" data-testid="text-community-section-title">
+              Ti suona familiare?
+            </h2>
+            <p className="text-muted-foreground text-center text-lg">
+              Leggi come Koinity risolve il problema che vivono ogni giorno cinefili come te.
+            </p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold" data-testid="text-community-section-title">
-                Crea esperienze uniche con i tuoi amici
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Su Koinity non è solo questione di votare film: è una comunità dove puoi coordinarti con gli amici, scoprire cosa vogliono vedere gli altri e insieme portare i vostri film preferiti al cinema.
-              </p>
-              <div className="space-y-3">
-                <div className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-xs text-primary-foreground font-bold">✓</span>
+              {/* Dialog Messages */}
+              <div className="space-y-4">
+                {/* Maria message */}
+                <div className="flex gap-3 items-start">
+                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-xs font-bold text-primary-foreground">
+                    M
                   </div>
-                  <p className="text-muted-foreground">Coordina con la tua community locale</p>
+                  <div className="flex-1">
+                    <p className="text-muted-foreground text-sm">
+                      "Ehi, vuoi andare al cinema? C'è quel nuovo film di Hayao Miyazaki che mi muore di voglia di vedere..."
+                    </p>
+                  </div>
                 </div>
-                <div className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-xs text-primary-foreground font-bold">✓</span>
+                
+                {/* Giorgio message */}
+                <div className="flex gap-3 items-start justify-end">
+                  <div className="flex-1">
+                    <div className="bg-primary/20 rounded-lg p-3 ml-auto max-w-xs">
+                      <p className="text-muted-foreground text-sm">
+                        "Mah... non esce nelle sale qui. Mi sa che non lo vedremo al cinema."
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-muted-foreground">Invita gli amici a votare insieme</p>
+                  <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 text-xs font-bold">
+                    G
+                  </div>
                 </div>
-                <div className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-xs text-primary-foreground font-bold">✓</span>
+                
+                {/* Maria message */}
+                <div className="flex gap-3 items-start">
+                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-xs font-bold text-primary-foreground">
+                    M
                   </div>
-                  <p className="text-muted-foreground">Vedi quali film sono più votati nella tua città</p>
+                  <div className="flex-1">
+                    <p className="text-muted-foreground text-sm">
+                      "Che peccato... sempre film di serie B nelle sale. Chi decide cosa proiettare?"
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Giorgio message */}
+                <div className="flex gap-3 items-start justify-end">
+                  <div className="flex-1">
+                    <div className="bg-primary/20 rounded-lg p-3 ml-auto max-w-xs">
+                      <p className="text-muted-foreground text-sm">
+                        "E se potessimo decidere noi? Su Koinity voti i film che vuoi vedere e se raggiungono la soglia, il cinema li proietta."
+                      </p>
+                    </div>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 text-xs font-bold">
+                    G
+                  </div>
+                </div>
+                
+                {/* Maria message */}
+                <div className="flex gap-3 items-start">
+                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-xs font-bold text-primary-foreground">
+                    M
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-muted-foreground text-sm">
+                      "Davvero? Allora registriamoci subito e proponiamo il film di Miyazaki!"
+                    </p>
+                  </div>
                 </div>
               </div>
+              
               <Link href="/vota">
-                <Button size="lg" data-testid="button-community-cta">
-                  Scopri la community
+                <Button size="lg" className="w-full md:w-auto" data-testid="button-community-cta">
+                  Scopri Koinity
                 </Button>
               </Link>
             </div>
+            
             <div className="hidden md:block">
               <img 
                 src={friendsImage} 
