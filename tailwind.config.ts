@@ -57,6 +57,8 @@ export default {
           DEFAULT: "hsl(var(--yellow) / <alpha-value>)",
           border: "hsl(var(--yellow-border) / <alpha-value>)",
         },
+        "dialog-light": "var(--dialog-light)",
+        "dialog-dark": "var(--dialog-dark)",
         chart: {
           "1": "hsl(var(--chart-1) / <alpha-value>)",
           "2": "hsl(var(--chart-2) / <alpha-value>)",

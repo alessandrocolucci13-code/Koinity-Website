@@ -140,7 +140,7 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-full bg-yellow flex items-center justify-center flex-shrink-0 text-xs font-bold">
                     M
                   </div>
-                  <div className="bg-primary/40 rounded-lg p-4 flex-1">
+                  <div className="rounded-lg p-4 flex-1" style={{backgroundColor: 'var(--dialog-light)'}}>
                     <p className="text-white text-sm leading-relaxed">
                       "Ehi Giulia, stasera cinema? C'è quel nuovo film d'azione di cui tutti parlano."
                     </p>
@@ -149,7 +149,7 @@ export default function Home() {
                 
                 {/* Giulia message 1 */}
                 <div className="flex gap-4 items-start justify-end">
-                  <div className="bg-primary/60 rounded-lg p-4 flex-1 max-w-sm">
+                  <div className="rounded-lg p-4 flex-1 max-w-sm" style={{backgroundColor: 'var(--dialog-dark)'}}>
                     <p className="text-white text-sm leading-relaxed">
                       "Mmh… non so. L'ultimo che abbiamo visto mi ha deluso, e poi stasera sono tutti impegnati."
                     </p>
@@ -164,7 +164,7 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-full bg-yellow flex items-center justify-center flex-shrink-0 text-xs font-bold">
                     M
                   </div>
-                  <div className="bg-primary/40 rounded-lg p-4 flex-1">
+                  <div className="rounded-lg p-4 flex-1" style={{backgroundColor: 'var(--dialog-light)'}}>
                     <p className="text-white text-sm leading-relaxed">
                       "Eh, stessa storia per me. Alla fine andarci da solo non ha senso… e i biglietti costano sempre di più."
                     </p>
@@ -173,7 +173,7 @@ export default function Home() {
                 
                 {/* Giulia message 2 */}
                 <div className="flex gap-4 items-start justify-end">
-                  <div className="bg-primary/60 rounded-lg p-4 flex-1 max-w-sm">
+                  <div className="rounded-lg p-4 flex-1 max-w-sm" style={{backgroundColor: 'var(--dialog-dark)'}}>
                     <p className="text-white text-sm leading-relaxed">
                       "Già. Se ci fosse un modo per andarci in gruppo, magari con uno sconto, sarebbe perfetto."
                     </p>
@@ -188,7 +188,7 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-full bg-yellow flex items-center justify-center flex-shrink-0 text-xs font-bold">
                     M
                   </div>
-                  <div className="bg-primary/40 rounded-lg p-4 flex-1">
+                  <div className="rounded-lg p-4 flex-1" style={{backgroundColor: 'var(--dialog-light)'}}>
                     <p className="text-white text-sm leading-relaxed">
                       "O meglio ancora: se potessimo scegliere noi quale film proiettano, tipo una community di cinefili veri."
                     </p>
@@ -197,7 +197,7 @@ export default function Home() {
                 
                 {/* Giulia message 3 */}
                 <div className="flex gap-4 items-start justify-end">
-                  <div className="bg-primary/60 rounded-lg p-4 flex-1 max-w-sm">
+                  <div className="rounded-lg p-4 flex-1 max-w-sm" style={{backgroundColor: 'var(--dialog-dark)'}}>
                     <p className="text-white text-sm leading-relaxed">
                       "Sarebbe un sogno! Invece finisce sempre così: io, tu e Netflix."
                     </p>
@@ -212,7 +212,7 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-full bg-yellow flex items-center justify-center flex-shrink-0 text-xs font-bold">
                     M
                   </div>
-                  <div className="bg-primary/40 rounded-lg p-4 flex-1">
+                  <div className="rounded-lg p-4 flex-1" style={{backgroundColor: 'var(--dialog-light)'}}>
                     <p className="text-white text-sm leading-relaxed">
                       "Il cinema meriterebbe di più."
                     </p>
