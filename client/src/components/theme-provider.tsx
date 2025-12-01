@@ -23,19 +23,16 @@ export function ThemeProvider({
   children,
   defaultTheme = "dark",
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem("koinity-theme") as Theme) || defaultTheme
-  );
+  const [theme] = useState<Theme>("dark");
 
   useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
-    root.classList.add(theme);
-    localStorage.setItem("koinity-theme", theme);
-  }, [theme]);
+    root.classList.add("dark");
+  }, []);
 
   return (
-    <ThemeProviderContext.Provider value={{ theme, setTheme }}>
+    <ThemeProviderContext.Provider value={{ theme, setTheme: () => {} }}>
       {children}
     </ThemeProviderContext.Provider>
   );
