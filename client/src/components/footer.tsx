@@ -53,7 +53,7 @@ export function Footer() {
                   <Send className="h-4 w-4" />
                 </Button>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/koinity/?viewAsMember=true" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   size="icon"
