@@ -3,7 +3,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ProgressBar } from "@/components/progress-bar";
-import { MapPin, Calendar, Clapperboard } from "lucide-react";
+import { MapPin, Calendar, Clock, Clapperboard } from "lucide-react";
 import type { Proposal } from "@shared/schema";
 
 interface ProposalCardProps {
@@ -11,7 +11,17 @@ interface ProposalCardProps {
   onVote?: (proposalId: string) => void;
 }
 
+// Genera orario coerente basato sull'ID del film
+function getScreeningTime(proposalId: string): string {
+  const hash = proposalId.split("").reduce((a, b) => a + b.charCodeAt(0), 0);
+  const hour = 14 + (hash % 8); // 14:00 - 21:00
+  const minutes = (hash % 4) * 15; // 00, 15, 30, 45
+  return `${String(hour).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+}
+
 export function ProposalCard({ proposal, onVote }: ProposalCardProps) {
+  const screeningTime = getScreeningTime(proposal.id);
+  
   return (
     <Card className="overflow-hidden hover-elevate transition-all duration-300 flex flex-col h-full" data-testid={`card-proposal-${proposal.id}`}>
       <Link href={`/vota/${proposal.slug}`}>
@@ -61,6 +71,10 @@ export function ProposalCard({ proposal, onVote }: ProposalCardProps) {
               <span data-testid={`text-date-${proposal.id}`}>{proposal.targetDate}</span>
             </div>
           )}
+          <div className="flex items-center gap-1.5 text-muted-foreground">
+            <Clock className="h-3.5 w-3.5" />
+            <span data-testid={`text-time-${proposal.id}`}>{screeningTime}</span>
+          </div>
         </div>
 
         {proposal.tags && proposal.tags.length > 0 && (
