@@ -639,7 +639,7 @@
 }
 
 .story-section {
-  padding: 80px 20px;
+  padding: 40px 20px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(255, 214, 0, 0.05));
 }
 
@@ -647,7 +647,7 @@
   font-size: 48px;
   font-weight: 800;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   background: linear-gradient(135deg, #FFD600, #FF8C00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -659,7 +659,7 @@
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
   max-width: 600px;
-  margin: 0 auto 60px;
+  margin: 0 auto 40px;
   line-height: 1.6;
 }
 
