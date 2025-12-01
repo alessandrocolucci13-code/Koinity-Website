@@ -44,9 +44,9 @@ export default function Home() {
                   Unisciti alla community
                 </Button>
               </Link>
-              <Link href="/proponi">
+              <Link href="/chi-siamo">
                 <Button size="lg" variant="outline" className="text-base px-8 !border-yellow-border !border-2" data-testid="button-hero-proponi">
-                  Proponi un film
+                  Chi siamo
                 </Button>
               </Link>
             </div>
