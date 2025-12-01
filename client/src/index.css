@@ -445,7 +445,7 @@
 }
 
 .proposal-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px) scale(1.005);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
