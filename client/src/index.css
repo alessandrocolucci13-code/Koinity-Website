@@ -498,7 +498,7 @@
 
 @media (max-width: 480px) {
   .hero-section {
-    min-h-[400px];
+    min-height: 400px;
     padding: 20px;
   }
 
@@ -529,7 +529,7 @@
 
 @media (min-width: 481px) and (max-width: 768px) {
   .hero-section {
-    min-h-[500px];
+    min-height: 500px;
   }
 
   .hero-title {
@@ -543,7 +543,7 @@
 
 @media (min-width: 1441px) {
   .hero-section {
-    min-h-[700px];
+    min-height: 700px;
   }
 
   .hero-title {
@@ -553,123 +553,5 @@
   .hero-content {
     max-width: 1200px;
     margin: 0 auto;
-  }
-}
-
-/* Stepper Responsive */
-@media (max-width: 768px) {
-  .grid.grid-cols-1.md\:grid-cols-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .stepper-card {
-    padding: 24px !important;
-  }
-
-  .stepper-card .relative.mb-6 > div:first-child {
-    width: 60px !important;
-    height: 60px !important;
-  }
-
-  .stepper-card .stepper-icon {
-    height: 28px !important;
-    width: 28px !important;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .grid.grid-cols-1.md\:grid-cols-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1025px) {
-  .grid.grid-cols-1.md\:grid-cols-2 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Proposal Card Responsive */
-@media (max-width: 768px) {
-  .grid.grid-cols-1.md\:grid-cols-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .proposal-card {
-    gap: 4px !important;
-  }
-
-  .proposal-card h3 {
-    font-size: clamp(1rem, 4vw, 1.125rem);
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .grid.grid-cols-1.md\:grid-cols-3 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px !important;
-  }
-}
-
-@media (min-width: 1025px) {
-  .grid.grid-cols-1.md\:grid-cols-3 {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px !important;
-  }
-}
-
-/* Typography Responsive */
-@media (max-width: 768px) {
-  h1 {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-  }
-
-  h2 {
-    font-size: clamp(1.25rem, 4vw, 2rem);
-  }
-
-  h3 {
-    font-size: clamp(1rem, 3vw, 1.5rem);
-  }
-
-  body {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-}
-
-/* Footer Responsive */
-@media (max-width: 768px) {
-  footer .grid {
-    grid-template-columns: 1fr !important;
-    text-align: center;
-  }
-
-  footer .flex {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  footer input {
-    width: 100%;
-  }
-}
-
-/* Touch Targets */
-@media (max-width: 768px) {
-  button,
-  [role="button"],
-  a {
-    min-height: 44px;
-    min-width: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  button[size="icon"],
-  [role="button"][size="icon"] {
-    min-height: 44px;
-    min-width: 44px;
   }
 }
