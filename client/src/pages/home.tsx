@@ -25,27 +25,27 @@ export default function Home() {
         description="Koinity è la piattaforma di cinema on-demand dove la community vota cosa vedere in sala—anche titoli fuori distribuzione. Proponi, vota e porta i film che ami al cinema."
       />
       <div className="flex flex-col">
-      <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background/95 to-background" style={{backgroundImage: `url(${cinemaSeatsImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}>
+      <section className="hero-section relative min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background/95 to-background" style={{backgroundImage: `url(${cinemaSeatsImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}>
         <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/90 to-background"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div className="hero-content container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight" data-testid="text-hero-title">
+            <h1 className="hero-title font-serif font-bold tracking-tight" data-testid="text-hero-title">
               Il cinema lo scegli tu.
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-hero-subtitle">
+            <p className="hero-subtitle text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-hero-subtitle">
               Koinity è la piattaforma di cinema on-demand dove la community vota
               cosa vedere in sala—anche titoli fuori distribuzione.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/community">
-                <Button size="lg" className="text-base px-8" data-testid="button-hero-community">
+                <Button size="lg" className="hero-button text-base px-8" data-testid="button-hero-community">
                   Unisciti alla community
                 </Button>
               </Link>
               <Link href="/chi-siamo">
-                <Button size="lg" variant="outline" className="text-base px-8 !border-yellow-border !border-2" data-testid="button-hero-proponi">
+                <Button size="lg" variant="outline" className="hero-button text-base px-8 !border-yellow-border !border-2" data-testid="button-hero-proponi">
                   Chi siamo
                 </Button>
               </Link>
