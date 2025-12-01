@@ -61,7 +61,7 @@ export default function Cinema() {
           </p>
         </div>
 
-        <Card className="mb-12 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+        <Card className="mb-12 bg-gradient-to-br from-primary/10 to-primary/5 border-yellow-border border-2">
           <CardContent className="p-8 md:p-12">
             <h2 className="font-serif text-2xl md:text-3xl font-bold mb-4">
               Il valore per gli esercenti
