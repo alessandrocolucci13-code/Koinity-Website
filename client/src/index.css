@@ -436,3 +436,54 @@
   transform: scale(1.1) rotate(5deg);
   filter: drop-shadow(0 0 8px rgba(255, 214, 0, 0.5));
 }
+
+/* Proposal Card Animations */
+.proposal-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.proposal-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.proposal-image {
+  overflow: hidden;
+  position: relative;
+}
+
+.proposal-image img {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
+}
+
+.proposal-card:hover .proposal-image img {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+.proposal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.4s ease;
+}
+
+.proposal-card:hover .proposal-overlay {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Skeleton Pulse Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}

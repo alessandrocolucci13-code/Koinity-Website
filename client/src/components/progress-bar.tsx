@@ -26,7 +26,7 @@ export function ProgressBar({
   return (
     <div className={`space-y-2 ${className}`}>
       <div
-        className="relative h-3 w-full overflow-hidden rounded-full bg-secondary/40"
+        className="relative h-1.5 w-full overflow-hidden rounded-sm bg-white/20"
         role="progressbar"
         aria-valuenow={votes}
         aria-valuemin={0}
@@ -34,11 +34,11 @@ export function ProgressBar({
         aria-label={`${votes} voti su ${goal}`}
       >
         <div
-          className="h-full transition-all duration-500 ease-out rounded-full shadow-sm"
+          className="h-full transition-all duration-500 ease-out rounded-sm shadow-sm"
           style={{ 
             width: `${percentage}%`,
-            backgroundColor: getProgressColor(),
-            boxShadow: `0 0 8px ${getProgressColor()}`
+            background: `linear-gradient(90deg, #FFD600, #FFA500)`,
+            boxShadow: `0 0 12px rgba(255, 166, 0, 0.6)`
           }}
         />
       </div>
