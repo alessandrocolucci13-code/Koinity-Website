@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Film, Menu, X } from "lucide-react";
 import { useState } from "react";
+import koinityLogo from "@assets/Logo_Koinity-removebg-preview_1764564269821.png";
 
 export function Navbar() {
   const [location] = useLocation();
@@ -23,8 +24,7 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <Link href="/" data-testid="link-home">
             <a className="flex items-center gap-2 hover-elevate active-elevate-2 rounded-md px-2 py-1 -ml-2">
-              <Film className="h-6 w-6 text-primary" />
-              <span className="font-serif text-xl font-bold">Koinity</span>
+              <img src={koinityLogo} alt="Koinity" className="h-8 w-auto" />
             </a>
           </Link>
 
