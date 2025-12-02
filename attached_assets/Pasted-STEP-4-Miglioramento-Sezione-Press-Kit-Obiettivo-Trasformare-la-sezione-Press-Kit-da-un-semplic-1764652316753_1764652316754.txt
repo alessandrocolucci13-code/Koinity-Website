@@ -1,0 +1,449 @@
+STEP 4: Miglioramento Sezione "Press Kit"
+Obiettivo
+Trasformare la sezione "Press Kit" da un semplice box blu generico a una sezione professionale, accattivante e facilmente accessibile per giornalisti e media.
+Problema Attuale
+
+Box blu semplice e poco invitante
+Informazioni minime (solo email)
+Nessun visual appeal
+Mancanza di risorse scaricabili (logo, immagini, fact sheet)
+Non ispira fiducia professionale
+
+
+Design Proposto: Press Kit Premium
+1. Layout Moderno a Due Colonne
+css.press-section {
+  padding: 100px 40px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 60, 0.4) 0%,
+    rgba(0, 0, 100, 0.2) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pattern decorativo background */
+.press-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255,214,0,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255,214,0,0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.press-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 968px) {
+  .press-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+2. Colonna Sinistra: Informazioni e CTA
+css.press-content {
+  padding: 40px 0;
+}
+
+.press-title {
+  font-size: 48px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.press-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.press-contact {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 28px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 214, 0, 0.3);
+  border-radius: 16px;
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+}
+
+.press-contact:hover {
+  border-color: rgba(255, 214, 0, 0.6);
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(8px);
+}
+
+.press-contact-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.press-contact-info {
+  flex: 1;
+}
+
+.press-contact-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 214, 0, 0.8);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.press-contact-value {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.press-contact-value a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.press-contact-value a:hover {
+  color: #FFD600;
+}
+3. Colonna Destra: Download Resources
+css.press-resources {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 214, 0, 0.05) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 48px;
+  backdrop-filter: blur(20px);
+}
+
+.press-resources-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.press-resources-title::before {
+  content: '📦';
+  font-size: 28px;
+}
+
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+4. Resource Item Cards
+css.resource-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: rgba(0, 0, 50, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.resource-item:hover {
+  background: rgba(0, 0, 80, 0.6);
+  border-color: rgba(255, 214, 0, 0.4);
+  transform: translateX(8px);
+  box-shadow: 0 8px 24px rgba(255, 214, 0, 0.2);
+}
+
+.resource-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.resource-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 214, 0, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.resource-details h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.resource-details p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.resource-download {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 214, 0, 0.2);
+  border: 2px solid rgba(255, 214, 0, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFD600;
+  font-size: 18px;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.resource-item:hover .resource-download {
+  background: rgba(255, 214, 0, 0.3);
+  border-color: #FFD600;
+  transform: rotate(180deg);
+}
+5. Quick Stats Section (Opzionale)
+css.press-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 24px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .press-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+6. Animated Background Pattern
+css@keyframes float-pattern {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.press-section .decorative-shape {
+  position: absolute;
+  opacity: 0.05;
+  animation: float-pattern 8s ease-in-out infinite;
+}
+
+.decorative-shape-1 {
+  top: 10%;
+  left: 5%;
+  font-size: 80px;
+}
+
+.decorative-shape-2 {
+  bottom: 15%;
+  right: 10%;
+  font-size: 100px;
+  animation-delay: 2s;
+}
+
+Struttura HTML Completa
+html<section class="press-section">
+  
+  <!-- Decorative shapes -->
+  <div class="decorative-shape decorative-shape-1">📰</div>
+  <div class="decorative-shape decorative-shape-2">📸</div>
+
+  <div class="press-container">
+    
+    <!-- Colonna Sinistra: Info -->
+    <div class="press-content">
+      <h2 class="press-title">Press Kit</h2>
+      <p class="press-subtitle">
+        Materiali per la stampa, loghi e informazioni sulla company. 
+        Per interviste, partnership o richieste media, contattaci.
+      </p>
+
+      <!-- Contact Info -->
+      <div class="press-contact">
+        <div class="press-contact-icon">✉️</div>
+        <div class="press-contact-info">
+          <p class="press-contact-label">Email Stampa</p>
+          <p class="press-contact-value">
+            <a href="mailto:press@koinity.it">press@koinity.it</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="press-contact">
+        <div class="press-contact-icon">📱</div>
+        <div class="press-contact-info">
+          <p class="press-contact-label">Ufficio Stampa</p>
+          <p class="press-contact-value">
+            <a href="tel:+390123456789">+39 012 345 6789</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Stats (Opzionale) -->
+      <div class="press-stats">
+        <div class="stat-item">
+          <div class="stat-number">50K+</div>
+          <div class="stat-label">Utenti</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">200+</div>
+          <div class="stat-label">Film Proiettati</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Città</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Colonna Destra: Resources -->
+    <div class="press-resources">
+      <h3 class="press-resources-title">Risorse Scaricabili</h3>
+      
+      <div class="resource-list">
+        
+        <!-- Resource 1: Logo Pack -->
+        <a href="/downloads/koinity-logo-pack.zip" class="resource-item" download>
+          <div class="resource-info">
+            <div class="resource-icon">🎨</div>
+            <div class="resource-details">
+              <h4>Logo Pack</h4>
+              <p>Loghi in vari formati (PNG, SVG, EPS) - 2.4 MB</p>
+            </div>
+          </div>
+          <div class="resource-download">↓</div>
+        </a>
+
+        <!-- Resource 2: Brand Guidelines -->
+        <a href="/downloads/koinity-brand-guidelines.pdf" class="resource-item" download>
+          <div class="resource-info">
+            <div class="resource-icon">📋</div>
+            <div class="resource-details">
+              <h4>Brand Guidelines</h4>
+              <p>Linee guida del brand (PDF) - 1.8 MB</p>
+            </div>
+          </div>
+          <div class="resource-download">↓</div>
+        </a>
+
+        <!-- Resource 3: Press Photos -->
+        <a href="/downloads/koinity-press-photos.zip" class="resource-item" download>
+          <div class="resource-info">
+            <div class="resource-icon">📸</div>
+            <div class="resource-details">
+              <h4>Foto Stampa</h4>
+              <p>Immagini ad alta risoluzione (ZIP) - 12 MB</p>
+            </div>
+          </div>
+          <div class="resource-download">↓</div>
+        </a>
+
+        <!-- Resource 4: Fact Sheet -->
+        <a href="/downloads/koinity-fact-sheet.pdf" class="resource-item" download>
+          <div class="resource-info">
+            <div class="resource-icon">📊</div>
+            <div class="resource-details">
+              <h4>Fact Sheet</h4>
+              <p>Dati e informazioni aziendali (PDF) - 450 KB</p>
+            </div>
+          </div>
+          <div class="resource-download">↓</div>
+        </a>
+
+        <!-- Resource 5: Press Release -->
+        <a href="/downloads/koinity-latest-press-release.pdf" class="resource-item" download>
+          <div class="resource-info">
+            <div class="resource-icon">📰</div>
+            <div class="resource-details">
+              <h4>Ultimo Comunicato Stampa</h4>
+              <p>Ultime novità e annunci (PDF) - 320 KB</p>
+            </div>
+          </div>
+          <div class="resource-download">↓</div>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+JavaScript per Download Tracking (Opzionale)
+javascript// Track downloads
+document.querySelectorAll('.resource-item').forEach(item => {
+  item.addEventListener('click', function(e) {
+    const resourceName = this.querySelector('h4').textContent;
+    
+    // Analytics tracking (esempio)
+    console.log(`Downloaded: ${resourceName}`);
+    
+    // Aggiungi animazione feedback
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      this.style.transform = '';
+    }, 200);
+  });
+});
