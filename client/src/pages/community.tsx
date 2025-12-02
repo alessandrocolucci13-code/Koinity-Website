@@ -279,17 +279,6 @@ export default function Community() {
               Chat in tempo reale, annunci e discussioni quotidiane sulla community.
             </p>
             
-            <div className="channel-stats">
-              <div className="stat-item">
-                <span className="stat-number">2.5K+</span>
-                <span className="stat-label">Membri</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">300+</span>
-                <span className="stat-label">Messaggi/giorno</span>
-              </div>
-            </div>
-            
             <a href="https://t.me/+9G_y3W8Lt_g4ZTg0" target="_blank" rel="noopener noreferrer" className="channel-button" data-testid="button-telegram">
               <span>Unisciti su Telegram</span>
               <span className="button-icon">→</span>
@@ -312,17 +301,6 @@ export default function Community() {
             <p className="channel-description">
               Storie, aggiornamenti visivi e dietro le quinte della community.
             </p>
-            
-            <div className="channel-stats">
-              <div className="stat-item">
-                <span className="stat-number">8.2K+</span>
-                <span className="stat-label">Follower</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">450+</span>
-                <span className="stat-label">Post</span>
-              </div>
-            </div>
             
             <a href="https://www.instagram.com/koinity/" target="_blank" rel="noopener noreferrer" className="channel-button" data-testid="button-instagram">
               <span>Seguici su Instagram</span>
