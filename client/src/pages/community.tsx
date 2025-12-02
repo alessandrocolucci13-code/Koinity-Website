@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,13 +13,70 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Heart, MessageSquare, Share2, Send, Instagram } from "lucide-react";
+import { Heart, MessageSquare, Share2, Send, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/seo";
 import { ambassadorFormSchema, type AmbassadorForm } from "@shared/schema";
 
 export default function Community() {
   const { toast } = useToast();
+  const statsRef = useRef<HTMLDivElement>(null);
+  const scrollIndicatorRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const animateCounters = () => {
+      const counters = statsRef.current?.querySelectorAll('.community-stat-number');
+      if (!counters) return;
+
+      counters.forEach((counter) => {
+        const target = parseInt(counter.getAttribute('data-target') || '0');
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.textContent = Math.floor(current).toLocaleString();
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target.toLocaleString();
+          }
+        };
+
+        updateCounter();
+      });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const handleScrollIndicatorClick = () => {
+      const target = document.querySelector('.community-values');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    if (scrollIndicatorRef.current) {
+      scrollIndicatorRef.current.addEventListener('click', handleScrollIndicatorClick);
+      return () => scrollIndicatorRef.current?.removeEventListener('click', handleScrollIndicatorClick);
+    }
+  }, []);
 
   const form = useForm<AmbassadorForm>({
     resolver: zodResolver(ambassadorFormSchema),
@@ -45,20 +103,55 @@ export default function Community() {
         title="Community & Ambassador"
         description="Unisciti alla community Koinity e diventa un Ambassador nella tua città. Aiutaci a diffondere la cultura cinematografica e porta i film che ami in sala."
       />
+      
+      <section className="community-hero">
+        <div className="hero-particles">
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+        </div>
+
+        <div className="community-hero-badge">
+          <div className="badge-container">
+            <div className="badge-ring"></div>
+            <div className="badge-ring"></div>
+            <div className="badge-ring"></div>
+            <span className="badge-icon">👥</span>
+          </div>
+        </div>
+
+        <h1 className="community-title" data-testid="text-page-title">Community Koinity</h1>
+        <p className="community-subtitle">
+          Siamo una community di appassionati di cinema che credono nel potere della 
+          scelta collettiva. Insieme, portiamo in sala i film che amiamo.
+        </p>
+
+        <div className="community-stats" ref={statsRef}>
+          <div className="community-stat-item">
+            <span className="community-stat-number" data-target="5000">0</span>
+            <span className="community-stat-label">Membri</span>
+          </div>
+          <div className="community-stat-item">
+            <span className="community-stat-number" data-target="150">0</span>
+            <span className="community-stat-label">Film Votati</span>
+          </div>
+          <div className="community-stat-item">
+            <span className="community-stat-number" data-target="30">0</span>
+            <span className="community-stat-label">Città</span>
+          </div>
+        </div>
+
+        <div className="scroll-indicator" ref={scrollIndicatorRef}>
+          <span className="scroll-indicator-text">Scopri di più</span>
+          <div className="scroll-indicator-arrow"></div>
+        </div>
+      </section>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-            <Users className="h-8 w-8 text-primary" />
-          </div>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4" data-testid="text-page-title">
-            Community Koinity
-          </h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Siamo una community di appassionati di cinema che credono nel potere
-            della scelta collettiva. Insieme, portiamo in sala i film che amiamo.
-          </p>
-        </div>
+        <div className="community-values"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           <Card className="hover-elevate transition-all duration-300">
