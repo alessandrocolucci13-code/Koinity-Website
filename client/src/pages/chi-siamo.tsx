@@ -9,39 +9,9 @@ export default function ChiSiamo() {
   const valuesRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const teamGridRef = useRef<HTMLDivElement>(null);
-  const communityStatsRef = useRef<HTMLDivElement>(null);
   const [visibleMission, setVisibleMission] = useState(false);
   const [visibleValues, setVisibleValues] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [countersAnimated, setCountersAnimated] = useState(false);
-
-  // Counter animation
-  const animateCounters = () => {
-    if (countersAnimated) return;
-    setCountersAnimated(true);
-
-    const counters = communityStatsRef.current?.querySelectorAll('.community-stat-number');
-    if (!counters) return;
-
-    counters.forEach((counter: any) => {
-      const target = parseInt(counter.getAttribute('data-target'));
-      const duration = 2000;
-      const increment = target / (duration / 16);
-      let current = 0;
-
-      const updateCounter = () => {
-        current += increment;
-        if (current < target) {
-          counter.textContent = Math.floor(current).toLocaleString();
-          requestAnimationFrame(updateCounter);
-        } else {
-          counter.textContent = target.toLocaleString();
-        }
-      };
-
-      updateCounter();
-    });
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -49,7 +19,6 @@ export default function ChiSiamo() {
         if (entry.isIntersecting) {
           if (entry.target === missionRef.current) setVisibleMission(true);
           if (entry.target === valuesRef.current) setVisibleValues(true);
-          if (entry.target === communityStatsRef.current) animateCounters();
           observer.unobserve(entry.target);
         }
       },
@@ -58,10 +27,9 @@ export default function ChiSiamo() {
 
     if (missionRef.current) observer.observe(missionRef.current);
     if (valuesRef.current) observer.observe(valuesRef.current);
-    if (communityStatsRef.current) observer.observe(communityStatsRef.current);
 
     return () => observer.disconnect();
-  }, [countersAnimated]);
+  }, []);
 
   // Team cards animation
   useEffect(() => {
@@ -108,62 +76,12 @@ export default function ChiSiamo() {
     }
   };
 
-  const scrollToMission = () => {
-    missionRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <>
       <SEO
         title="Chi Siamo"
         description="Scopri la missione di Koinity: rendere accessibile qualsiasi film in sala attraverso il potere della community. Scopri chi siamo e i nostri valori fondamentali."
       />
-
-      <section className="community-hero">
-        <div className="hero-particles">
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-        </div>
-
-        <div className="community-hero-badge">
-          <div className="badge-container">
-            <div className="badge-ring"></div>
-            <div className="badge-ring"></div>
-            <div className="badge-ring"></div>
-            <span className="badge-icon">👥</span>
-          </div>
-        </div>
-
-        <h1 className="community-title">Community Koinity</h1>
-        <p className="community-subtitle">
-          Siamo una community di appassionati di cinema che credono nel potere della 
-          scelta collettiva. Insieme, portiamo in sala i film che amiamo.
-        </p>
-
-        <div className="community-stats" ref={communityStatsRef}>
-          <div className="community-stat-item">
-            <span className="community-stat-number" data-target="5000">0</span>
-            <span className="community-stat-label">Membri</span>
-          </div>
-          <div className="community-stat-item">
-            <span className="community-stat-number" data-target="150">0</span>
-            <span className="community-stat-label">Film Votati</span>
-          </div>
-          <div className="community-stat-item">
-            <span className="community-stat-number" data-target="30">0</span>
-            <span className="community-stat-label">Città</span>
-          </div>
-        </div>
-
-        <div className="scroll-indicator" onClick={scrollToMission} data-testid="button-scroll-to-mission">
-          <span className="scroll-indicator-text">Scopri di più</span>
-          <div className="scroll-indicator-arrow"></div>
-        </div>
-      </section>
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
