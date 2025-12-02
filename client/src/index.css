@@ -1448,6 +1448,7 @@
   justify-content: center;
   gap: 48px;
   margin-top: 48px;
+  margin-bottom: 60px;
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.6s forwards;
 }
@@ -1489,7 +1490,7 @@
 
 .scroll-indicator {
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1499,6 +1500,7 @@
   cursor: pointer;
   opacity: 0;
   animation: fadeIn 1s ease-out 1s forwards;
+  margin-top: 60px;
 }
 
 .scroll-indicator-text {
