@@ -1072,27 +1072,9 @@
 
 /* Press Section */
 .press-section {
-  padding: 100px 40px;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 60, 0.4) 0%,
-    rgba(0, 0, 100, 0.2) 100%
-  );
+  padding: 40px 40px;
   position: relative;
   overflow: hidden;
-}
-
-.press-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(255,214,0,0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(255,214,0,0.03) 0%, transparent 50%);
-  pointer-events: none;
 }
 
 .press-container-centered {
