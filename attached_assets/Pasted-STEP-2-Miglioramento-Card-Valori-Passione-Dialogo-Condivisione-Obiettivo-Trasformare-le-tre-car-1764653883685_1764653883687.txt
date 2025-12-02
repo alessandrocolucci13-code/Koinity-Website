@@ -1,0 +1,117 @@
+STEP 2: Miglioramento Card Valori (Passione, Dialogo, Condivisione)
+Obiettivo
+Trasformare le tre card valori da semplici box blu con bordo a card moderne, interattive e visivamente distintive che rappresentano meglio i valori della community.
+Problema Attuale
+
+Card troppo simili tra loro (stesso stile, stesso bordo blu)
+Icone piccole e poco impattanti
+Nessun hover effect significativo
+Layout rigido e poco coinvolgente
+Mancanza di personalità visiva per ogni valore
+
+
+Modifiche da implementare:
+1. Card Design Unico per Ogni Valore
+Ogni card avrà un colore accent diverso per distinguerla:
+css.community-values {
+  padding: 80px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 60px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+2. Card Base Style con Gradient Unico
+css.value-card {
+  position: relative;
+  padding: 48px 36px;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Gradient overlay specifico per ogni card */
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+/* Passione - Rosso/Arancio */
+.value-card.passion::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 87, 51, 0.15) 0%,
+    rgba(255, 154, 0, 0.1) 100%
+  );
+}
+
+/* Dialogo - Blu/Ciano */
+.value-card.dialogue::before {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(14, 165, 233, 0.1) 100%
+  );
+}
+
+/* Condivisione - Giallo/Verde */
+.value-card.sharing::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 214, 0, 0.15) 0%,
+    rgba(34, 197, 94, 0.1) 100%
+  );
+}
+3. Hover Effects Sofisticati
+css.value-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: rgba(255, 214, 0, 0.4);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(255, 214, 0, 0.2);
+}
+
+.value-card:hover::before {
+  opacity: 1;
+}
+
+/* Bordo colorato specifico al hover */
+.value-card.passion:hover {
+  border-color: rgba(255, 87, 51, 0.6);
+}
+
+.value-card.dialogue:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+}
+
+.value-card.sharing:hover {
+  border-color: rgba(255, 214, 0, 0.6);
+}
+4. Icone Grandi e Animate

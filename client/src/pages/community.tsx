@@ -145,47 +145,48 @@ export default function Community() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="max-w-4xl mx-auto">
-        <div className="community-values"></div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          <Card className="hover-elevate transition-all duration-300">
-            <CardContent className="pt-8 pb-8 text-center space-y-3">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                <Heart className="h-6 w-6 text-primary" />
+      <section className="community-values">
+        <div className="values-grid">
+          <div className="value-card passion">
+            <div className="value-card-content">
+              <div className="value-icon">
+                <Heart className="h-8 w-8" />
               </div>
-              <h3 className="font-bold">Passione</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="value-title">Passione</h3>
+              <p className="value-description">
                 Condividi l'amore per il cinema con altri appassionati
               </p>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
-          <Card className="hover-elevate transition-all duration-300">
-            <CardContent className="pt-8 pb-8 text-center space-y-3">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                <MessageSquare className="h-6 w-6 text-primary" />
+          <div className="value-card dialogue">
+            <div className="value-card-content">
+              <div className="value-icon">
+                <MessageSquare className="h-8 w-8" />
               </div>
-              <h3 className="font-bold">Dialogo</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="value-title">Dialogo</h3>
+              <p className="value-description">
                 Partecipa alle conversazioni e coordina con la community
               </p>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
-          <Card className="hover-elevate transition-all duration-300">
-            <CardContent className="pt-8 pb-8 text-center space-y-3">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                <Share2 className="h-6 w-6 text-primary" />
+          <div className="value-card sharing">
+            <div className="value-card-content">
+              <div className="value-icon">
+                <Share2 className="h-8 w-8" />
               </div>
-              <h3 className="font-bold">Condivisione</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="value-title">Condivisione</h3>
+              <p className="value-description">
                 Fai scoprire grandi film a nuove persone
               </p>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto">
 
         <Card className="mb-12">
           <CardHeader>
