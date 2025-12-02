@@ -249,29 +249,91 @@ export default function Community() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="max-w-4xl mx-auto">
 
-        <Card className="mb-12 bg-gradient-to-br from-primary/10 to-primary/5" style={{borderColor: 'hsl(var(--yellow))'}}>
-          <CardContent className="pt-8 pb-8">
-            <h3 className="font-serif text-2xl font-bold mb-3">Canali Community</h3>
-            <p className="text-muted-foreground mb-6">
-              Unisciti alle nostre community esterne per rimanere aggiornato e
-              partecipare alle discussioni.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a href="https://t.me/+9G_y3W8Lt_g4ZTg0" target="_blank" rel="noopener noreferrer">
-                <Button data-testid="button-telegram" className="gap-2" style={{backgroundColor: 'hsl(var(--yellow))', color: '#000'}}>
-                  <Send className="h-4 w-4" />
-                  Telegram
-                </Button>
-              </a>
-              <a href="https://www.instagram.com/koinity/" target="_blank" rel="noopener noreferrer">
-                <Button data-testid="button-instagram" className="gap-2" style={{backgroundColor: 'hsl(var(--yellow))', color: '#000'}}>
-                  <Instagram className="h-4 w-4" />
-                  Instagram
-                </Button>
-              </a>
+      </div>
+      </div>
+
+      <section className="community-channels">
+        <div className="channels-header">
+          <h2 className="channels-title">Canali Community</h2>
+          <p className="channels-subtitle">
+            Unisciti alle nostre community esterne per rimanere aggiornato 
+            e partecipare alle discussioni.
+          </p>
+        </div>
+
+        <div className="channels-grid">
+          <div className="channel-card telegram">
+            <span className="channel-badge">
+              <span className="badge-dot"></span>
+              Attivo
+            </span>
+            
+            <div className="channel-icon-container">
+              <div className="channel-icon-bg"></div>
+              <div className="channel-ring"></div>
+              <Send className="channel-icon" data-testid="icon-telegram" />
             </div>
-          </CardContent>
-        </Card>
+            
+            <h3 className="channel-name">Telegram</h3>
+            <p className="channel-description">
+              Chat in tempo reale, annunci e discussioni quotidiane sulla community.
+            </p>
+            
+            <div className="channel-stats">
+              <div className="stat-item">
+                <span className="stat-number">2.5K+</span>
+                <span className="stat-label">Membri</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">300+</span>
+                <span className="stat-label">Messaggi/giorno</span>
+              </div>
+            </div>
+            
+            <a href="https://t.me/+9G_y3W8Lt_g4ZTg0" target="_blank" rel="noopener noreferrer" className="channel-button" data-testid="button-telegram">
+              <span>Unisciti su Telegram</span>
+              <span className="button-icon">→</span>
+            </a>
+          </div>
+
+          <div className="channel-card instagram">
+            <span className="channel-badge">
+              <span className="badge-dot"></span>
+              Attivo
+            </span>
+            
+            <div className="channel-icon-container">
+              <div className="channel-icon-bg"></div>
+              <div className="channel-ring"></div>
+              <Instagram className="channel-icon" data-testid="icon-instagram" />
+            </div>
+            
+            <h3 className="channel-name">Instagram</h3>
+            <p className="channel-description">
+              Storie, aggiornamenti visivi e dietro le quinte della community.
+            </p>
+            
+            <div className="channel-stats">
+              <div className="stat-item">
+                <span className="stat-number">8.2K+</span>
+                <span className="stat-label">Follower</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">450+</span>
+                <span className="stat-label">Post</span>
+              </div>
+            </div>
+            
+            <a href="https://www.instagram.com/koinity/" target="_blank" rel="noopener noreferrer" className="channel-button" data-testid="button-instagram">
+              <span>Seguici su Instagram</span>
+              <span className="button-icon">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto">
 
         <Card>
           <CardHeader>

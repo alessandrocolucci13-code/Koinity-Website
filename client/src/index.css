@@ -1980,3 +1980,374 @@
     font-size: 13px;
   }
 }
+
+/* Community Channels Section */
+.community-channels {
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.channels-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.channels-title {
+  font-size: 48px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff, rgba(255, 214, 0, 0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.channels-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.channels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.channel-card {
+  position: relative;
+  padding: 40px 32px;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.channel-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.channel-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.channel-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.channel-card.telegram::before {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 136, 204, 0.2) 0%,
+    rgba(37, 169, 224, 0.1) 100%
+  );
+}
+
+.channel-card.instagram::before {
+  background: linear-gradient(
+    135deg,
+    rgba(225, 48, 108, 0.2) 0%,
+    rgba(193, 53, 132, 0.15) 50%,
+    rgba(131, 58, 180, 0.1) 100%
+  );
+}
+
+.channel-card:hover::before {
+  opacity: 1;
+}
+
+.channel-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(34, 197, 94, 0.2);
+  border: 2px solid rgba(34, 197, 94, 0.4);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #22C55E;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background: #22C55E;
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+.channel-icon-container {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.channel-icon-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+
+.channel-card.telegram .channel-icon-bg {
+  background: linear-gradient(135deg, #0088CC, #25A9E0);
+  box-shadow: 0 8px 24px rgba(0, 136, 204, 0.3);
+}
+
+.channel-card.instagram .channel-icon-bg {
+  background: linear-gradient(135deg, #E1306C, #C13584, #833AB4);
+  box-shadow: 0 8px 24px rgba(225, 48, 108, 0.3);
+}
+
+.channel-icon {
+  position: relative;
+  z-index: 2;
+  font-size: 48px;
+  color: #fff;
+  transition: all 0.4s;
+  width: 48px;
+  height: 48px;
+}
+
+.channel-card:hover .channel-icon-bg {
+  transform: scale(1.15) rotate(10deg);
+}
+
+.channel-card:hover .channel-icon {
+  transform: scale(1.1);
+}
+
+.channel-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid;
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulse-channel 2s ease-out infinite;
+}
+
+.channel-card.telegram .channel-ring {
+  border-color: rgba(0, 136, 204, 0.5);
+}
+
+.channel-card.instagram .channel-ring {
+  border-color: rgba(225, 48, 108, 0.5);
+}
+
+@keyframes pulse-channel {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+.channel-name {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  transition: color 0.3s;
+}
+
+.channel-card.telegram:hover .channel-name {
+  color: #0088CC;
+}
+
+.channel-card.instagram:hover .channel-name {
+  color: #E1306C;
+}
+
+.channel-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 24px;
+  transition: color 0.3s;
+}
+
+.channel-card:hover .channel-description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.channel-stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 28px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: 900;
+  color: #FFD600;
+}
+
+.stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+
+.channel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 32px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+.channel-card.telegram .channel-button {
+  background: linear-gradient(135deg, #0088CC, #25A9E0);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 136, 204, 0.3);
+}
+
+.channel-card.telegram .channel-button:hover {
+  background: linear-gradient(135deg, #25A9E0, #0088CC);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 136, 204, 0.5);
+}
+
+.channel-card.instagram .channel-button {
+  background: linear-gradient(135deg, #E1306C, #C13584);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(225, 48, 108, 0.3);
+}
+
+.channel-card.instagram .channel-button:hover {
+  background: linear-gradient(135deg, #C13584, #E1306C);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(225, 48, 108, 0.5);
+}
+
+.button-icon {
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+
+.channel-button:hover .button-icon {
+  transform: translateX(4px);
+}
+
+.channel-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 214, 0, 0.3);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.channel-card.telegram:hover {
+  border-color: rgba(0, 136, 204, 0.5);
+}
+
+.channel-card.instagram:hover {
+  border-color: rgba(225, 48, 108, 0.5);
+}
+
+@media (max-width: 768px) {
+  .community-channels {
+    padding: 60px 20px;
+  }
+
+  .channels-title {
+    font-size: 36px;
+  }
+
+  .channels-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .channel-card {
+    padding: 32px 24px;
+  }
+
+  .channel-name {
+    font-size: 24px;
+  }
+
+  .channel-description {
+    font-size: 14px;
+  }
+}
