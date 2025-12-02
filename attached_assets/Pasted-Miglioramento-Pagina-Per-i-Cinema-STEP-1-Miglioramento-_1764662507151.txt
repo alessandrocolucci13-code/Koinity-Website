@@ -1,0 +1,494 @@
+Miglioramento Pagina "Per i Cinema"
+STEP 1: Miglioramento Hero Section "Per i Cinema"
+Obiettivo
+Rendere la hero section più professionale, B2B-oriented e convincente per gli esercenti cinematografici, comunicando chiaramente il valore della partnership con Koinity.
+Problema Attuale
+
+Icona emoji generica (🎟️) poco professionale per target B2B
+Titolo troppo generico senza strong value proposition
+Sottotitolo lungo ma poco impattante
+Mancanza di elementi che trasmettano credibilità e fiducia
+Nessun dato o statistica che dimostri risultati concreti
+
+
+Modifiche da implementare:
+1. Hero Badge Professionale
+Sostituire l'icona emoji con un badge che comunichi partnership/crescita:
+css.cinema-hero {
+  padding: 100px 20px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-badge-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 214, 0, 0.15) 0%,
+    rgba(34, 197, 94, 0.1) 100%
+  );
+  border: 2px solid rgba(255, 214, 0, 0.3);
+  border-radius: 30px;
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+}
+
+.badge-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #FFD600, #22C55E);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.badge-text {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #FFD600;
+}
+2. Typography con Strong Value Proposition
+css.cinema-title {
+  font-size: 64px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: slideInDown 0.8s ease-out 0.2s forwards;
+}
+
+/* Highlight text */
+.title-highlight {
+  background: linear-gradient(135deg, #FFD600, #22C55E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.cinema-subtitle {
+  font-size: 22px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 800px;
+  margin: 0 auto 48px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+@media (max-width: 768px) {
+  .cinema-title {
+    font-size: 40px;
+  }
+  
+  .cinema-subtitle {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+3. Stats Bar con Metriche di Successo
+Aggiungere una barra con statistiche chiave che dimostri il valore:
+css.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 214, 0, 0.05) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+}
+
+.stat-box {
+  text-align: center;
+  position: relative;
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #FFD600, #22C55E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.stat-description {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 4px;
+}
+
+/* Separatori */
+.stat-box:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 214, 0, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 24px;
+  }
+  
+  .stat-box:not(:last-child)::after {
+    display: none;
+  }
+  
+  .stat-number {
+    font-size: 40px;
+  }
+}
+4. CTAs Dual - Primary & Secondary
+css.hero-cta-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.8s forwards;
+}
+
+.cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 36px;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  border: none;
+  border-radius: 16px;
+  color: #000050;
+  font-size: 18px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(255, 214, 0, 0.4);
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255, 214, 0, 0.6);
+}
+
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 36px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 214, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.cta-icon {
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+
+.cta-primary:hover .cta-icon,
+.cta-secondary:hover .cta-icon {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .hero-cta-container {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+5. Trust Badges (Loghi Partner/Certificazioni)
+css.trust-section {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.trust-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.trust-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  opacity: 0.6;
+  filter: grayscale(1);
+  transition: all 0.3s;
+}
+
+.trust-logos:hover {
+  opacity: 0.9;
+  filter: grayscale(0);
+}
+
+.trust-logo {
+  height: 40px;
+  width: auto;
+  transition: all 0.3s;
+}
+
+.trust-logo:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .trust-logos {
+    gap: 32px;
+  }
+  
+  .trust-logo {
+    height: 32px;
+  }
+}
+6. Background Decorativo Premium
+css.cinema-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255, 214, 0, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(34, 197, 94, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Pattern decorativo */
+.hero-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 214, 0, 0.1) 10px,
+      rgba(255, 214, 0, 0.1) 11px
+    );
+  pointer-events: none;
+}
+
+Struttura HTML Proposta
+html<section class="cinema-hero">
+  
+  <!-- Background pattern -->
+  <div class="hero-pattern"></div>
+  
+  <!-- Badge -->
+  <div class="hero-badge-container">
+    <div class="badge-icon">🤝</div>
+    <span class="badge-text">Partner Certificato</span>
+  </div>
+  
+  <!-- Title -->
+  <h1 class="cinema-title">
+    Riempi le tue sale con 
+    <span class="title-highlight">eventi su misura</span>
+  </h1>
+  
+  <!-- Subtitle -->
+  <p class="cinema-subtitle">
+    Porta in sala ciò che il tuo pubblico vuole davvero. Eventi speciali, 
+    classici, festival: domanda chiara, rischio ridotto, sale piene.
+  </p>
+  
+  <!-- Stats -->
+  <div class="hero-stats">
+    <div class="stat-box">
+      <span class="stat-number">95%</span>
+      <span class="stat-label">Tasso di Riempimento</span>
+      <span class="stat-description">Sale mediamente piene</span>
+    </div>
+    
+    <div class="stat-box">
+      <span class="stat-number">200+</span>
+      <span class="stat-label">Eventi Organizzati</span>
+      <span class="stat-description">Nell'ultimo anno</span>
+    </div>
+    
+    <div class="stat-box">
+      <span class="stat-number">50+</span>
+      <span class="stat-label">Cinema Partner</span>
+      <span class="stat-description">In tutta Italia</span>
+    </div>
+    
+    <div class="stat-box">
+      <span class="stat-number">Zero</span>
+      <span class="stat-label">Rischio Commerciale</span>
+      <span class="stat-description">Prenotazioni garantite</span>
+    </div>
+  </div>
+  
+  <!-- CTAs -->
+  <div class="hero-cta-container">
+    <a href="#demo" class="cta-primary">
+      <span>Richiedi una Demo</span>
+      <span class="cta-icon">→</span>
+    </a>
+    
+    <a href="#come-funziona" class="cta-secondary">
+      <span>Scopri Come Funziona</span>
+      <span class="cta-icon">↓</span>
+    </a>
+  </div>
+  
+  <!-- Trust badges (opzionale) -->
+  <div class="trust-section">
+    <p class="trust-label">Si fidano di noi</p>
+    <div class="trust-logos">
+      <!-- Inserire loghi cinema partner o associazioni -->
+      <img src="/logos/partner1.svg" alt="Partner" class="trust-logo">
+      <img src="/logos/partner2.svg" alt="Partner" class="trust-logo">
+      <img src="/logos/partner3.svg" alt="Partner" class="trust-logo">
+    </div>
+  </div>
+  
+</section>
+
+JavaScript per Counter Animation
+javascript// Animate numbers when in viewport
+function animateStats() {
+  const stats = document.querySelectorAll('.stat-number');
+  
+  stats.forEach(stat => {
+    const text = stat.textContent;
+    
+    // Se è un numero
+    if (!isNaN(text.replace('+', ''))) {
+      const target = parseInt(text.replace('+', ''));
+      const duration = 2000;
+      const increment = target / (duration / 16);
+      let current = 0;
+      
+      const updateNumber = () => {
+        current += increment;
+        if (current < target) {
+          stat.textContent = Math.floor(current) + (text.includes('+') ? '+' : '');
+          requestAnimationFrame(updateNumber);
+        } else {
+          stat.textContent = text;
+        }
+      };
+      
+      updateNumber();
+    }
+  });
+}
+
+// Observer per triggering animation
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateStats();
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+const statsSection = document.querySelector('.hero-stats');
+if (statsSection) {
+  statsObserver.observe(statsSection);
+}
+
+// Smooth scroll per CTA secondary
+document.querySelector('.cta-secondary')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.querySelector('#come-funziona')?.scrollIntoView({ 
+    behavior: 'smooth' 
+  });
+});
