@@ -1,0 +1,425 @@
+STEP 3: Miglioramento Sezione "Regole della Community"
+Obiettivo
+Trasformare la sezione "Regole della Community" da un semplice box blu con lista numerata a una sezione moderna, accattivante e facilmente leggibile che ispiri rispetto e coinvolgimento.
+Problema Attuale
+
+Box blu generico con bordo troppo spesso
+Lista numerata troppo compatta e poco leggibile
+Mancanza di gerarchia visiva tra le regole
+Nessun elemento visivo che renda la sezione coinvolgente
+Testo troppo denso e poco invitante
+
+
+Modifiche da implementare:
+1. Rimozione Box Unico - Card Separate per Ogni Regola
+css.community-rules {
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rules-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.rules-title {
+  font-size: 48px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.rules-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+2. Card Individuali per Ogni Regola
+css.rules-list {
+  display: grid;
+  gap: 24px;
+}
+
+.rule-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: start;
+  padding: 32px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 214, 0, 0.03) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+/* Stagger animation */
+.rule-item:nth-child(1) { animation-delay: 0.1s; }
+.rule-item:nth-child(2) { animation-delay: 0.2s; }
+.rule-item:nth-child(3) { animation-delay: 0.3s; }
+.rule-item:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover effect */
+.rule-item:hover {
+  border-color: rgba(255, 214, 0, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 214, 0, 0.06) 100%
+  );
+  transform: translateX(8px);
+  box-shadow: 
+    -4px 0 0 rgba(255, 214, 0, 0.6),
+    0 8px 24px rgba(0, 0, 0, 0.3);
+}
+3. Numero Badge Grande e Distintivo
+css.rule-number {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 900;
+  color: #000050;
+  box-shadow: 
+    0 4px 12px rgba(255, 214, 0, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s;
+  position: relative;
+}
+
+/* Glow effect al hover */
+.rule-item:hover .rule-number {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 
+    0 8px 24px rgba(255, 214, 0, 0.6),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Badge alternativo con icone */
+.rule-icon {
+  font-size: 36px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+4. Content Area Typography
+css.rule-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rule-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+.rule-item:hover .rule-title {
+  color: #FFD600;
+}
+
+.rule-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  transition: color 0.3s;
+}
+
+.rule-item:hover .rule-description {
+  color: rgba(255, 255, 255, 0.95);
+}
+5. Decorative Corner Element
+css.rule-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(
+    circle at top right,
+    rgba(255, 214, 0, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.rule-item:hover::before {
+  opacity: 1;
+}
+6. Accent Line (Bordo Sinistro Colorato)
+css.rule-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 214, 0, 0) 0%,
+    rgba(255, 214, 0, 0.6) 50%,
+    rgba(255, 214, 0, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.rule-item:hover::after {
+  opacity: 1;
+}
+7. Badge Icons per Tipo di Regola (Alternativa ai Numeri)
+css/* Se preferisci icone invece di numeri */
+.rule-icon-badge {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 214, 0, 0.15);
+  border: 3px solid rgba(255, 214, 0, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  transition: all 0.4s;
+}
+
+.rule-item:hover .rule-icon-badge {
+  background: rgba(255, 214, 0, 0.25);
+  border-color: #FFD600;
+  transform: rotate(10deg) scale(1.1);
+}
+8. Responsive Mobile
+css@media (max-width: 768px) {
+  .rule-item {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 28px 24px;
+  }
+  
+  .rule-number {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+    margin: 0 auto;
+  }
+  
+  .rule-content {
+    text-align: center;
+  }
+  
+  .rule-title {
+    font-size: 20px;
+  }
+  
+  .rule-description {
+    font-size: 15px;
+  }
+}
+
+Struttura HTML Proposta
+OPZIONE A: Con Numeri
+html<section class="community-rules">
+  
+  <div class="rules-header">
+    <h2 class="rules-title">Regole della Community</h2>
+    <p class="rules-subtitle">
+      Alcune linee guida per mantenere la community rispettosa e produttiva
+    </p>
+  </div>
+
+  <div class="rules-list">
+    
+    <!-- Regola 1 -->
+    <div class="rule-item">
+      <div class="rule-number">1</div>
+      <div class="rule-content">
+        <h3 class="rule-title">Rispetto reciproco</h3>
+        <p class="rule-description">
+          Tratta tutti con rispetto, anche quando le opinioni divergono. 
+          Nessuna forma di discriminazione o linguaggio offensivo è tollerata.
+        </p>
+      </div>
+    </div>
+
+    <!-- Regola 2 -->
+    <div class="rule-item">
+      <div class="rule-number">2</div>
+      <div class="rule-content">
+        <h3 class="rule-title">Proposte genuine</h3>
+        <p class="rule-description">
+          Proponi film che vorresti davvero vedere, non spam o contenuti inappropriati. 
+          La community si basa sulla passione autentica per il cinema.
+        </p>
+      </div>
+    </div>
+
+    <!-- Regola 3 -->
+    <div class="rule-item">
+      <div class="rule-number">3</div>
+      <div class="rule-content">
+        <h3 class="rule-title">Vota con sincerità</h3>
+        <p class="rule-description">
+          Vota solo per i film che sei disposto a vedere in sala. 
+          La tua partecipazione attiva rende possibile l'esperienza cinematografica.
+        </p>
+      </div>
+    </div>
+
+    <!-- Regola 4 -->
+    <div class="rule-item">
+      <div class="rule-number">4</div>
+      <div class="rule-content">
+        <h3 class="rule-title">Condividi e coinvolgi</h3>
+        <p class="rule-description">
+          Invita amici che condividono la tua passione per il cinema. 
+          Più siamo, più film straordinari porteremo nelle nostre sale.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+OPZIONE B: Con Icone (Alternativa)
+html<section class="community-rules">
+  
+  <div class="rules-header">
+    <h2 class="rules-title">Regole della Community</h2>
+    <p class="rules-subtitle">
+      Alcune linee guida per mantenere la community rispettosa e produttiva
+    </p>
+  </div>
+
+  <div class="rules-list">
+    
+    <!-- Regola 1 -->
+    <div class="rule-item">
+      <div class="rule-icon-badge">
+        <span class="rule-icon">🤝</span>
+      </div>
+      <div class="rule-content">
+        <h3 class="rule-title">Rispetto reciproco</h3>
+        <p class="rule-description">
+          Tratta tutti con rispetto, anche quando le opinioni divergono.
+        </p>
+      </div>
+    </div>
+
+    <!-- Regola 2 -->
+    <div class="rule-item">
+      <div class="rule-icon-badge">
+        <span class="rule-icon">🎬</span>
+      </div>
+      <div class="rule-content">
+        <h3 class="rule-title">Proposte genuine</h3>
+        <p class="rule-description">
+          Proponi film che vorresti davvero vedere in sala.
+        </p>
+      </div>
+    </div>
+
+    <!-- Regola 3 -->
+    <div class="rule-item">
+      <div class="rule-icon-badge">
+        <span class="rule-icon">✅</span>
+      </div>
+      <div class="rule-content">
+        <h3 class="rule-title">Vota con sincerità</h3>
+        <p class="rule-description">
+          Vota solo per i film che sei disposto a vedere in sala.
+        </p>
+      </div>
+    </div>
+
+    <!-- Regola 4 -->
+    <div class="rule-item">
+      <div class="rule-icon-badge">
+        <span class="rule-icon">🌟</span>
+      </div>
+      <div class="rule-content">
+        <h3 class="rule-title">Condividi e coinvolgi</h3>
+        <p class="rule-description">
+          Invita amici che condividono la tua passione per il cinema.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+JavaScript per Scroll Animation
+javascript// Intersection Observer per animazioni scroll
+const rulesObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = 'running';
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+document.querySelectorAll('.rule-item').forEach(rule => {
+  rule.style.animationPlayState = 'paused';
+  rulesObserver.observe(rule);
+});
+
+Variante: Accordion Style (Opzionale)
+Se vuoi rendere le regole espandibili per risparmiare spazio:
+css.rule-item {
+  cursor: pointer;
+}
+
+.rule-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, margin-top 0.4s;
+}
+
+.rule-item.expanded .rule-description {
+  max-height: 200px;
+  margin-top: 12px;
+}
+
+.rule-expand-icon {
+  margin-left: auto;
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+
+.rule-item.expanded .rule-expand-icon {
+  transform: rotate(180deg);
+}
+javascript// Toggle accordion
+document.querySelectorAll('.rule-item').forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('expanded');
+  });
+});

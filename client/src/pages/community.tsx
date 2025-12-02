@@ -188,65 +188,66 @@ export default function Community() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="max-w-4xl mx-auto">
 
-        <Card className="mb-12">
-          <CardHeader>
-            <CardTitle className="font-serif text-2xl">Regole della Community</CardTitle>
-            <CardDescription>
-              Alcune linee guida per mantenere la community rispettosa e produttiva
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-3">
-              <div className="flex gap-3">
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-xs font-bold text-primary">1</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Rispetto reciproco</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Tratta tutti con rispetto, anche quando le opinioni divergono.
-                  </p>
-                </div>
-              </div>
+      </div>
+      </div>
 
-              <div className="flex gap-3">
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-xs font-bold text-primary">2</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Proposte genuine</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Proponi film che vorresti davvero vedere, non spam o contenuti inappropriati.
-                  </p>
-                </div>
-              </div>
+      <section className="community-rules">
+        <div className="rules-header">
+          <h2 className="rules-title">Regole della Community</h2>
+          <p className="rules-subtitle">
+            Alcune linee guida per mantenere la community rispettosa e produttiva
+          </p>
+        </div>
 
-              <div className="flex gap-3">
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-xs font-bold text-primary">3</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Vota con sincerità</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Vota solo per i film che sei disposto a vedere in sala.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-3">
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-xs font-bold text-primary">4</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Condividi e coinvolgi</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Invita amici che condividono la tua passione per il cinema.
-                  </p>
-                </div>
-              </div>
+        <div className="rules-list">
+          <div className="rule-item">
+            <div className="rule-number">1</div>
+            <div className="rule-content">
+              <h3 className="rule-title">Rispetto reciproco</h3>
+              <p className="rule-description">
+                Tratta tutti con rispetto, anche quando le opinioni divergono. 
+                Nessuna forma di discriminazione o linguaggio offensivo è tollerata.
+              </p>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+
+          <div className="rule-item">
+            <div className="rule-number">2</div>
+            <div className="rule-content">
+              <h3 className="rule-title">Proposte genuine</h3>
+              <p className="rule-description">
+                Proponi film che vorresti davvero vedere, non spam o contenuti inappropriati. 
+                La community si basa sulla passione autentica per il cinema.
+              </p>
+            </div>
+          </div>
+
+          <div className="rule-item">
+            <div className="rule-number">3</div>
+            <div className="rule-content">
+              <h3 className="rule-title">Vota con sincerità</h3>
+              <p className="rule-description">
+                Vota solo per i film che sei disposto a vedere in sala. 
+                La tua partecipazione attiva rende possibile l'esperienza cinematografica.
+              </p>
+            </div>
+          </div>
+
+          <div className="rule-item">
+            <div className="rule-number">4</div>
+            <div className="rule-content">
+              <h3 className="rule-title">Condividi e coinvolgi</h3>
+              <p className="rule-description">
+                Invita amici che condividono la tua passione per il cinema. 
+                Più siamo, più film straordinari porteremo nelle nostre sale.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto">
 
         <Card className="mb-12 bg-gradient-to-br from-primary/10 to-primary/5" style={{borderColor: 'hsl(var(--yellow))'}}>
           <CardContent className="pt-8 pb-8">
