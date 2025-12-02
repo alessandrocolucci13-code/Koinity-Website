@@ -17,6 +17,10 @@ import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/seo";
 import { demoRequestSchema, type DemoRequest } from "@shared/schema";
 import { useEffect, useRef, useState } from "react";
+import laRepubblicaLogo from "@assets/La_Repubblica_logo_1764714212430.png";
+import cinetecaLogo from "@assets/Cineteca-Logo_1764714212431.png";
+import almaMaterLogo from "@assets/copy_of_logo_1764714212431.png";
+import almacubeLogo from "@assets/image-removebg-preview_(27)_1764714212432.png";
 
 export default function Cinema() {
   const { toast } = useToast();
@@ -174,11 +178,48 @@ export default function Cinema() {
 
             {/* Trust section */}
             <div className="text-center">
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Si fidano di noi</p>
-              <div className="flex flex-wrap items-center justify-center gap-8 opacity-60 hover:opacity-90 transition-opacity">
-                <div className="text-muted-foreground font-semibold text-sm">ANEC</div>
-                <div className="text-muted-foreground font-semibold text-sm">Associazione Cinema</div>
-                <div className="text-muted-foreground font-semibold text-sm">Festival Network</div>
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Si fidano di noi</p>
+              <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+                <img
+                  src={laRepubblicaLogo}
+                  alt="La Repubblica"
+                  className="h-10 md:h-12 w-auto"
+                  style={{
+                    opacity: 0.7,
+                    filter: 'brightness(0.85) saturate(0.6)',
+                  }}
+                  data-testid="logo-la-repubblica"
+                />
+                <img
+                  src={cinetecaLogo}
+                  alt="Cineteca Bologna"
+                  className="h-10 md:h-12 w-auto"
+                  style={{
+                    opacity: 0.7,
+                    filter: 'brightness(0.85) saturate(0.6)',
+                  }}
+                  data-testid="logo-cineteca"
+                />
+                <img
+                  src={almaMaterLogo}
+                  alt="Alma Mater Studiorum"
+                  className="h-10 md:h-12 w-auto"
+                  style={{
+                    opacity: 0.7,
+                    filter: 'brightness(0.85) saturate(0.6)',
+                  }}
+                  data-testid="logo-alma-mater"
+                />
+                <img
+                  src={almacubeLogo}
+                  alt="Almacube"
+                  className="h-10 md:h-12 w-auto"
+                  style={{
+                    opacity: 0.7,
+                    filter: 'brightness(0.85) saturate(0.6)',
+                  }}
+                  data-testid="logo-almacube"
+                />
               </div>
             </div>
           </div>
