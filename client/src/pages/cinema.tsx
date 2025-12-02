@@ -69,38 +69,37 @@ export default function Cinema() {
       />
 
       {/* HERO SECTION */}
-      <div className="relative w-full overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-20 md:py-32">
+      <div className="relative w-full overflow-hidden bg-gradient-to-b from-background via-background/95 to-background py-20 md:py-32">
         {/* Decorative background pattern */}
         <div className="absolute inset-0 opacity-5 pointer-events-none"
           style={{
-            backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 214, 0, 0.1) 10px, rgba(255, 214, 0, 0.1) 11px)'
+            backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 107, 53, 0.1) 10px, rgba(255, 107, 53, 0.1) 11px)'
           }}>
         </div>
 
         {/* Gradient orbs */}
-        <div className="absolute top-20 left-20 w-72 h-72 bg-yellow-400/20 rounded-full blur-3xl opacity-10 pointer-events-none"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-green-500/10 rounded-full blur-3xl opacity-10 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_30%,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none"></div>
 
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             {/* Badge */}
-            <div className="inline-flex items-center justify-center gap-3 px-6 py-3 mb-8 bg-gradient-to-r from-yellow-400/20 to-green-500/20 border border-yellow-400/30 rounded-full backdrop-blur-sm hover-elevate transition-all">
-              <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                <Handshake className="w-4 h-4 text-slate-900" />
+            <div className="inline-flex items-center justify-center gap-3 px-6 py-3 mb-8 bg-gradient-to-r from-primary/20 to-primary/10 border border-primary/30 rounded-full backdrop-blur-sm hover-elevate transition-all">
+              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                <Handshake className="w-4 h-4 text-primary-foreground" />
               </div>
-              <span className="text-sm font-bold uppercase tracking-widest text-yellow-400">Partner Certificato</span>
+              <span className="text-sm font-bold uppercase tracking-widest text-primary">Partner Certificato</span>
             </div>
 
             {/* Title */}
-            <h1 className="font-serif text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+            <h1 className="font-serif text-4xl md:text-6xl font-black text-foreground mb-6 leading-tight">
               Riempi le tue sale con{' '}
-              <span className="bg-gradient-to-r from-yellow-400 to-green-500 bg-clip-text text-transparent">
+              <span className="text-primary">
                 eventi su misura
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-12 leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
               Porta in sala ciò che il tuo pubblico vuole davvero. Eventi speciali, 
               classici, festival: domanda chiara, rischio ridotto, sale piene.
             </p>
@@ -108,46 +107,46 @@ export default function Cinema() {
             {/* Stats Section */}
             <div
               ref={statsRef}
-              className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 mb-12 p-6 md:p-8 bg-gradient-to-r from-white/5 to-yellow-400/5 border border-white/10 rounded-2xl backdrop-blur-md"
+              className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 mb-12 p-6 md:p-8 bg-gradient-to-r from-foreground/5 to-primary/5 border border-primary/20 rounded-2xl backdrop-blur-md"
             >
               <div className="text-center py-2">
-                <div className={`text-4xl md:text-5xl font-black text-transparent bg-gradient-to-r from-yellow-400 to-green-500 bg-clip-text transition-all duration-1000 ${animated ? 'opacity-100' : 'opacity-0'}`}>
+                <div className={`text-4xl md:text-5xl font-black text-primary transition-all duration-1000 ${animated ? 'opacity-100' : 'opacity-0'}`}>
                   {animated ? '95%' : '0%'}
                 </div>
-                <div className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-400 mt-2">
+                <div className="text-xs md:text-sm font-bold uppercase tracking-wider text-muted-foreground mt-2">
                   Tasso di Riempimento
                 </div>
-                <div className="text-xs text-slate-500 mt-1">Sale mediamente piene</div>
+                <div className="text-xs text-muted-foreground/70 mt-1">Sale mediamente piene</div>
               </div>
 
-              <div className="text-center py-2 md:border-l md:border-yellow-400/20">
-                <div className={`text-4xl md:text-5xl font-black text-transparent bg-gradient-to-r from-yellow-400 to-green-500 bg-clip-text transition-all duration-1000 ${animated ? 'opacity-100' : 'opacity-0'}`}>
+              <div className="text-center py-2 md:border-l md:border-primary/20">
+                <div className={`text-4xl md:text-5xl font-black text-primary transition-all duration-1000 ${animated ? 'opacity-100' : 'opacity-0'}`}>
                   {animated ? '200+' : '0+'}
                 </div>
-                <div className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-400 mt-2">
+                <div className="text-xs md:text-sm font-bold uppercase tracking-wider text-muted-foreground mt-2">
                   Eventi Organizzati
                 </div>
-                <div className="text-xs text-slate-500 mt-1">Nell'ultimo anno</div>
+                <div className="text-xs text-muted-foreground/70 mt-1">Nell'ultimo anno</div>
               </div>
 
-              <div className="text-center py-2 md:border-l md:border-yellow-400/20">
-                <div className={`text-4xl md:text-5xl font-black text-transparent bg-gradient-to-r from-yellow-400 to-green-500 bg-clip-text transition-all duration-1000 ${animated ? 'opacity-100' : 'opacity-0'}`}>
+              <div className="text-center py-2 md:border-l md:border-primary/20">
+                <div className={`text-4xl md:text-5xl font-black text-primary transition-all duration-1000 ${animated ? 'opacity-100' : 'opacity-0'}`}>
                   {animated ? '50+' : '0+'}
                 </div>
-                <div className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-400 mt-2">
+                <div className="text-xs md:text-sm font-bold uppercase tracking-wider text-muted-foreground mt-2">
                   Cinema Partner
                 </div>
-                <div className="text-xs text-slate-500 mt-1">In tutta Italia</div>
+                <div className="text-xs text-muted-foreground/70 mt-1">In tutta Italia</div>
               </div>
 
-              <div className="text-center py-2 md:border-l md:border-yellow-400/20">
-                <div className="text-4xl md:text-5xl font-black text-transparent bg-gradient-to-r from-yellow-400 to-green-500 bg-clip-text">
+              <div className="text-center py-2 md:border-l md:border-primary/20">
+                <div className="text-4xl md:text-5xl font-black text-primary">
                   Zero
                 </div>
-                <div className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-400 mt-2">
+                <div className="text-xs md:text-sm font-bold uppercase tracking-wider text-muted-foreground mt-2">
                   Rischio Commerciale
                 </div>
-                <div className="text-xs text-slate-500 mt-1">Prenotazioni garantite</div>
+                <div className="text-xs text-muted-foreground/70 mt-1">Prenotazioni garantite</div>
               </div>
             </div>
 
@@ -155,7 +154,7 @@ export default function Cinema() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-slate-900 font-bold text-lg px-8 h-14 rounded-xl group"
+                className="text-base px-8 h-14 rounded-xl group"
                 data-testid="button-demo-request"
               >
                 <span>Richiedi una Demo</span>
@@ -164,7 +163,7 @@ export default function Cinema() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-yellow-400/50 font-bold text-lg px-8 h-14 rounded-xl group"
+                className="!border-yellow-border !border-2 text-base px-8 h-14 rounded-xl group"
                 onClick={() => document.querySelector('#come-funziona')?.scrollIntoView({ behavior: 'smooth' })}
                 data-testid="button-learn-more"
               >
@@ -175,11 +174,11 @@ export default function Cinema() {
 
             {/* Trust section */}
             <div className="text-center">
-              <p className="text-xs uppercase tracking-widest text-slate-500 mb-4">Si fidano di noi</p>
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Si fidano di noi</p>
               <div className="flex flex-wrap items-center justify-center gap-8 opacity-60 hover:opacity-90 transition-opacity">
-                <div className="text-slate-400 font-semibold text-sm">ANEC</div>
-                <div className="text-slate-400 font-semibold text-sm">Associazione Cinema</div>
-                <div className="text-slate-400 font-semibold text-sm">Festival Network</div>
+                <div className="text-muted-foreground font-semibold text-sm">ANEC</div>
+                <div className="text-muted-foreground font-semibold text-sm">Associazione Cinema</div>
+                <div className="text-muted-foreground font-semibold text-sm">Festival Network</div>
               </div>
             </div>
           </div>
