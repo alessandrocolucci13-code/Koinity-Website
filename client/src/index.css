@@ -1095,26 +1095,16 @@
   pointer-events: none;
 }
 
-.press-container {
-  max-width: 1200px;
+.press-container-centered {
+  max-width: 700px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
   position: relative;
   z-index: 1;
 }
 
-@media (max-width: 968px) {
-  .press-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-.press-content {
+.press-content-centered {
   padding: 40px 0;
+  text-align: center;
 }
 
 .press-title {
@@ -1136,14 +1126,16 @@
 .press-contact {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   padding: 20px 28px;
   background: rgba(255, 255, 255, 0.08);
   border: 2px solid rgba(255, 214, 0, 0.3);
   border-radius: 16px;
-  margin-bottom: 32px;
+  margin: 0 auto 32px auto;
   backdrop-filter: blur(10px);
   transition: all 0.3s;
+  max-width: 100%;
 }
 
 .press-contact:hover {

@@ -293,8 +293,8 @@ export default function ChiSiamo() {
         </section>
 
         <section className="press-section">
-          <div className="press-container">
-            <div className="press-content">
+          <div className="press-container-centered">
+            <div className="press-content-centered">
               <h2 className="press-title">Press Kit</h2>
               <p className="press-subtitle">
                 Materiali per la stampa, loghi e informazioni sulla company. 
@@ -334,67 +334,6 @@ export default function ChiSiamo() {
                   <div className="stat-number">30+</div>
                   <div className="stat-label">Città</div>
                 </div>
-              </div>
-            </div>
-
-            <div className="press-resources">
-              <h3 className="press-resources-title">Risorse Scaricabili</h3>
-              
-              <div className="resource-list">
-                <a href="/downloads/koinity-logo-pack.zip" className="resource-item" download data-testid="link-logo-pack">
-                  <div className="resource-info">
-                    <div className="resource-icon">🎨</div>
-                    <div className="resource-details">
-                      <h4>Logo Pack</h4>
-                      <p>Loghi in vari formati (PNG, SVG, EPS) - 2.4 MB</p>
-                    </div>
-                  </div>
-                  <div className="resource-download">↓</div>
-                </a>
-
-                <a href="/downloads/koinity-brand-guidelines.pdf" className="resource-item" download data-testid="link-brand-guidelines">
-                  <div className="resource-info">
-                    <div className="resource-icon">📋</div>
-                    <div className="resource-details">
-                      <h4>Brand Guidelines</h4>
-                      <p>Linee guida del brand (PDF) - 1.8 MB</p>
-                    </div>
-                  </div>
-                  <div className="resource-download">↓</div>
-                </a>
-
-                <a href="/downloads/koinity-press-photos.zip" className="resource-item" download data-testid="link-press-photos">
-                  <div className="resource-info">
-                    <div className="resource-icon">📸</div>
-                    <div className="resource-details">
-                      <h4>Foto Stampa</h4>
-                      <p>Immagini ad alta risoluzione (ZIP) - 12 MB</p>
-                    </div>
-                  </div>
-                  <div className="resource-download">↓</div>
-                </a>
-
-                <a href="/downloads/koinity-fact-sheet.pdf" className="resource-item" download data-testid="link-fact-sheet">
-                  <div className="resource-info">
-                    <div className="resource-icon">📊</div>
-                    <div className="resource-details">
-                      <h4>Fact Sheet</h4>
-                      <p>Dati e informazioni aziendali (PDF) - 450 KB</p>
-                    </div>
-                  </div>
-                  <div className="resource-download">↓</div>
-                </a>
-
-                <a href="/downloads/koinity-latest-press-release.pdf" className="resource-item" download data-testid="link-press-release">
-                  <div className="resource-info">
-                    <div className="resource-icon">📰</div>
-                    <div className="resource-details">
-                      <h4>Ultimo Comunicato Stampa</h4>
-                      <p>Ultime novità e annunci (PDF) - 320 KB</p>
-                    </div>
-                  </div>
-                  <div className="resource-download">↓</div>
-                </a>
               </div>
             </div>
           </div>
