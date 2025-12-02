@@ -1,0 +1,717 @@
+STEP 5: Miglioramento Form "Diventa Ambassador"
+Obiettivo
+Trasformare il form "Diventa Ambassador" da un semplice form blu generico a una sezione moderna, professionale e invitante che motivi gli utenti a candidarsi.
+Problema Attuale
+
+Box blu generico poco distintivo
+Form base senza personalità visiva
+Mancanza di elementi che comunichino i benefit del ruolo
+Input fields standard senza UX moderna
+Nessun feedback visivo durante la compilazione
+Layout statico poco coinvolgente
+
+
+Modifiche da implementare:
+1. Layout a Due Colonne (Desktop)
+css.ambassador-section {
+  padding: 100px 40px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 80, 0.3) 0%,
+    rgba(0, 0, 40, 0.2) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.ambassador-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 968px) {
+  .ambassador-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+2. Colonna Sinistra: Info e Benefits
+css.ambassador-info {
+  padding: 0 20px;
+}
+
+.ambassador-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(255, 214, 0, 0.15);
+  border: 2px solid rgba(255, 214, 0, 0.3);
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #FFD600;
+  margin-bottom: 24px;
+}
+
+.ambassador-badge-icon {
+  font-size: 16px;
+}
+
+.ambassador-title {
+  font-size: 52px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.ambassador-subtitle {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+}
+
+/* Benefits List */
+.ambassador-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: start;
+  gap: 16px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s;
+}
+
+.benefit-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 214, 0, 0.3);
+  transform: translateX(8px);
+}
+
+.benefit-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(255, 214, 0, 0.3);
+}
+
+.benefit-content h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.benefit-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+@media (max-width: 968px) {
+  .ambassador-title {
+    font-size: 40px;
+  }
+}
+3. Colonna Destra: Form Moderno
+css.ambassador-form-container {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 214, 0, 0.05) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 32px;
+  padding: 48px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.form-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.form-subtitle {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .ambassador-form-container {
+    padding: 32px 24px;
+  }
+}
+4. Input Fields Moderni con Floating Labels
+css.form-group {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.form-label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 50, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  color: #fff;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  background: rgba(0, 0, 80, 0.6);
+  border-color: #FFD600;
+  box-shadow: 0 0 0 4px rgba(255, 214, 0, 0.1);
+}
+
+/* Floating label effect */
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label,
+.form-textarea:focus + .form-label,
+.form-textarea:not(:placeholder-shown) + .form-label {
+  top: -10px;
+  left: 16px;
+  font-size: 12px;
+  color: #FFD600;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 0, 60, 0.9) 50%,
+    rgba(0, 0, 60, 0.9) 100%
+  );
+  padding: 0 8px;
+  font-weight: 600;
+}
+
+.form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Placeholder invisible per floating label */
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: transparent;
+}
+5. Icon Prefix nei Fields
+css.form-group-with-icon {
+  position: relative;
+}
+
+.form-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  transition: color 0.3s;
+}
+
+.form-input:focus ~ .form-icon {
+  color: #FFD600;
+}
+
+/* Per textarea, icona in alto */
+.form-textarea ~ .form-icon {
+  top: 24px;
+  transform: none;
+}
+6. Character Counter per Textarea
+css.form-counter {
+  position: absolute;
+  bottom: -24px;
+  right: 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+}
+
+.form-counter.warning {
+  color: #FF8C00;
+}
+
+.form-counter.danger {
+  color: #FF5733;
+}
+7. Submit Button Premium
+css.form-submit {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  border: none;
+  border-radius: 16px;
+  color: #000050;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(255, 214, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  margin-top: 32px;
+}
+
+.form-submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.form-submit:hover::before {
+  left: 100%;
+}
+
+.form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255, 214, 0, 0.6);
+}
+
+.form-submit:active {
+  transform: translateY(0);
+}
+
+.form-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading state */
+.form-submit.loading {
+  pointer-events: none;
+}
+
+.form-submit.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #000050;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+8. Success/Error Messages
+css.form-message {
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s;
+}
+
+.form-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-message.success {
+  background: rgba(34, 197, 94, 0.2);
+  border: 2px solid rgba(34, 197, 94, 0.4);
+  color: #22C55E;
+}
+
+.form-message.error {
+  background: rgba(239, 68, 68, 0.2);
+  border: 2px solid rgba(239, 68, 68, 0.4);
+  color: #EF4444;
+}
+
+.message-icon {
+  font-size: 20px;
+}
+9. Privacy Notice
+css.form-privacy {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-privacy a {
+  color: #FFD600;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.form-privacy a:hover {
+  color: #FF8C00;
+}
+10. Validation Indicators
+css.form-input.valid {
+  border-color: #22C55E;
+}
+
+.form-input.invalid {
+  border-color: #EF4444;
+}
+
+.validation-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.form-input.valid ~ .validation-icon.success {
+  opacity: 1;
+  color: #22C55E;
+}
+
+.form-input.invalid ~ .validation-icon.error {
+  opacity: 1;
+  color: #EF4444;
+}
+
+Struttura HTML Completa
+html<section class="ambassador-section">
+  
+  <div class="ambassador-container">
+    
+    <!-- Colonna Sinistra: Info -->
+    <div class="ambassador-info">
+      
+      <div class="ambassador-badge">
+        <span class="ambassador-badge-icon">⭐</span>
+        <span>Opportunità Esclusiva</span>
+      </div>
+      
+      <h2 class="ambassador-title">Diventa Ambassador</h2>
+      <p class="ambassador-subtitle">
+        Gli ambassador di Koinity aiutano a far crescere la community 
+        nella propria città, organizzando eventi e coordinando le proiezioni locali.
+      </p>
+      
+      <!-- Benefits -->
+      <div class="ambassador-benefits">
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">🎬</div>
+          <div class="benefit-content">
+            <h4>Eventi Esclusivi</h4>
+            <p>Accesso prioritario a premiere e eventi speciali</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">🎟️</div>
+          <div class="benefit-content">
+            <h4>Biglietti Gratuiti</h4>
+            <p>Ingresso omaggio per te e un ospite</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">🌟</div>
+          <div class="benefit-content">
+            <h4>Riconoscimento</h4>
+            <p>Badge speciale e visibilità nella community</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">🤝</div>
+          <div class="benefit-content">
+            <h4>Network</h4>
+            <p>Connessioni con cinema e professionisti del settore</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Colonna Destra: Form -->
+    <div class="ambassador-form-container">
+      
+      <h3 class="form-title">Candidati Ora</h3>
+      <p class="form-subtitle">
+        Compila il form e racconta la tua motivazione. 
+        Ti risponderemo entro 48 ore.
+      </p>
+      
+      <!-- Message (success/error) -->
+      <div class="form-message success" id="formMessage" style="display: none;">
+        <span class="message-icon">✓</span>
+        <span>Candidatura inviata con successo!</span>
+      </div>
+      
+      <form class="ambassador-form" id="ambassadorForm">
+        
+        <!-- Nome Completo -->
+        <div class="form-group form-group-with-icon">
+          <input 
+            type="text" 
+            id="name" 
+            class="form-input" 
+            placeholder=" "
+            required
+          >
+          <label for="name" class="form-label">Nome completo</label>
+          <span class="form-icon">👤</span>
+          <span class="validation-icon success">✓</span>
+          <span class="validation-icon error">✗</span>
+        </div>
+        
+        <!-- Email -->
+        <div class="form-group form-group-with-icon">
+          <input 
+            type="email" 
+            id="email" 
+            class="form-input" 
+            placeholder=" "
+            required
+          >
+          <label for="email" class="form-label">Email</label>
+          <span class="form-icon">✉️</span>
+          <span class="validation-icon success">✓</span>
+          <span class="validation-icon error">✗</span>
+        </div>
+        
+        <!-- Città -->
+        <div class="form-group form-group-with-icon">
+          <input 
+            type="text" 
+            id="city" 
+            class="form-input" 
+            placeholder=" "
+            required
+          >
+          <label for="city" class="form-label">Città</label>
+          <span class="form-icon">📍</span>
+          <span class="validation-icon success">✓</span>
+          <span class="validation-icon error">✗</span>
+        </div>
+        
+        <!-- Motivazione -->
+        <div class="form-group form-group-with-icon">
+          <textarea 
+            id="motivation" 
+            class="form-textarea" 
+            placeholder=" "
+            maxlength="500"
+            required
+          ></textarea>
+          <label for="motivation" class="form-label">Perché vuoi diventare ambassador?</label>
+          <span class="form-icon">✍️</span>
+          <span class="form-counter">
+            <span id="charCount">0</span>/500
+          </span>
+        </div>
+        
+        <!-- Submit Button -->
+        <button type="submit" class="form-submit">
+          Invia Candidatura
+        </button>
+        
+        <!-- Privacy -->
+        <p class="form-privacy">
+          Inviando questo form accetti la nostra 
+          <a href="/privacy">Privacy Policy</a> e i 
+          <a href="/terms">Termini di Servizio</a>.
+        </p>
+        
+      </form>
+    </div>
+    
+  </div>
+</section>
+
+JavaScript per Validazione e UX
+javascript// Form handling
+const form = document.getElementById('ambassadorForm');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const cityInput = document.getElementById('city');
+const motivationInput = document.getElementById('motivation');
+const charCount = document.getElementById('charCount');
+const formMessage = document.getElementById('formMessage');
+const submitButton = form.querySelector('.form-submit');
+
+// Character counter
+motivationInput.addEventListener('input', function() {
+  const count = this.value.length;
+  charCount.textContent = count;
+  
+  const counter = this.nextElementSibling.nextElementSibling;
+  if (count > 450) {
+    counter.classList.add('danger');
+    counter.classList.remove('warning');
+  } else if (count > 400) {
+    counter.classList.add('warning');
+    counter.classList.remove('danger');
+  } else {
+    counter.classList.remove('warning', 'danger');
+  }
+});
+
+// Real-time validation
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function validateField(input, validationFn = null) {
+  const value = input.value.trim();
+  const isValid = validationFn ? validationFn(value) : value.length > 0;
+  
+  if (value.length === 0) {
+    input.classList.remove('valid', 'invalid');
+  } else if (isValid) {
+    input.classList.add('valid');
+    input.classList.remove('invalid');
+  } else {
+    input.classList.add('invalid');
+    input.classList.remove('valid');
+  }
+  
+  return isValid;
+}
+
+nameInput.addEventListener('blur', () => validateField(nameInput));
+emailInput.addEventListener('blur', () => validateField(emailInput, validateEmail));
+cityInput.addEventListener('blur', () => validateField(cityInput));
+
+// Form submission
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  // Validate all fields
+  const isNameValid = validateField(nameInput);
+  const isEmailValid = validateField(emailInput, validateEmail);
+  const isCityValid = validateField(cityInput);
+  const isMotivationValid = motivationInput.value.trim().length >= 50;
+  
+  if (!isNameValid || !isEmailValid || !isCityValid || !isMotivationValid) {
+    showMessage('Completa tutti i campi correttamente', 'error');
+    return;
+  }
+  
+  // Loading state
+  submitButton.classList.add('loading');
+  submitButton.disabled = true;
+  submitButton.textContent = 'Invio in corso...';
+  
+  // Simulate API call
+  try {
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    // Success
+    showMessage('Candidatura inviata con successo! Ti contatteremo presto.', 'success');
+    form.reset();
+    charCount.textContent = '0';
+    
+    // Reset validation states
+    [nameInput, emailInput, cityInput].forEach(input => {
+      input.classList.remove('valid', 'invalid');
+    });
+    
+  } catch (error) {
+    showMessage('Errore nell\'invio. Riprova più tardi.', 'error');
+  } finally {
+    submitButton.classList.remove('loading');
+    submitButton.disabled = false;
+    submitButton.textContent = 'Invia Candidatura';
+  }
+});
+
+function showMessage(text, type) {
+  formMessage.textContent = text;
+  formMessage.className = `form-message ${type} show`;
+  formMessage.style.display = 'flex';
+  
+  setTimeout(() => {
+    formMessage.classList.remove('show');
+    setTimeout(() => {
+      formMessage.style.display = 'none';
+    }, 300);
+  }, 5000);
+}
+
+// Scroll animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+observer.observe(document.querySelector('.ambassador-section'));

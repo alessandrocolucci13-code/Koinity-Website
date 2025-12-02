@@ -310,31 +310,75 @@ export default function Community() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="max-w-4xl mx-auto">
+      <section className="ambassador-section">
+        <div className="ambassador-container">
+          <div className="ambassador-info">
+            <div className="ambassador-badge">
+              <span>⭐</span>
+              <span>Opportunità Esclusiva</span>
+            </div>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="font-serif text-2xl">Diventa Ambassador</CardTitle>
-            <CardDescription>
-              Gli ambassador di Koinity aiutano a far crescere la community nella
-              propria città, organizzano eventi e coordinano le proiezioni locali.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
+            <h2 className="ambassador-title">Diventa Ambassador</h2>
+            <p className="ambassador-subtitle">
+              Gli ambassador di Koinity aiutano a far crescere la community 
+              nella propria città, organizzando eventi e coordinando le proiezioni locali.
+            </p>
+
+            <div className="ambassador-benefits">
+              <div className="benefit-item">
+                <div className="benefit-icon">🎬</div>
+                <div className="benefit-content">
+                  <h4>Eventi Esclusivi</h4>
+                  <p>Accesso prioritario a premiere e eventi speciali</p>
+                </div>
+              </div>
+
+              <div className="benefit-item">
+                <div className="benefit-icon">🎟️</div>
+                <div className="benefit-content">
+                  <h4>Biglietti Gratuiti</h4>
+                  <p>Ingresso omaggio per te e un ospite</p>
+                </div>
+              </div>
+
+              <div className="benefit-item">
+                <div className="benefit-icon">🌟</div>
+                <div className="benefit-content">
+                  <h4>Riconoscimento</h4>
+                  <p>Badge speciale e visibilità nella community</p>
+                </div>
+              </div>
+
+              <div className="benefit-item">
+                <div className="benefit-icon">🤝</div>
+                <div className="benefit-content">
+                  <h4>Network</h4>
+                  <p>Connessioni con cinema e professionisti del settore</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="ambassador-form-container">
+            <h3 className="form-title">Candidatura</h3>
+            <p className="form-subtitle">Compila il modulo per candidarti al programma ambassador.</p>
+
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="ambassador-form">
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Nome completo</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Mario Rossi" {...field} data-testid="input-name" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
+                    <div className="form-group">
+                      <input 
+                        {...field} 
+                        type="text"
+                        placeholder="Nome completo"
+                        className="form-input" 
+                        data-testid="input-name" 
+                      />
+                      <label className="form-label">Nome completo</label>
+                    </div>
                   )}
                 />
 
@@ -342,18 +386,16 @@ export default function Community() {
                   control={form.control}
                   name="email"
                   render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input
-                          type="email"
-                          placeholder="mario@example.com"
-                          {...field}
-                          data-testid="input-email"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
+                    <div className="form-group">
+                      <input 
+                        {...field} 
+                        type="email"
+                        placeholder="Email"
+                        className="form-input" 
+                        data-testid="input-email" 
+                      />
+                      <label className="form-label">Email</label>
+                    </div>
                   )}
                 />
 
@@ -361,13 +403,16 @@ export default function Community() {
                   control={form.control}
                   name="città"
                   render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Città</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Milano" {...field} data-testid="input-city" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
+                    <div className="form-group">
+                      <input 
+                        {...field} 
+                        type="text"
+                        placeholder="Città"
+                        className="form-input" 
+                        data-testid="input-city" 
+                      />
+                      <label className="form-label">Città</label>
+                    </div>
                   )}
                 />
 
@@ -375,30 +420,30 @@ export default function Community() {
                   control={form.control}
                   name="motivation"
                   render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Perché vuoi diventare ambassador?</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Racconta la tua motivazione..."
-                          {...field}
-                          rows={4}
-                          data-testid="input-motivation"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
+                    <div className="form-group">
+                      <textarea 
+                        {...field} 
+                        placeholder="Perché vuoi diventare ambassador?"
+                        className="form-textarea" 
+                        data-testid="input-motivation"
+                      />
+                      <label className="form-label">Perché vuoi diventare ambassador?</label>
+                    </div>
                   )}
                 />
 
-                <Button type="submit" className="w-full" data-testid="button-submit">
+                <button type="submit" className="form-submit" data-testid="button-submit">
                   Invia candidatura
-                </Button>
+                </button>
+
+                <p className="form-privacy">
+                  Proteggiamo i tuoi dati. Leggi la nostra <a href="#">privacy policy</a>.
+                </p>
               </form>
             </Form>
-          </CardContent>
-        </Card>
-      </div>
-      </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
