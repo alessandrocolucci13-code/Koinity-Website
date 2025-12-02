@@ -130,15 +130,11 @@ export default function Community() {
 
         <div className="community-stats" ref={statsRef}>
           <div className="community-stat-item">
-            <span className="community-stat-number" data-target="5000">0</span>
+            <span className="community-stat-number" data-target="50">0</span>
             <span className="community-stat-label">Membri</span>
           </div>
           <div className="community-stat-item">
-            <span className="community-stat-number" data-target="150">0</span>
-            <span className="community-stat-label">Film Votati</span>
-          </div>
-          <div className="community-stat-item">
-            <span className="community-stat-number" data-target="30">0</span>
+            <span className="community-stat-number" data-target="4">0</span>
             <span className="community-stat-label">Città</span>
           </div>
         </div>
