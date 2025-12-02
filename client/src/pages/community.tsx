@@ -130,7 +130,7 @@ export default function Community() {
 
         <div className="community-stats" ref={statsRef}>
           <div className="community-stat-item">
-            <span className="community-stat-number" data-target="50">0</span>
+            <span className="community-stat-number" data-target="70">0</span>
             <span className="community-stat-label">Membri</span>
           </div>
           <div className="community-stat-item">
