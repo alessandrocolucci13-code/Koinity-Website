@@ -58,22 +58,6 @@ export default function Blog() {
             Resta aggiornato sul mondo del cinema on-demand.
           </p>
 
-          {/* Stats */}
-          <div className="blog-stats">
-            <div className="stat-item">
-              <span className="stat-number">50+</span>
-              <span className="stat-label">Articoli</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">12K+</span>
-              <span className="stat-label">Lettori/Mese</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">Settimanale</span>
-              <span className="stat-label">Frequenza</span>
-            </div>
-          </div>
-
           {/* Category Filters */}
           <div className="category-filters">
             {categories.map((category) => (
