@@ -320,7 +320,7 @@ export default function Cinema() {
       </section>
 
       {/* MAIN CONTENT SECTION */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div className="max-w-4xl mx-auto">
 
         {/* COME FUNZIONA SECTION */}
