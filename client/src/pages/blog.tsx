@@ -1,9 +1,6 @@
 import { Link } from "wouter";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Calendar, Search, Zap } from "lucide-react";
+import { Calendar, Search } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
-import { Skeleton } from "@/components/ui/skeleton";
 import { SEO } from "@/components/seo";
 import type { BlogPost } from "@shared/schema";
 import { useState } from "react";
@@ -30,6 +27,22 @@ export default function Blog() {
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   }) || [];
+
+  const getCategoryBadge = (category?: string) => {
+    const categoryMap: Record<string, string> = {
+      cinema: "🎬 Cinema",
+      community: "👥 Community",
+      novita: "🚀 Novità",
+      guide: "💡 Guide",
+    };
+    return categoryMap[category || "cinema"] || "📚 Blog";
+  };
+
+  const estimateReadTime = (text: string) => {
+    const wordsPerMinute = 200;
+    const words = text.split(/\s+/).length;
+    return Math.ceil(words / wordsPerMinute);
+  };
 
   return (
     <>
@@ -103,68 +116,97 @@ export default function Blog() {
       </section>
 
       {/* BLOG POSTS SECTION */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12" id="blog-posts-section">
-        <div className="max-w-5xl mx-auto">
-          {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[...Array(4)].map((_, i) => (
-                <Card key={i}>
-                  <Skeleton className="aspect-[16/9] w-full" />
-                  <CardContent className="p-6 space-y-3">
-                    <Skeleton className="h-6 w-3/4" />
-                    <Skeleton className="h-4 w-full" />
-                    <Skeleton className="h-4 w-2/3" />
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : filteredPosts && filteredPosts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {filteredPosts.map((post) => (
+      <section className="blog-posts-section" id="blog-posts-section">
+        <div className="section-header">
+          <h2 className="section-title">Ultimi Articoli</h2>
+          <p className="section-subtitle">
+            Scopri le ultime novità dal mondo Koinity
+          </p>
+        </div>
+
+        {isLoading ? (
+          <div className="blog-posts-grid">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="blog-card-skeleton" data-testid={`skeleton-${i}`}></div>
+            ))}
+          </div>
+        ) : filteredPosts && filteredPosts.length > 0 ? (
+          <div className="blog-posts-grid">
+            {filteredPosts.map((post, index) => {
+              const isFeatured = index === 0;
+              const readTime = estimateReadTime(post.excerpt);
+              return (
                 <Link key={post.id} href={`/blog/${post.slug}`}>
-                  <Card className="overflow-hidden hover-elevate transition-all duration-300 h-full flex flex-col" data-testid={`card-blog-${post.id}`}>
-                    {post.imageUrl && (
-                      <div className="aspect-[16/9] overflow-hidden bg-muted">
+                  <article 
+                    className={`blog-card ${isFeatured ? "featured" : ""}`}
+                    data-testid={`card-blog-${post.id}`}
+                  >
+                    {isFeatured && (
+                      <div className="featured-badge">
+                        <span className="featured-icon">⭐</span>
+                        <span>In Evidenza</span>
+                      </div>
+                    )}
+                    
+                    <div className="blog-image-container">
+                      {post.imageUrl && (
                         <img
                           src={post.imageUrl}
                           alt={post.title}
-                          className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                          className="blog-image"
                         />
-                      </div>
-                    )}
-                    <CardContent className="p-6 flex-1 flex flex-col">
-                      <h2 className="font-serif text-2xl font-bold mb-3 line-clamp-2 hover:text-primary transition-colors" data-testid={`text-title-${post.id}`}>
+                      )}
+                      <div className="blog-image-overlay"></div>
+                      <span className="blog-category-badge">
+                        {getCategoryBadge(post.category)}
+                      </span>
+                    </div>
+                    
+                    <div className="blog-content">
+                      <h3 className="blog-card-title" data-testid={`text-title-${post.id}`}>
                         {post.title}
-                      </h2>
-                      <p className="text-muted-foreground mb-4 line-clamp-3 flex-1" data-testid={`text-excerpt-${post.id}`}>
+                      </h3>
+                      <p className="blog-description" data-testid={`text-excerpt-${post.id}`}>
                         {post.excerpt}
                       </p>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Calendar className="h-4 w-4" />
-                        <span data-testid={`text-date-${post.id}`}>
-                          {new Date(post.publishedAt).toLocaleDateString("it-IT", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                          })}
-                        </span>
+                      
+                      <div className="blog-footer">
+                        <div className="blog-date">
+                          <span className="date-icon">📅</span>
+                          <span data-testid={`text-date-${post.id}`}>
+                            {new Date(post.publishedAt).toLocaleDateString("it-IT", {
+                              year: "numeric",
+                              month: "short",
+                              day: "numeric",
+                            })}
+                          </span>
+                        </div>
+                        <div className="blog-read-time">
+                          <span className="read-icon">⏱️</span>
+                          <span>{readTime} min</span>
+                        </div>
                       </div>
-                    </CardContent>
-                  </Card>
+                      
+                      <a href={`/blog/${post.slug}`} className="blog-read-more">
+                        <span>Leggi l'articolo</span>
+                        <span className="read-more-arrow">→</span>
+                      </a>
+                    </div>
+                  </article>
                 </Link>
-              ))}
-            </div>
-          ) : (
-            <Card className="text-center p-12">
-              <p className="text-muted-foreground">
-                {searchQuery || selectedCategory !== "all" 
-                  ? "Nessun articolo trovato. Prova una ricerca diversa."
-                  : "Nessun articolo pubblicato ancora. Torna presto!"}
-              </p>
-            </Card>
-          )}
-        </div>
-      </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="text-center py-16">
+            <p className="text-muted-foreground text-lg">
+              {searchQuery || selectedCategory !== "all" 
+                ? "Nessun articolo trovato. Prova una ricerca diversa."
+                : "Nessun articolo pubblicato ancora. Torna presto!"}
+            </p>
+          </div>
+        )}
+      </section>
     </>
   );
 }

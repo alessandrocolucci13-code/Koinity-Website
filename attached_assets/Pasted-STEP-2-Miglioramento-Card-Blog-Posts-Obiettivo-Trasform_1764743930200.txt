@@ -1,0 +1,614 @@
+STEP 2: Miglioramento Card Blog Posts
+Obiettivo
+Trasformare le card blog attuali da semplici box blu con bordo a card moderne, visivamente accattivanti e facilmente scannable che invitino al click.
+Problema Attuale
+
+Card troppo semplici con bordo blu spesso
+Immagini poco integrate nel design
+Mancanza di gerarchia visiva tra titolo, descrizione e metadata
+Nessun hover effect interessante
+Layout rigido poco flessibile
+Mancanza di indicatori visivi (categoria, tempo di lettura, ecc.)
+
+
+Modifiche da implementare:
+1. Section Container per Blog Posts
+css.blog-posts-section {
+  padding: 80px 40px 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+2. Grid Layout Responsive
+css.blog-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 32px;
+}
+
+@media (max-width: 1200px) {
+  .blog-posts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-posts-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+3. Blog Card Design Moderno
+css.blog-card {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 214, 0, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Gradient overlay al hover */
+.blog-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 214, 0, 0.08) 0%,
+    rgba(255, 140, 0, 0.04) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.blog-card:hover::before {
+  opacity: 1;
+}
+4. Image Container con Overlay
+css.blog-image-container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: rgba(0, 0, 50, 0.5);
+}
+
+.blog-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blog-card:hover .blog-image {
+  transform: scale(1.08);
+}
+
+/* Dark overlay sulla foto */
+.blog-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 80, 0) 0%,
+    rgba(0, 0, 80, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+/* Category badge sull'immagine */
+.blog-category-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  background: rgba(255, 214, 0, 0.95);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000050;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+}
+5. Content Area
+css.blog-content {
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.blog-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.3s;
+}
+
+.blog-card:hover .blog-title {
+  color: #FFD600;
+}
+
+.blog-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+6. Metadata Footer
+css.blog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+.blog-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+
+.date-icon {
+  font-size: 16px;
+  color: #FFD600;
+}
+
+.blog-read-time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.read-icon {
+  font-size: 14px;
+}
+7. Read More Link
+css.blog-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFD600;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s;
+}
+
+.blog-card:hover .blog-read-more {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.read-more-arrow {
+  transition: transform 0.3s;
+}
+
+.blog-read-more:hover .read-more-arrow {
+  transform: translateX(4px);
+}
+8. Featured Post (Primo articolo più grande)
+css.blog-card.featured {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.blog-card.featured .blog-image-container {
+  height: 100%;
+}
+
+.blog-card.featured .blog-content {
+  padding: 40px;
+}
+
+.blog-card.featured .blog-title {
+  font-size: 32px;
+  -webkit-line-clamp: 3;
+}
+
+.blog-card.featured .blog-description {
+  font-size: 17px;
+  -webkit-line-clamp: 4;
+}
+
+/* Featured badge */
+.featured-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000050;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.featured-icon {
+  font-size: 14px;
+}
+
+@media (max-width: 968px) {
+  .blog-card.featured {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+  
+  .blog-card.featured .blog-image-container {
+    height: 280px;
+  }
+  
+  .blog-card.featured .blog-content {
+    padding: 28px 24px;
+  }
+  
+  .blog-card.featured .blog-title {
+    font-size: 24px;
+  }
+}
+9. Author Info (Opzionale)
+css.blog-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.author-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+  color: #000050;
+  flex-shrink: 0;
+}
+
+.author-info {
+  flex: 1;
+}
+
+.author-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.author-role {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+10. Loading Skeleton (Opzionale)
+css.blog-card-skeleton {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 24px;
+  height: 450px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+11. Animazioni Entrata
+css.blog-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInCard 0.6s ease-out forwards;
+}
+
+.blog-card:nth-child(1) { animation-delay: 0.1s; }
+.blog-card:nth-child(2) { animation-delay: 0.2s; }
+.blog-card:nth-child(3) { animation-delay: 0.3s; }
+.blog-card:nth-child(4) { animation-delay: 0.4s; }
+.blog-card:nth-child(5) { animation-delay: 0.5s; }
+.blog-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+Struttura HTML Completa
+html<section class="blog-posts-section">
+  
+  <!-- Optional Section Header -->
+  <div class="section-header">
+    <h2 class="section-title">Ultimi Articoli</h2>
+    <p class="section-subtitle">
+      Scopri le ultime novità dal mondo Koinity
+    </p>
+  </div>
+
+  <!-- Blog Posts Grid -->
+  <div class="blog-posts-grid">
+    
+    <!-- Featured Post (più grande) -->
+    <article class="blog-card featured">
+      <div class="featured-badge">
+        <span class="featured-icon">⭐</span>
+        <span>In Evidenza</span>
+      </div>
+      
+      <div class="blog-image-container">
+        <img 
+          src="/images/blog/featured-post.jpg" 
+          alt="Post title"
+          class="blog-image"
+        >
+        <div class="blog-image-overlay"></div>
+        <span class="blog-category-badge">🎬 Cinema</span>
+      </div>
+      
+      <div class="blog-content">
+        <h3 class="blog-title">
+          I primi successi: Milano e Roma abbracciano Koinity
+        </h3>
+        <p class="blog-description">
+          Le prime proiezioni confermate a Milano e Roma dimostrano 
+          il potere della community cinematografica italiana. Un traguardo 
+          importante che segna l'inizio di una nuova era per il cinema on-demand.
+        </p>
+        
+        <div class="blog-footer">
+          <div class="blog-date">
+            <span class="date-icon">📅</span>
+            <span>30 novembre 2025</span>
+          </div>
+          <div class="blog-read-time">
+            <span class="read-icon">⏱️</span>
+            <span>5 min</span>
+          </div>
+        </div>
+        
+        <a href="/blog/post-1" class="blog-read-more">
+          <span>Leggi l'articolo</span>
+          <span class="read-more-arrow">→</span>
+        </a>
+        
+        <!-- Author (opzionale) -->
+        <div class="blog-author">
+          <div class="author-avatar">MR</div>
+          <div class="author-info">
+            <div class="author-name">Marco Rossi</div>
+            <div class="author-role">Content Manager</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Regular Post 1 -->
+    <article class="blog-card">
+      <div class="blog-image-container">
+        <img 
+          src="/images/blog/post-2.jpg" 
+          alt="Post title"
+          class="blog-image"
+        >
+        <div class="blog-image-overlay"></div>
+        <span class="blog-category-badge">👥 Community</span>
+      </div>
+      
+      <div class="blog-content">
+        <h3 class="blog-title">
+          Benvenuti su Koinity: Il cinema lo scegli tu
+        </h3>
+        <p class="blog-description">
+          Scopri come Koinity sta rivoluzionando il modo in cui 
+          vediamo i film in sala, restituendo il potere di scelta 
+          alla community.
+        </p>
+        
+        <div class="blog-footer">
+          <div class="blog-date">
+            <span class="date-icon">📅</span>
+            <span>26 novembre 2025</span>
+          </div>
+          <div class="blog-read-time">
+            <span class="read-icon">⏱️</span>
+            <span>3 min</span>
+          </div>
+        </div>
+        
+        <a href="/blog/post-2" class="blog-read-more">
+          <span>Leggi l'articolo</span>
+          <span class="read-more-arrow">→</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- Regular Post 2 -->
+    <article class="blog-card">
+      <div class="blog-image-container">
+        <img 
+          src="/images/blog/post-3.jpg" 
+          alt="Post title"
+          class="blog-image"
+        >
+        <div class="blog-image-overlay"></div>
+        <span class="blog-category-badge">💡 Guide</span>
+      </div>
+      
+      <div class="blog-content">
+        <h3 class="blog-title">
+          Come funziona il sistema di voto di Koinity
+        </h3>
+        <p class="blog-description">
+          Una guida completa su come votare, pre-prenotare e 
+          sbloccare sconti sulla nostra piattaforma. Tutto quello 
+          che devi sapere per iniziare.
+        </p>
+        
+        <div class="blog-footer">
+          <div class="blog-date">
+            <span class="date-icon">📅</span>
+            <span>19 novembre 2025</span>
+          </div>
+          <div class="blog-read-time">
+            <span class="read-icon">⏱️</span>
+            <span>8 min</span>
+          </div>
+        </div>
+        
+        <a href="/blog/post-3" class="blog-read-more">
+          <span>Leggi l'articolo</span>
+          <span class="read-more-arrow">→</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- Add more blog cards as needed -->
+
+  </div>
+  
+  <!-- Load More Button (opzionale) -->
+  <div style="text-align: center; margin-top: 60px;">
+    <button class="load-more-button">
+      Carica altri articoli
+    </button>
+  </div>
+  
+</section>
+
+Load More Button CSS
+css.load-more-button {
+  padding: 16px 40px;
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.15), rgba(255, 140, 0, 0.1));
+  border: 2px solid rgba(255, 214, 0, 0.3);
+  border-radius: 16px;
+  color: #FFD600;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.load-more-button:hover {
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.25), rgba(255, 140, 0, 0.15));
+  border-color: #FFD600;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 214, 0, 0.3);
+}
+
+JavaScript per Scroll Animation
+javascript// Intersection Observer per animazioni card
+const cardsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = 'running';
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+document.querySelectorAll('.blog-card').forEach(card => {
+  card.style.animationPlayState = 'paused';
+  cardsObserver.observe(card);
+});
+
+// Load more functionality (opzionale)
+document.querySelector('.load-more-button')?.addEventListener('click', function() {
+  console.log('Load more articles...');
+  // Implement pagination/infinite scroll here
+});
