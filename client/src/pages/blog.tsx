@@ -22,7 +22,8 @@ export default function Blog() {
   ];
 
   const filteredPosts = posts?.filter((post) => {
-    const matchesCategory = selectedCategory === "all" || post.category === selectedCategory;
+    const postCategory = post.category || "cinema";
+    const matchesCategory = selectedCategory === "all" || postCategory === selectedCategory;
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
