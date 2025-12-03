@@ -1,0 +1,85 @@
+Fix: Allineamento Error Messages
+Problema
+I messaggi di errore sono troppo distanti dai campi input e non sono allineati correttamente.
+Soluzione CSS
+Sostituisci il CSS dei messaggi di errore con questo:
+css.error-message {
+  display: none;
+  margin-top: 6px;
+  margin-left: 4px;
+  font-size: 13px;
+  color: #EF4444;
+  font-weight: 600;
+}
+
+.form-group.has-error .error-message {
+  display: block;
+}
+Aggiusta anche il margin-bottom del form-group:
+css.form-group {
+  position: relative;
+  margin-bottom: 28px; /* Era 24px, aumentato per fare spazio agli errori */
+}
+
+/* Quando c'è errore, non aggiungere extra margin */
+.form-group.has-error {
+  margin-bottom: 28px;
+}
+Verifica che la struttura HTML sia corretta:
+html<div class="form-group form-group-icon">
+  <input 
+    type="text" 
+    id="firstName" 
+    class="form-input" 
+    placeholder=" "
+    required
+  >
+  <label for="firstName" class="form-label">Nome completo</label>
+  <span class="field-icon">👤</span>
+  <span class="validation-icon success">✓</span>
+  <span class="validation-icon error">✗</span>
+  <span class="error-message">Nome è richiesto</span>
+</div>
+Aggiornamento JavaScript per messaggi personalizzati:
+javascriptfunction validateField(input) {
+  const value = input.value.trim();
+  const errorMsg = input.closest('.form-group')?.querySelector('.error-message');
+  let isValid = false;
+  
+  if (input.type === 'email') {
+    isValid = validateEmail(value);
+    if (errorMsg && value.length > 0 && !isValid) {
+      errorMsg.textContent = 'Email non valida';
+    }
+  } else if (input.tagName === 'SELECT') {
+    isValid = value !== '';
+    if (errorMsg && !isValid) {
+      errorMsg.textContent = `${input.labels[0]?.textContent || 'Campo'} è richiesto`;
+    }
+  } else {
+    isValid = value.length > 0;
+    if (errorMsg && !isValid) {
+      errorMsg.textContent = `${input.labels[0]?.textContent || 'Campo'} è richiesto`;
+    }
+  }
+  
+  if (value.length === 0 && !input.hasAttribute('required')) {
+    input.classList.remove('valid', 'invalid');
+    input.closest('.form-group')?.classList.remove('has-error');
+    return true;
+  }
+  
+  if (isValid) {
+    input.classList.add('valid');
+    input.classList.remove('invalid');
+    input.closest('.form-group')?.classList.remove('has-error');
+  } else {
+    input.classList.add('invalid');
+    input.classList.remove('valid');
+    if (value.length > 0) {
+      input.closest('.form-group')?.classList.add('has-error');
+    }
+  }
+  
+  return isValid;
+}

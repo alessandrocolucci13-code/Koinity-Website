@@ -3439,7 +3439,11 @@
 
 .form-group {
   position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+}
+
+.form-group.has-error {
+  margin-bottom: 28px;
 }
 
 .form-label {
@@ -3502,6 +3506,19 @@
 .form-input::placeholder,
 .form-textarea::placeholder {
   color: transparent;
+}
+
+.error-message {
+  display: none;
+  margin-top: 6px;
+  margin-left: 4px;
+  font-size: 13px;
+  color: #EF4444;
+  font-weight: 600;
+}
+
+.form-group.has-error .error-message {
+  display: block;
 }
 
 .form-submit {
