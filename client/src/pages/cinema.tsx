@@ -226,87 +226,138 @@ export default function Cinema() {
         </div>
       </div>
 
+      {/* BENEFITS SECTION */}
+      <section className="py-20 md:py-32 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          {/* Header */}
+          <div className="text-center mb-16 md:mb-24">
+            <h2 className="font-serif text-4xl md:text-5xl font-black text-foreground mb-6">
+              Il valore per gli{' '}
+              <span className="text-primary">esercenti</span>
+            </h2>
+            <div className="bg-gradient-to-r from-foreground/5 to-primary/5 border border-primary/20 rounded-2xl backdrop-blur-sm p-6 md:p-8 max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                Koinity ti permette di programmare proiezioni basate sulla domanda reale del tuo pubblico locale. Riduci il rischio di sale vuote e scopri quali film la tua community vuole davvero vedere.
+              </p>
+            </div>
+          </div>
+
+          {/* Benefits Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+            {/* Card 1: Domanda locale - Verde */}
+            <div className="benefit-card benefit-card-green group">
+              <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-green-500/20 border-2 border-green-500/40 flex items-center justify-center text-green-400 font-black text-lg group-hover:rotate-180 group-hover:scale-125 transition-all duration-300" data-testid="badge-1">
+                1
+              </div>
+              
+              <div className="relative mb-8">
+                <div className="benefit-icon-container">
+                  <div className="benefit-ring benefit-ring-green"></div>
+                  <div className="benefit-icon-bg benefit-icon-bg-green"></div>
+                  <TrendingUp className="benefit-icon w-12 h-12 text-white relative z-10" />
+                </div>
+              </div>
+              
+              <h3 className="benefit-title text-white group-hover:text-green-400 transition-colors text-2xl md:text-3xl font-black mb-4" data-testid="title-demand">
+                Domanda locale
+              </h3>
+              <p className="benefit-description text-muted-foreground group-hover:text-foreground transition-colors text-base leading-relaxed mb-6">
+                Scopri cosa vuole vedere il tuo pubblico prima di programmare. Ogni proposta rappresenta domanda reale.
+              </p>
+              <div className="inline-flex items-center gap-2 text-sm font-bold text-foreground/80 bg-background/40 px-4 py-2 rounded-lg border border-green-500/20">
+                <span className="text-green-400">👥</span>
+                <span className="text-green-400">Fino a 300+</span>
+                <span className="text-foreground/60">prenotazioni/evento</span>
+              </div>
+            </div>
+
+            {/* Card 2: Programmazione mirata - Blu */}
+            <div className="benefit-card benefit-card-blue group">
+              <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-blue-500/20 border-2 border-blue-500/40 flex items-center justify-center text-blue-400 font-black text-lg group-hover:rotate-180 group-hover:scale-125 transition-all duration-300" data-testid="badge-2">
+                2
+              </div>
+              
+              <div className="relative mb-8">
+                <div className="benefit-icon-container">
+                  <div className="benefit-ring benefit-ring-blue"></div>
+                  <div className="benefit-icon-bg benefit-icon-bg-blue"></div>
+                  <Calendar className="benefit-icon w-12 h-12 text-white relative z-10" />
+                </div>
+              </div>
+              
+              <h3 className="benefit-title text-white group-hover:text-blue-400 transition-colors text-2xl md:text-3xl font-black mb-4" data-testid="title-programming">
+                Programmazione mirata
+              </h3>
+              <p className="benefit-description text-muted-foreground group-hover:text-foreground transition-colors text-base leading-relaxed mb-6">
+                Organizza eventi speciali, rassegne di classici o anteprime con la certezza di riempire la sala.
+              </p>
+              <div className="inline-flex items-center gap-2 text-sm font-bold text-foreground/80 bg-background/40 px-4 py-2 rounded-lg border border-blue-500/20">
+                <span className="text-blue-400">📅</span>
+                <span className="text-blue-400">100% Confermato</span>
+                <span className="text-foreground/60">con pre-prenotazioni</span>
+              </div>
+            </div>
+
+            {/* Card 3: Rischio ridotto - Giallo */}
+            <div className="benefit-card benefit-card-yellow group">
+              <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center text-primary font-black text-lg group-hover:rotate-180 group-hover:scale-125 transition-all duration-300" data-testid="badge-3">
+                3
+              </div>
+              
+              <div className="relative mb-8">
+                <div className="benefit-icon-container">
+                  <div className="benefit-ring benefit-ring-yellow"></div>
+                  <div className="benefit-icon-bg benefit-icon-bg-yellow"></div>
+                  <DollarSign className="benefit-icon w-12 h-12 text-white relative z-10" />
+                </div>
+              </div>
+              
+              <h3 className="benefit-title text-white group-hover:text-primary transition-colors text-2xl md:text-3xl font-black mb-4" data-testid="title-risk">
+                Rischio ridotto
+              </h3>
+              <p className="benefit-description text-muted-foreground group-hover:text-foreground transition-colors text-base leading-relaxed mb-6">
+                Le pre-prenotazioni garantiscono un numero minimo di spettatori prima di confermare la proiezione.
+              </p>
+              <div className="inline-flex items-center gap-2 text-sm font-bold text-foreground/80 bg-background/40 px-4 py-2 rounded-lg border border-primary/20">
+                <span className="text-primary">🛡️</span>
+                <span className="text-primary">Zero Rischio</span>
+                <span className="text-foreground/60">finché non riempi</span>
+              </div>
+            </div>
+
+            {/* Card 4: Eventi speciali - Viola */}
+            <div className="benefit-card benefit-card-purple group">
+              <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-purple-500/20 border-2 border-purple-500/40 flex items-center justify-center text-purple-400 font-black text-lg group-hover:rotate-180 group-hover:scale-125 transition-all duration-300" data-testid="badge-4">
+                4
+              </div>
+              
+              <div className="relative mb-8">
+                <div className="benefit-icon-container">
+                  <div className="benefit-ring benefit-ring-purple"></div>
+                  <div className="benefit-icon-bg benefit-icon-bg-purple"></div>
+                  <Film className="benefit-icon w-12 h-12 text-white relative z-10" />
+                </div>
+              </div>
+              
+              <h3 className="benefit-title text-white group-hover:text-purple-400 transition-colors text-2xl md:text-3xl font-black mb-4" data-testid="title-events">
+                Eventi speciali
+              </h3>
+              <p className="benefit-description text-muted-foreground group-hover:text-foreground transition-colors text-base leading-relaxed mb-6">
+                Crea esperienze uniche con film fuori distribuzione, festival e rassegne tematiche.
+              </p>
+              <div className="inline-flex items-center gap-2 text-sm font-bold text-foreground/80 bg-background/40 px-4 py-2 rounded-lg border border-purple-500/20">
+                <span className="text-purple-400">🎬</span>
+                <span className="text-purple-400">Esperienza Unica</span>
+                <span className="text-foreground/60">comunità engaged</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* MAIN CONTENT SECTION */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-            <Film className="h-8 w-8 text-primary" />
-          </div>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4" data-testid="text-page-subtitle">
-            Il valore per gli esercenti
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-base">
-            Koinity ti permette di programmare proiezioni basate sulla domanda reale del tuo pubblico locale.
-          </p>
-        </div>
-
-        <Card className="mb-12 bg-gradient-to-br from-primary/10 to-primary/5 border-yellow-border border-2">
-          <CardContent className="p-8 md:p-12">
-            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-4">
-              Il valore per gli esercenti
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Koinity ti permette di programmare proiezioni basate sulla domanda
-              reale del tuo pubblico locale. Riduci il rischio di sale vuote e
-              scopri quali film la tua community vuole davvero vedere.
-            </p>
-          </CardContent>
-        </Card>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          <Card className="hover-elevate transition-all duration-300">
-            <CardContent className="pt-8 pb-8 space-y-3">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <TrendingUp className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-bold text-lg">Domanda locale</h3>
-              <p className="text-sm text-muted-foreground">
-                Scopri cosa vuole vedere il tuo pubblico prima di programmare.
-                Ogni proposta rappresenta domanda reale.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="hover-elevate transition-all duration-300">
-            <CardContent className="pt-8 pb-8 space-y-3">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <Calendar className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-bold text-lg">Programmazione mirata</h3>
-              <p className="text-sm text-muted-foreground">
-                Organizza eventi speciali, rassegne di classici o anteprime con
-                la certezza di riempire la sala.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="hover-elevate transition-all duration-300">
-            <CardContent className="pt-8 pb-8 space-y-3">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <DollarSign className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-bold text-lg">Rischio ridotto</h3>
-              <p className="text-sm text-muted-foreground">
-                Le pre-prenotazioni garantiscono un numero minimo di spettatori
-                prima di confermare la proiezione.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="hover-elevate transition-all duration-300">
-            <CardContent className="pt-8 pb-8 space-y-3">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <Film className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-bold text-lg">Eventi speciali</h3>
-              <p className="text-sm text-muted-foreground">
-                Crea esperienze uniche con film fuori distribuzione, festival e
-                rassegne tematiche.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
 
         <Card className="mb-12">
           <CardHeader>
