@@ -204,8 +204,8 @@ export default function Cinema() {
                   alt="La Repubblica"
                   className="h-10 md:h-12 w-auto"
                   style={{
-                    opacity: 0.7,
-                    filter: 'brightness(0.85) saturate(0.6)',
+                    opacity: 1,
+                    filter: 'brightness(1.5) saturate(0)',
                   }}
                   data-testid="logo-la-repubblica"
                 />
@@ -214,8 +214,8 @@ export default function Cinema() {
                   alt="Cineteca Bologna"
                   className="h-10 md:h-12 w-auto"
                   style={{
-                    opacity: 0.7,
-                    filter: 'brightness(0.85) saturate(0.6)',
+                    opacity: 1,
+                    filter: 'brightness(1.5) saturate(0)',
                   }}
                   data-testid="logo-cineteca"
                 />
@@ -224,8 +224,8 @@ export default function Cinema() {
                   alt="Alma Mater Studiorum"
                   className="h-10 md:h-12 w-auto"
                   style={{
-                    opacity: 0.7,
-                    filter: 'brightness(0.85) saturate(0.6)',
+                    opacity: 1,
+                    filter: 'brightness(1.5) saturate(0)',
                   }}
                   data-testid="logo-alma-mater"
                 />
@@ -234,8 +234,8 @@ export default function Cinema() {
                   alt="Almacube"
                   className="h-10 md:h-12 w-auto"
                   style={{
-                    opacity: 0.7,
-                    filter: 'brightness(0.85) saturate(0.6)',
+                    opacity: 1,
+                    filter: 'brightness(1.5) saturate(0)',
                   }}
                   data-testid="logo-almacube"
                 />
