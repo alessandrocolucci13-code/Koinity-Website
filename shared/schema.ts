@@ -100,6 +100,25 @@ export const demoRequestSchema = z.object({
 
 export type DemoRequest = z.infer<typeof demoRequestSchema>;
 
+// Demo Requests Table - Database storage
+export const demoRequests = pgTable("demo_requests", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  cinemaNome: text("cinema_nome").notNull(),
+  città: text("citta").notNull(),
+  message: text("message"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+export const insertDemoRequestSchema = createInsertSchema(demoRequests).omit({
+  id: true,
+  createdAt: true,
+});
+
+export type InsertDemoRequest = z.infer<typeof insertDemoRequestSchema>;
+export type DemoRequestRecord = typeof demoRequests.$inferSelect;
+
 // Ambassador Form Schema
 export const ambassadorFormSchema = z.object({
   name: z.string().min(1, "Nome è richiesto"),

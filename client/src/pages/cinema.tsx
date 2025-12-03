@@ -17,6 +17,8 @@ import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/seo";
 import { demoRequestSchema, type DemoRequest } from "@shared/schema";
 import { useEffect, useRef, useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 import laRepubblicaLogo from "@assets/La_Repubblica_logo_1764714212430.png";
 import cinetecaLogo from "@assets/Cineteca-Logo_1764714212431.png";
 import almaMaterLogo from "@assets/copy_of_logo_1764714212431.png";
@@ -38,13 +40,30 @@ export default function Cinema() {
     },
   });
 
+  const demoMutation = useMutation({
+    mutationFn: (data: DemoRequest) => 
+      apiRequest("/api/demo-request", {
+        method: "POST",
+        body: JSON.stringify(data),
+      }),
+    onSuccess: () => {
+      toast({
+        title: "Richiesta inviata!",
+        description: "Ti contatteremo presto per programmare una demo.",
+      });
+      form.reset();
+    },
+    onError: () => {
+      toast({
+        title: "Errore",
+        description: "Si è verificato un errore. Riprova più tardi.",
+        variant: "destructive",
+      });
+    },
+  });
+
   const onSubmit = (data: DemoRequest) => {
-    console.log("Demo request:", data);
-    toast({
-      title: "Richiesta inviata!",
-      description: "Ti contatteremo presto per programmare una demo.",
-    });
-    form.reset();
+    demoMutation.mutate(data);
   };
 
   useEffect(() => {

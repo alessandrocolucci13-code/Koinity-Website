@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type Proposal, type InsertProposal, type BlogPost, type InsertBlogPost } from "@shared/schema";
+import { type User, type InsertUser, type Proposal, type InsertProposal, type BlogPost, type InsertBlogPost, type DemoRequestRecord, type InsertDemoRequest } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -17,7 +17,8 @@ export interface IStorage {
   getBlogPostBySlug(slug: string): Promise<BlogPost | undefined>;
   
   submitContactForm(data: any): Promise<void>;
-  submitDemoRequest(data: any): Promise<void>;
+  submitDemoRequest(data: InsertDemoRequest): Promise<DemoRequestRecord>;
+  getAllDemoRequests(): Promise<DemoRequestRecord[]>;
   submitAmbassadorForm(data: any): Promise<void>;
   subscribeNewsletter(data: any): Promise<void>;
 }
@@ -26,11 +27,13 @@ export class MemStorage implements IStorage {
   private users: Map<string, User>;
   private proposals: Map<string, Proposal>;
   private blogPosts: Map<string, BlogPost>;
+  private demoRequests: Map<string, DemoRequestRecord>;
 
   constructor() {
     this.users = new Map();
     this.proposals = new Map();
     this.blogPosts = new Map();
+    this.demoRequests = new Map();
     this.seedData();
   }
 
@@ -298,8 +301,22 @@ export class MemStorage implements IStorage {
     console.log("Contact form submission:", data);
   }
 
-  async submitDemoRequest(data: any): Promise<void> {
-    console.log("Demo request submission:", data);
+  async submitDemoRequest(data: InsertDemoRequest): Promise<DemoRequestRecord> {
+    const id = randomUUID();
+    const record: DemoRequestRecord = {
+      id,
+      ...data,
+      createdAt: new Date().toISOString(),
+    };
+    this.demoRequests.set(id, record);
+    console.log("Demo request saved:", record);
+    return record;
+  }
+
+  async getAllDemoRequests(): Promise<DemoRequestRecord[]> {
+    return Array.from(this.demoRequests.values()).sort(
+      (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
   }
 
   async submitAmbassadorForm(data: any): Promise<void> {

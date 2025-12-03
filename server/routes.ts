@@ -61,13 +61,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.get("/api/demo-request", async (_req, res) => {
+    try {
+      const requests = await storage.getAllDemoRequests();
+      res.json(requests);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch demo requests" });
+    }
+  });
+
   app.post("/api/demo-request", async (req, res) => {
     try {
       const validatedData = demoRequestSchema.parse(req.body);
-      await storage.submitDemoRequest(validatedData);
-      res.status(200).json({ success: true });
+      const saved = await storage.submitDemoRequest(validatedData);
+      res.status(201).json(saved);
     } catch (error) {
-      res.status(400).json({ error: "Invalid demo request data" });
+      if (error instanceof Error) {
+        res.status(400).json({ error: error.message });
+      } else {
+        res.status(400).json({ error: "Invalid demo request data" });
+      }
     }
   });
 
