@@ -42,10 +42,7 @@ export default function Cinema() {
 
   const demoMutation = useMutation({
     mutationFn: (data: DemoRequest) => 
-      apiRequest("/api/demo-request", {
-        method: "POST",
-        body: JSON.stringify(data),
-      }),
+      apiRequest("POST", "/api/demo-request", data),
     onSuccess: () => {
       toast({
         title: "Richiesta inviata!",
