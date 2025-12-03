@@ -18,6 +18,7 @@ import BlogPost from "@/pages/blog-post";
 import Contatti from "@/pages/contatti";
 import Privacy from "@/pages/privacy";
 import Termini from "@/pages/termini";
+import AdminDashboard from "@/pages/admin";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -35,6 +36,7 @@ function Router() {
       <Route path="/contatti" component={Contatti} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/termini" component={Termini} />
+      <Route path="/admin" component={AdminDashboard} />
       <Route component={NotFound} />
     </Switch>
   );
