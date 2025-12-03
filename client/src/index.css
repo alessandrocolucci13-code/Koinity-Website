@@ -1,3 +1,6 @@
+/* Imported styles from shadcn/ui components */
+@import "./components/ui/components.css";
+
 /* Tailwind directives */
 @tailwind base;
 @tailwind components;
