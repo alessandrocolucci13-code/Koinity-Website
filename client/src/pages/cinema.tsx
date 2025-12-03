@@ -19,10 +19,7 @@ import { demoRequestSchema, type DemoRequest } from "@shared/schema";
 import { useEffect, useRef, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import laRepubblicaLogo from "@assets/La_Repubblica_logo_1764714212430.png";
-import cinetecaLogo from "@assets/Cineteca-Logo_1764714212431.png";
-import almaMaterLogo from "@assets/copy_of_logo_1764714212431.png";
-import almacubeLogo from "@assets/image-removebg-preview_(27)_1764714212432.png";
+import trustLogos from "@assets/Gemini_Generated_Image_eomsazeomsazeoms_1764741052163.png";
 
 export default function Cinema() {
   const { toast } = useToast();
@@ -195,48 +192,12 @@ export default function Cinema() {
             {/* Trust section */}
             <div className="text-center">
               <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Si fidano di noi</p>
-              <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-                <img
-                  src={laRepubblicaLogo}
-                  alt="La Repubblica"
-                  className="h-10 md:h-12 w-auto"
-                  style={{
-                    opacity: 0.7,
-                    filter: 'brightness(0.85) saturate(0.6)',
-                  }}
-                  data-testid="logo-la-repubblica"
-                />
-                <img
-                  src={cinetecaLogo}
-                  alt="Cineteca Bologna"
-                  className="h-10 md:h-12 w-auto"
-                  style={{
-                    opacity: 0.7,
-                    filter: 'brightness(0.85) saturate(0.6)',
-                  }}
-                  data-testid="logo-cineteca"
-                />
-                <img
-                  src={almaMaterLogo}
-                  alt="Alma Mater Studiorum"
-                  className="h-10 md:h-12 w-auto"
-                  style={{
-                    opacity: 0.7,
-                    filter: 'brightness(0.85) saturate(0.6)',
-                  }}
-                  data-testid="logo-alma-mater"
-                />
-                <img
-                  src={almacubeLogo}
-                  alt="Almacube"
-                  className="h-10 md:h-12 w-auto"
-                  style={{
-                    opacity: 0.7,
-                    filter: 'brightness(0.85) saturate(0.6)',
-                  }}
-                  data-testid="logo-almacube"
-                />
-              </div>
+              <img
+                src={trustLogos}
+                alt="Partner logos"
+                className="w-full max-w-4xl mx-auto"
+                data-testid="trust-logos"
+              />
             </div>
           </div>
         </div>
