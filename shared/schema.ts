@@ -69,6 +69,7 @@ export const blogPosts = pgTable("blog_posts", {
   content: text("content").notNull(),
   imageUrl: text("image_url"),
   coverImage: text("cover_image"),
+  category: text("category").notNull().default("cinema"),
   publishedAt: timestamp("published_at").notNull().defaultNow(),
 });
 
