@@ -1,5 +1,7 @@
-import { type User, type InsertUser, type Proposal, type InsertProposal, type BlogPost, type InsertBlogPost, type DemoRequestRecord, type InsertDemoRequest } from "@shared/schema";
+import { type User, type InsertUser, type Proposal, type InsertProposal, type BlogPost, type InsertBlogPost, type DemoRequestRecord, type InsertDemoRequest, demoRequests } from "@shared/schema";
 import { randomUUID } from "crypto";
+import { getDb } from "./db";
+import { desc } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
@@ -302,21 +304,35 @@ export class MemStorage implements IStorage {
   }
 
   async submitDemoRequest(data: InsertDemoRequest): Promise<DemoRequestRecord> {
-    const id = randomUUID();
-    const record: DemoRequestRecord = {
-      id,
-      ...data,
-      createdAt: new Date().toISOString(),
-    };
-    this.demoRequests.set(id, record);
-    console.log("Demo request saved:", record);
-    return record;
+    try {
+      const db = getDb();
+      const result = await db.insert(demoRequests).values(data).returning();
+      console.log("Demo request saved to database:", result[0]);
+      return result[0];
+    } catch (error) {
+      console.error("Error saving demo request:", error);
+      const id = randomUUID();
+      const record: DemoRequestRecord = {
+        id,
+        ...data,
+        createdAt: new Date().toISOString(),
+      };
+      this.demoRequests.set(id, record);
+      return record;
+    }
   }
 
   async getAllDemoRequests(): Promise<DemoRequestRecord[]> {
-    return Array.from(this.demoRequests.values()).sort(
-      (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-    );
+    try {
+      const db = getDb();
+      const result = await db.select().from(demoRequests).orderBy(desc(demoRequests.createdAt));
+      return result;
+    } catch (error) {
+      console.error("Error fetching demo requests:", error);
+      return Array.from(this.demoRequests.values()).sort(
+        (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+      );
+    }
   }
 
   async submitAmbassadorForm(data: any): Promise<void> {
