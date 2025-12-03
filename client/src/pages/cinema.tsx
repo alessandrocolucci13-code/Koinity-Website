@@ -19,7 +19,7 @@ import { demoRequestSchema, type DemoRequest } from "@shared/schema";
 import { useEffect, useRef, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import trustLogos from "@assets/Gemini_Generated_Image_eomsazeomsazeoms_1764741052163.png";
+import trustLogos from "@assets/Gemini_Generated_Image_gtkdy8gtkdy8gtkd-removebg-preview_1764741275758.png";
 
 export default function Cinema() {
   const { toast } = useToast();
