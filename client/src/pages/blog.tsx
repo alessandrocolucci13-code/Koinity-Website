@@ -132,21 +132,14 @@ export default function Blog() {
           </div>
         ) : filteredPosts && filteredPosts.length > 0 ? (
           <div className="blog-posts-grid">
-            {filteredPosts.map((post, index) => {
-              const isFeatured = index === 0;
+            {filteredPosts.map((post) => {
               const readTime = estimateReadTime(post.excerpt);
               return (
                 <Link key={post.id} href={`/blog/${post.slug}`}>
                   <article 
-                    className={`blog-card ${isFeatured ? "featured" : ""}`}
+                    className="blog-card"
                     data-testid={`card-blog-${post.id}`}
                   >
-                    {isFeatured && (
-                      <div className="featured-badge">
-                        <span className="featured-icon">⭐</span>
-                        <span>In Evidenza</span>
-                      </div>
-                    )}
                     
                     <div className="blog-image-container">
                       {post.imageUrl && (
