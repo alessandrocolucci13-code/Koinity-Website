@@ -421,20 +421,6 @@ export default function Cinema() {
               </div>
             </div>
           </div>
-
-          {/* CTA Section */}
-          <div className="steps-cta">
-            <h3 className="cta-title">Pronto a iniziare?</h3>
-            <p className="cta-description">Richiedi una demo e scopri come riempire le tue sale</p>
-            <Button
-              onClick={() => document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-base px-8 h-12"
-              data-testid="button-cta-demo"
-            >
-              <span>Richiedi Demo Gratuita</span>
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </div>
         </section>
 
         {/* DEMO SECTION - Two Column Premium Layout */}
