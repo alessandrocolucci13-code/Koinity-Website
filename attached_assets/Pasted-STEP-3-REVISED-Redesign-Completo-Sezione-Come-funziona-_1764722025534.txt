@@ -1,0 +1,503 @@
+STEP 3 (REVISED): Redesign Completo Sezione "Come funziona"
+Problema con l'Implementazione Attuale
+La versione attuale ha diversi problemi:
+
+Layout mobile-first poco adatto a desktop (sembra una versione mobile allungata)
+Linea centrale troppo prominente e invasiva
+Card troppo separate mancanza di coesione visiva
+Numeri badge dispersi lungo la linea invece di essere parte delle card
+Troppo spazio vuoto e poco contenuto visibile
+Mancanza di gerarchia tra gli elementi
+Non comunica un "flow" chiaro e professionale
+
+
+Nuovo Approccio: Grid Compatta con Card Integrate
+Obiettivo
+Creare una sezione più compatta, professionale e desktop-friendly che mostri tutto il processo in modo chiaro e scannable.
+
+Design Proposto: Grid 2x2 con Connettori Sottili
+Desktop Layout:
+┌─────────────────┐    ┌─────────────────┐
+│   1. Monitora   │ →  │   2. Valuta     │
+│   [icon/visual] │    │   [icon/visual] │
+└─────────────────┘    └─────────────────┘
+        ↓                       ↓
+┌─────────────────┐    ┌─────────────────┐
+│   3. Organizza  │ ←  │   4. Sala piena │
+│   [icon/visual] │    │   [icon/visual] │
+└─────────────────┘    └─────────────────┘
+
+Modifiche da implementare:
+1. Rimozione Timeline Centrale - Grid Compatta
+css.how-it-works-section {
+  padding: 100px 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+/* Grid 2x2 */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  position: relative;
+}
+
+@media (max-width: 968px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+2. Step Card Integrata con Number
+css.step-card {
+  position: relative;
+  padding: 48px 40px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 214, 0, 0.04) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInCard 0.6s ease-out forwards;
+}
+
+.step-card:nth-child(1) { animation-delay: 0.1s; }
+.step-card:nth-child(2) { animation-delay: 0.2s; }
+.step-card:nth-child(3) { animation-delay: 0.3s; }
+.step-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effect */
+.step-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 214, 0, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Gradient overlay al hover */
+.step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 214, 0, 0.1) 0%,
+    rgba(34, 197, 94, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.step-card:hover::before {
+  opacity: 1;
+}
+3. Number Badge Integrato nell'Angolo
+css.step-number {
+  position: absolute;
+  top: -20px;
+  left: 40px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 900;
+  color: #000050;
+  box-shadow: 
+    0 8px 24px rgba(255, 214, 0, 0.5),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+  border: 4px solid rgba(0, 0, 80, 0.9);
+  z-index: 2;
+  transition: all 0.4s;
+}
+
+.step-card:hover .step-number {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 
+    0 12px 32px rgba(255, 214, 0, 0.7),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon badge sul numero */
+.step-number-icon {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  width: 24px;
+  height: 24px;
+  background: #22C55E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border: 3px solid rgba(0, 0, 80, 0.9);
+}
+4. Icon/Visual Grande Centrale
+css.step-icon-container {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.step-icon-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 214, 0, 0.1);
+  border: 2px solid rgba(255, 214, 0, 0.2);
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+
+.step-card:hover .step-icon-bg {
+  background: rgba(255, 214, 0, 0.2);
+  border-color: rgba(255, 214, 0, 0.4);
+  transform: scale(1.15) rotate(15deg);
+}
+
+.step-icon {
+  position: relative;
+  z-index: 2;
+  font-size: 64px;
+  filter: drop-shadow(0 4px 16px rgba(255, 214, 0, 0.3));
+  transition: transform 0.4s;
+}
+
+.step-card:hover .step-icon {
+  transform: scale(1.1);
+}
+5. Content Typography Compatta
+css.step-content {
+  text-align: center;
+}
+
+.step-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  transition: color 0.3s;
+}
+
+.step-card:hover .step-title {
+  color: #FFD600;
+}
+
+.step-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 20px;
+}
+
+/* Info badge inline */
+.step-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #22C55E;
+}
+6. Connettori Frecce Sottili (Desktop)
+css/* Connettori orizzontali */
+.step-connector-h {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 214, 0, 0.6) 0%,
+    rgba(255, 214, 0, 0.3) 100%
+  );
+  transform: translateY(-50%);
+}
+
+/* Step 1 → Step 2 */
+.step-connector-h.c1-2 {
+  right: -40px;
+}
+
+.step-connector-h::after {
+  content: '→';
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 214, 0, 0.8);
+  font-size: 16px;
+}
+
+/* Connettori verticali */
+.step-connector-v {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 214, 0, 0.6) 0%,
+    rgba(255, 214, 0, 0.3) 100%
+  );
+  transform: translateX(-50%);
+}
+
+/* Step 1 ↓ Step 3 */
+.step-connector-v.c1-3 {
+  bottom: -40px;
+}
+
+.step-connector-v::after {
+  content: '↓';
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 214, 0, 0.8);
+  font-size: 16px;
+}
+
+/* Step 4 ← Step 3 */
+.step-connector-h.c4-3 {
+  left: -40px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 214, 0, 0.3) 0%,
+    rgba(255, 214, 0, 0.6) 100%
+  );
+}
+
+.step-connector-h.c4-3::after {
+  content: '←';
+  left: -12px;
+  right: auto;
+}
+
+/* Hide su mobile */
+@media (max-width: 968px) {
+  .step-connector-h,
+  .step-connector-v {
+    display: none;
+  }
+}
+7. Action Button (Opzionale)
+css.step-action {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s;
+}
+
+.step-card:hover .step-action {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFD600;
+  text-decoration: none;
+  transition: gap 0.3s;
+}
+
+.action-link:hover {
+  gap: 10px;
+}
+
+Struttura HTML Semplificata
+html<section class="how-it-works-section">
+  
+  <!-- Header -->
+  <div class="section-header">
+    <span class="section-badge">
+      <span>⚡</span>
+      Processo Semplice
+    </span>
+    <h2 class="section-title">Come funziona</h2>
+    <p class="section-subtitle">
+      Quattro semplici passaggi per riempire le tue sale
+    </p>
+  </div>
+
+  <!-- Steps Grid -->
+  <div class="steps-grid">
+    
+    <!-- Step 1 -->
+    <div class="step-card">
+      <div class="step-number">
+        1
+        <span class="step-number-icon">📊</span>
+      </div>
+      
+      <div class="step-icon-container">
+        <div class="step-icon-bg"></div>
+        <span class="step-icon">📱</span>
+      </div>
+      
+      <div class="step-content">
+        <h3 class="step-title">Monitora le proposte</h3>
+        <p class="step-description">
+          Accedi alla dashboard per vedere le proposte nella tua città 
+          e i livelli di interesse reale.
+        </p>
+        <span class="step-info">
+          <span>⏱️</span>
+          Aggiornamento continuo
+        </span>
+      </div>
+      
+      <!-- Connettori -->
+      <div class="step-connector-h c1-2"></div>
+      <div class="step-connector-v c1-3"></div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-card">
+      <div class="step-number">
+        2
+        <span class="step-number-icon">👍</span>
+      </div>
+      
+      <div class="step-icon-container">
+        <div class="step-icon-bg"></div>
+        <span class="step-icon">✅</span>
+      </div>
+      
+      <div class="step-content">
+        <h3 class="step-title">Valuta la domanda</h3>
+        <p class="step-description">
+          Quando una proposta raggiunge la soglia, ricevi notifica 
+          e decidi se confermare. Pubblico garantito.
+        </p>
+        <span class="step-info">
+          <span>🎯</span>
+          Soglia: 50-100 prenotazioni
+        </span>
+      </div>
+      
+      <div class="step-connector-v c2-4"></div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-card">
+      <div class="step-number">
+        3
+        <span class="step-number-icon">📅</span>
+      </div>
+      
+      <div class="step-icon-container">
+        <div class="step-icon-bg"></div>
+        <span class="step-icon">🗓️</span>
+      </div>
+      
+      <div class="step-content">
+        <h3 class="step-title">Organizza l'evento</h3>
+        <p class="step-description">
+          Confermi date e orari, la community riceve notifica 
+          per acquistare. Coordinamento automatico.
+        </p>
+        <span class="step-info">
+          <span>✨</span>
+          Flessibilità totale
+        </span>
+      </div>
+      
+      <div class="step-connector-h c3-4"></div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-card">
+      <div class="step-number">
+        4
+        <span class="step-number-icon">✨</span>
+      </div>
+      
+      <div class="step-icon-container">
+        <div class="step-icon-bg"></div>
+        <span class="step-icon">🎉</span>
+      </div>
+      
+      <div class="step-content">
+        <h3 class="step-title">Sala piena</h3>
+        <p class="step-description">
+          Proietti con la certezza di un pubblico appassionato. 
+          Zero rischio, massima soddisfazione.
+        </p>
+        <span class="step-info">
+          <span>📈</span>
+          95% riempimento medio
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Final CTA -->
+  <div class="steps-cta">
+    <h3 class="cta-title">Pronto a iniziare?</h3>
+    <p class="cta-description">
+      Richiedi una demo e scopri come riempire le tue sale
+    </p>
+    <a href="#demo" class="cta-button">
+      <span>Richiedi Demo Gratuita</span>
+      <span>→</span>
+    </a>
+  </div>
+
+</section>
+
+JavaScript Minimale
+javascript// Intersection Observer per animazioni
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = 'running';
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.step-card').forEach(card => {
+  card.style.animationPlayState = 'paused';
+  observer.observe(card);
+});

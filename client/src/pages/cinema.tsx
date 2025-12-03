@@ -360,135 +360,114 @@ export default function Cinema() {
       <div className="max-w-4xl mx-auto">
 
         {/* COME FUNZIONA SECTION */}
-        <section id="come-funziona" className="py-16 md:py-20">
+        <section id="come-funziona" className="how-it-works-section">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="section-header">
             <div className="inline-flex items-center gap-2 px-5 py-2 mb-6 bg-primary/15 border border-primary/30 rounded-full">
               <Zap className="w-4 h-4 text-primary" />
               <span className="text-xs font-bold uppercase tracking-wider text-primary">Processo Semplice</span>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-black text-foreground mb-4">
-              Come funziona
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Quattro semplici passaggi per portare gli eventi più richiesti nelle tue sale cinematografiche
-            </p>
+            <h2 className="section-title">Come funziona</h2>
+            <p className="section-subtitle">Quattro semplici passaggi per riempire le tue sale</p>
           </div>
 
-          {/* Steps Container */}
-          <div className="steps-container relative max-w-4xl mx-auto">
-            {/* Timeline Line */}
-            <div className="timeline-line"></div>
-
+          {/* Steps Grid 2x2 */}
+          <div className="steps-grid">
             {/* Step 1 */}
-            <div className="step-item">
+            <div className="step-card">
+              <div className="step-number">
+                1
+                <BarChart3 className="step-number-icon" />
+              </div>
+              <div className="step-icon-container">
+                <div className="step-icon-bg"></div>
+                <BarChart3 className="step-icon" />
+              </div>
               <div className="step-content">
                 <h3 className="step-title">Monitora le proposte</h3>
-                <p className="step-description">
-                  Accedi alla dashboard per vedere le proposte nella tua città e i livelli di interesse reale.
-                </p>
-                <div className="step-info mt-4">
+                <p className="step-description">Accedi alla dashboard per vedere le proposte nella tua città e i livelli di interesse reale.</p>
+                <span className="step-info">
                   <Clock className="w-4 h-4" />
-                  <span>Aggiornamento continuo</span>
-                </div>
+                  Aggiornamento continuo
+                </span>
               </div>
-              <div className="step-number-container">
-                <div className="step-ring"></div>
-                <div className="step-number-bg">
-                  <span className="step-number">1</span>
-                  <BarChart3 className="step-icon" />
-                </div>
-              </div>
-              <div className="step-visual">
-                <BarChart3 className="visual-icon w-16 h-16 text-primary" />
-              </div>
+              <div className="step-connector-h c1-2"></div>
+              <div className="step-connector-v c1-3"></div>
             </div>
 
             {/* Step 2 */}
-            <div className="step-item">
-              <div className="step-visual">
-                <CheckCircle className="visual-icon w-16 h-16 text-green-400" />
+            <div className="step-card">
+              <div className="step-number">
+                2
+                <CheckCircle className="step-number-icon" />
               </div>
-              <div className="step-number-container">
-                <div className="step-ring"></div>
-                <div className="step-number-bg">
-                  <span className="step-number">2</span>
-                  <CheckCircle className="step-icon" />
-                </div>
+              <div className="step-icon-container">
+                <div className="step-icon-bg"></div>
+                <CheckCircle className="step-icon" />
               </div>
               <div className="step-content">
                 <h3 className="step-title">Valuta la domanda</h3>
-                <p className="step-description">
-                  Quando una proposta raggiunge la soglia, ricevi una notifica e puoi decidere se ospitare.
-                </p>
-                <div className="step-info mt-4">
+                <p className="step-description">Quando una proposta raggiunge la soglia, ricevi notifica e decidi se confermare. Pubblico garantito.</p>
+                <span className="step-info">
                   <Zap className="w-4 h-4" />
-                  <span>Notifiche in tempo reale</span>
-                </div>
+                  Soglia: 50-100 prenotazioni
+                </span>
               </div>
+              <div className="step-connector-v c2-4"></div>
             </div>
 
             {/* Step 3 */}
-            <div className="step-item">
+            <div className="step-card">
+              <div className="step-number">
+                3
+                <Calendar className="step-number-icon" />
+              </div>
+              <div className="step-icon-container">
+                <div className="step-icon-bg"></div>
+                <Calendar className="step-icon" />
+              </div>
               <div className="step-content">
                 <h3 className="step-title">Organizza l'evento</h3>
-                <p className="step-description">
-                  Confermi date e orari, e la community riceve la notifica per acquistare i biglietti.
-                </p>
-                <div className="step-info mt-4">
-                  <Calendar className="w-4 h-4" />
-                  <span>Gestione semplice</span>
-                </div>
+                <p className="step-description">Confermi date e orari, la community riceve notifica per acquistare. Coordinamento automatico.</p>
+                <span className="step-info">
+                  <Handshake className="w-4 h-4" />
+                  Flessibilità totale
+                </span>
               </div>
-              <div className="step-number-container">
-                <div className="step-ring"></div>
-                <div className="step-number-bg">
-                  <span className="step-number">3</span>
-                  <Calendar className="step-icon" />
-                </div>
-              </div>
-              <div className="step-visual">
-                <Calendar className="visual-icon w-16 h-16 text-blue-400" />
-              </div>
+              <div className="step-connector-h c3-4"></div>
             </div>
 
             {/* Step 4 */}
-            <div className="step-item">
-              <div className="step-visual">
-                <Film className="visual-icon w-16 h-16 text-yellow-400" />
+            <div className="step-card">
+              <div className="step-number">
+                4
+                <Film className="step-number-icon" />
               </div>
-              <div className="step-number-container">
-                <div className="step-ring"></div>
-                <div className="step-number-bg">
-                  <span className="step-number">4</span>
-                  <Film className="step-icon" />
-                </div>
+              <div className="step-icon-container">
+                <div className="step-icon-bg"></div>
+                <Film className="step-icon" />
               </div>
               <div className="step-content">
-                <h3 className="step-title">Sala piena garantita</h3>
-                <p className="step-description">
-                  Proietti il film con la certezza di avere un pubblico appassionato e coinvolto.
-                </p>
-                <div className="step-info mt-4">
-                  <CheckCircle className="w-4 h-4" />
-                  <span>Incassi certi</span>
-                </div>
+                <h3 className="step-title">Sala piena</h3>
+                <p className="step-description">Proietti con la certezza di un pubblico appassionato. Zero rischio, massima soddisfazione.</p>
+                <span className="step-info">
+                  <TrendingUp className="w-4 h-4" />
+                  95% riempimento medio
+                </span>
               </div>
             </div>
           </div>
 
           {/* CTA Section */}
-          <div className="steps-cta mt-16 md:mt-20">
-            <h3 className="cta-title mb-2">Pronto a iniziare?</h3>
-            <p className="cta-description mb-8">
-              Scopri come Koinity può rivoluzionare la programmazione del tuo cinema
-            </p>
+          <div className="steps-cta">
+            <h3 className="cta-title">Pronto a iniziare?</h3>
+            <p className="cta-description">Richiedi una demo e scopri come riempire le tue sale</p>
             <Button
               onClick={() => document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
               className="text-base px-8 h-12"
               data-testid="button-cta-demo"
             >
-              <span>Richiedi una Demo</span>
+              <span>Richiedi Demo Gratuita</span>
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
