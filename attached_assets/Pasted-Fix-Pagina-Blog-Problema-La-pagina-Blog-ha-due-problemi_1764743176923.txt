@@ -1,0 +1,69 @@
+Fix Pagina Blog
+Problema
+La pagina Blog ha due problemi principali:
+
+Background nero invece del blu brand (dovrebbe essere blu scuro come le altre pagine)
+Colori testo non allineati con il brand (gradient giallo-verde invece del gradient giallo-arancio standard)
+
+
+Modifiche da implementare:
+1. Fix Background - Blu Brand
+Cambia il background della pagina Blog da nero a blu brand:
+css/* PRIMA (errato - nero) */
+body, .blog-page {
+  background: #000000;
+}
+
+/* DOPO (corretto - blu brand) */
+body, .blog-page {
+  background: #000050; /* Blu scuro brand */
+}
+
+/* Oppure con gradient come altre pagine */
+body, .blog-page {
+  background: linear-gradient(
+    180deg,
+    #000050 0%,
+    #00003a 100%
+  );
+}
+2. Fix Gradient Titolo - Giallo/Arancio Brand
+Cambia il gradient del titolo "Aggiornamenti" da giallo-verde a giallo-arancio:
+css/* PRIMA (errato - giallo-verde) */
+.blog-title .highlight {
+  background: linear-gradient(135deg, #FFD600, #22C55E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* DOPO (corretto - giallo-arancio brand) */
+.blog-title .highlight {
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+3. Fix Stats Numbers Gradient
+Anche i numeri nelle stats devono usare il gradient brand:
+css/* PRIMA (errato) */
+.stat-number {
+  background: linear-gradient(135deg, #FFD600, #22C55E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* DOPO (corretto) */
+.stat-number {
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+4. Verifica Altri Elementi con Verde
+Cerca e sostituisci tutti gli altri elementi che usano il verde (#22C55E) con il gradient brand dove appropriato:
+css/* Badge, buttons, accents dovrebbero usare */
+background: linear-gradient(135deg, #FFD600, #FF8C00);
+
+/* Il verde (#22C55E) va usato SOLO per:
+   - Success states
+   - Trust badges
+   - Newsletter CTA (va bene verde)
+*/

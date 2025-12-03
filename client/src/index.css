@@ -3690,7 +3690,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(to bottom, rgba(0, 0, 12, 1), rgba(0, 0, 50, 0.8));
+  background: linear-gradient(180deg, #000050 0%, #00003a 100%);
 }
 
 .blog-hero::before {
@@ -3702,7 +3702,7 @@
   height: 600px;
   background: radial-gradient(
     circle,
-    rgba(255, 214, 0, 0.06) 0%,
+    rgba(255, 214, 0, 0.08) 0%,
     transparent 70%
   );
   transform: translateX(-50%);
@@ -3724,7 +3724,7 @@
   background: linear-gradient(
     135deg,
     rgba(255, 214, 0, 0.15) 0%,
-    rgba(34, 197, 94, 0.1) 100%
+    rgba(255, 140, 0, 0.1) 100%
   );
   border: 2px solid rgba(255, 214, 0, 0.3);
   border-radius: 30px;
@@ -3798,7 +3798,7 @@
 }
 
 .blog-title .highlight {
-  background: linear-gradient(135deg, #FFD600, #22C55E);
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -3835,7 +3835,7 @@
 .stat-number {
   font-size: 36px;
   font-weight: 900;
-  background: linear-gradient(135deg, #FFD600, #22C55E);
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
