@@ -12,7 +12,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Film, TrendingUp, Calendar, DollarSign, Handshake, ArrowRight, ChevronDown, CheckCircle, BarChart3, Clock, Zap } from "lucide-react";
+import { Film, TrendingUp, Calendar, DollarSign, Handshake, ArrowRight, ChevronDown, CheckCircle, BarChart3, Clock, Zap, Sparkles, Shield, Headphones } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/seo";
 import { demoRequestSchema, type DemoRequest } from "@shared/schema";
@@ -473,112 +473,183 @@ export default function Cinema() {
           </div>
         </section>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="font-serif text-2xl">Richiedi una Demo</CardTitle>
-            <CardDescription>
-              Scopri come Koinity può aiutare il tuo cinema a programmare eventi
-              di successo basati sulla domanda reale.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Nome completo</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Mario Rossi" {...field} data-testid="input-name" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+        {/* DEMO SECTION - Two Column Premium Layout */}
+        <section className="demo-section">
+          <div className="demo-container">
+            {/* LEFT COLUMN - Info */}
+            <div className="demo-info">
+              <span className="demo-badge">
+                <Sparkles className="w-4 h-4" />
+                DEMO GRATUITA
+              </span>
+              <h2 className="demo-title">Scopri il Potenziale del Tuo Cinema</h2>
+              <p className="demo-subtitle">
+                Una consulenza personalizzata di 30 minuti per mostrarti come aumentare i ricavi programmando film che la tua community vuole davvero.
+              </p>
+              
+              {/* What to expect */}
+              <div className="demo-benefits">
+                <div className="benefit-item">
+                  <div className="benefit-icon">📊</div>
+                  <div className="benefit-text">
+                    <h4>Analisi Personalizzata</h4>
+                    <p>Esaminiamo i dati del tuo cinema e il mercato locale</p>
+                  </div>
+                </div>
+                <div className="benefit-item">
+                  <div className="benefit-icon">🎯</div>
+                  <div className="benefit-text">
+                    <h4>Strategie su Misura</h4>
+                    <p>Scopri come programmare film con domanda garantita</p>
+                  </div>
+                </div>
+                <div className="benefit-item">
+                  <div className="benefit-icon">💰</div>
+                  <div className="benefit-text">
+                    <h4>ROI Immediato</h4>
+                    <p>Vedi subito come aumentare i tuoi incassi</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Trust signals */}
+              <div className="demo-trust">
+                <div className="trust-item">
+                  <Shield className="w-4 h-4 trust-icon" />
+                  <span>100% Gratuito</span>
+                </div>
+                <div className="trust-item">
+                  <Clock className="w-4 h-4 trust-icon" />
+                  <span>30 minuti</span>
+                </div>
+                <div className="trust-item">
+                  <Headphones className="w-4 h-4 trust-icon" />
+                  <span>Supporto dedicato</span>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN - Premium Form */}
+            <div className="demo-form-container">
+              <div className="form-header">
+                <h3 className="form-title">Richiedi la Tua Demo</h3>
+                <p className="form-subtitle">Compila il form e sarai contattato entro 24 ore</p>
+              </div>
+
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="demo-form">
+                  <div className="form-row">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem className="form-group">
+                          <FormControl>
+                            <Input 
+                              placeholder=" " 
+                              {...field} 
+                              data-testid="input-name"
+                              className="form-input"
+                            />
+                          </FormControl>
+                          <FormLabel className="form-label">Nome completo</FormLabel>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem className="form-group">
+                          <FormControl>
+                            <Input
+                              type="email"
+                              placeholder=" "
+                              {...field}
+                              data-testid="input-email"
+                              className="form-input"
+                            />
+                          </FormControl>
+                          <FormLabel className="form-label">Email</FormLabel>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <div className="form-row">
+                    <FormField
+                      control={form.control}
+                      name="cinemaNome"
+                      render={({ field }) => (
+                        <FormItem className="form-group">
+                          <FormControl>
+                            <Input
+                              placeholder=" "
+                              {...field}
+                              data-testid="input-cinema-name"
+                              className="form-input"
+                            />
+                          </FormControl>
+                          <FormLabel className="form-label">Nome del cinema</FormLabel>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="città"
+                      render={({ field }) => (
+                        <FormItem className="form-group">
+                          <FormControl>
+                            <Input 
+                              placeholder=" " 
+                              {...field} 
+                              data-testid="input-city"
+                              className="form-input"
+                            />
+                          </FormControl>
+                          <FormLabel className="form-label">Città</FormLabel>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
 
                   <FormField
                     control={form.control}
-                    name="email"
+                    name="message"
                     render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
+                      <FormItem className="form-group">
                         <FormControl>
-                          <Input
-                            type="email"
-                            placeholder="mario@cinema.it"
+                          <Textarea
+                            placeholder=" "
                             {...field}
-                            data-testid="input-email"
+                            data-testid="input-message"
+                            className="form-textarea"
                           />
                         </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="cinemaNome"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Nome del cinema</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="Cinema Odeon"
-                            {...field}
-                            data-testid="input-cinema-name"
-                          />
-                        </FormControl>
+                        <FormLabel className="form-label">Messaggio (opzionale)</FormLabel>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
 
-                  <FormField
-                    control={form.control}
-                    name="città"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Città</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Milano" {...field} data-testid="input-city" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Messaggio (opzionale)</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Raccontaci del tuo cinema..."
-                          {...field}
-                          rows={4}
-                          data-testid="input-message"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <Button type="submit" className="w-full" data-testid="button-submit">
-                  Richiedi una demo
-                </Button>
-              </form>
-            </Form>
-          </CardContent>
-        </Card>
+                  <Button 
+                    type="submit" 
+                    data-testid="button-submit"
+                    className="form-submit"
+                  >
+                    Richiedi Demo Gratuita
+                  </Button>
+                </form>
+              </Form>
+            </div>
+          </div>
+        </section>
       </div>
       </div>
     </>
