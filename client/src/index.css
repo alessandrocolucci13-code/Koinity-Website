@@ -647,7 +647,7 @@
   font-weight: 800;
   text-align: center;
   margin-bottom: 8px;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -687,7 +687,7 @@
 }
 
 .story-container::-webkit-scrollbar-thumb {
-  background: linear-gradient(90deg, #FFD600, #FF8C00);
+  background: linear-gradient(90deg, var(--primary-orange), var(--primary-orange-dark));
   border-radius: 2px;
 }
 
@@ -724,7 +724,7 @@
 .story-year {
   font-size: 40px;
   font-weight: 900;
-  background: linear-gradient(135deg, #FFD600 0%, #FF8C00 100%);
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -757,7 +757,7 @@
 
 .cta-button {
   padding: 10px 24px;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   color: #000;
   border: none;
   border-radius: 12px;
@@ -799,7 +799,7 @@
 .story-nav:hover {
   background: rgba(255, 214, 0, 0.4);
   transform: translateY(-50%) scale(1.1);
-  color: #FFD600;
+  color: var(--primary-orange);
 }
 
 .story-nav-left {
@@ -822,7 +822,7 @@
 
 .timeline-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #FFD600, #FF8C00);
+  background: linear-gradient(90deg, var(--primary-orange), var(--primary-orange-dark));
   width: 0%;
   transition: width 0.3s ease;
   box-shadow: 0 0 10px rgba(255, 214, 0, 0.6);
@@ -901,7 +901,7 @@
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -924,8 +924,8 @@
 .team-badge {
   position: absolute;
   bottom: -10px;
-  background: #FFD600;
-  color: #000050;
+  background: var(--primary-orange);
+  color: #0B0B0F;
   padding: 6px 16px;
   border-radius: 20px;
   font-size: 12px;
@@ -945,7 +945,7 @@
 }
 
 .team-card:hover .team-name {
-  color: #FFD600;
+  color: var(--primary-orange);
 }
 
 .team-role {
@@ -991,7 +991,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFD600;
+  color: var(--primary-orange);
   font-size: 20px;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -999,7 +999,7 @@
 
 .social-link:hover {
   background: rgba(255, 214, 0, 0.2);
-  border-color: #FFD600;
+  border-color: var(--primary-orange);
   transform: translateY(-4px) scale(1.1);
   box-shadow: 0 8px 16px rgba(255, 214, 0, 0.4);
 }
@@ -1129,7 +1129,7 @@
 .press-contact-icon {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -1164,7 +1164,7 @@
 }
 
 .press-contact-value a:hover {
-  color: #FFD600;
+  color: var(--primary-orange);
 }
 
 .press-resources {
@@ -1258,7 +1258,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFD600;
+  color: var(--primary-orange);
   font-size: 18px;
   transition: all 0.3s;
   flex-shrink: 0;
@@ -1266,7 +1266,7 @@
 
 .resource-item:hover .resource-download {
   background: rgba(255, 214, 0, 0.3);
-  border-color: #FFD600;
+  border-color: var(--primary-orange);
   transform: rotate(180deg);
 }
 
@@ -1288,7 +1288,7 @@
 .stat-number {
   font-size: 36px;
   font-weight: 900;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 8px;
@@ -1342,7 +1342,7 @@
 .badge-container {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #FFD600 0%, #FF8C00 100%);
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-dark) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1461,7 +1461,7 @@
 .community-stat-number {
   font-size: 48px;
   font-weight: 900;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
@@ -1514,8 +1514,8 @@
 .scroll-indicator-arrow {
   width: 24px;
   height: 24px;
-  border-left: 2px solid #FFD600;
-  border-bottom: 2px solid #FFD600;
+  border-left: 2px solid var(--primary-orange);
+  border-bottom: 2px solid var(--primary-orange);
   transform: rotate(-45deg);
   animation: bounce-arrow 2s ease-in-out infinite;
 }
@@ -1728,7 +1728,7 @@
 
 .value-card.sharing .value-icon {
   background: rgba(255, 214, 0, 0.2);
-  color: #FFD600;
+  color: var(--primary-orange);
 }
 
 .value-card:hover .value-icon {
@@ -1851,14 +1851,14 @@
   width: 52px;
   height: 52px;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 26px;
   font-weight: 900;
-  color: #000050;
+  color: #0B0B0F;
   box-shadow: 
     0 4px 12px rgba(255, 214, 0, 0.4),
     inset 0 -2px 4px rgba(0, 0, 0, 0.2);
@@ -1888,7 +1888,7 @@
 }
 
 .rule-item:hover .rule-title {
-  color: #FFD600;
+  color: var(--primary-orange);
 }
 
 .rule-description {
@@ -2100,13 +2100,13 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #22C55E;
+  color: var(--primary-green);
 }
 
 .badge-dot {
   width: 6px;
   height: 6px;
-  background: #22C55E;
+  background: var(--primary-green);
   border-radius: 50%;
   animation: pulse-dot 2s ease-in-out infinite;
 }
@@ -2247,7 +2247,7 @@
 .stat-number {
   font-size: 24px;
   font-weight: 900;
-  color: #FFD600;
+  color: var(--primary-orange);
 }
 
 .stat-label {
@@ -2385,7 +2385,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #FFD600;
+  color: var(--primary-orange);
   margin-bottom: 24px;
 }
 
@@ -2430,7 +2430,7 @@
 .benefit-icon {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -2511,7 +2511,7 @@
 .form-input:focus,
 .form-textarea:focus {
   background: rgba(0, 0, 80, 0.6);
-  border-color: #FFD600;
+  border-color: var(--primary-orange);
   box-shadow: 0 0 0 4px rgba(255, 214, 0, 0.1);
 }
 
@@ -2538,7 +2538,7 @@
   top: -10px;
   left: 16px;
   font-size: 12px;
-  color: #FFD600;
+  color: var(--primary-orange);
   background: linear-gradient(
     to bottom,
     transparent 0%,
@@ -2558,10 +2558,10 @@
 .form-submit {
   width: 100%;
   padding: 20px;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   border: none;
   border-radius: 16px;
-  color: #000050;
+  color: #0B0B0F;
   font-size: 18px;
   font-weight: 800;
   text-transform: uppercase;
@@ -2618,13 +2618,13 @@
 }
 
 .form-privacy a {
-  color: #FFD600;
+  color: var(--primary-orange);
   text-decoration: underline;
   transition: color 0.3s;
 }
 
 .form-privacy a:hover {
-  color: #FF8C00;
+  color: var(--primary-orange-dark);
 }
 
 @media (max-width: 968px) {
@@ -2756,7 +2756,7 @@
   top: 0;
   width: 4px;
   height: 100%;
-  background: linear-gradient(180deg, #FFD600, #22C55E);
+  background: linear-gradient(180deg, var(--primary-orange), var(--primary-green));
   opacity: 0;
   transition: opacity 0.3s;
   z-index: 1;
@@ -2834,7 +2834,7 @@
 }
 
 .benefit-card:hover .benefit-title {
-  color: #FFD600;
+  color: var(--primary-orange);
 }
 
 .benefit-description {
@@ -2855,7 +2855,7 @@
   border-radius: 8px;
   font-size: 12px;
   font-weight: 700;
-  color: #22C55E;
+  color: var(--primary-green);
 }
 
 /* Badge Numerico Piccolo */
@@ -2873,7 +2873,7 @@
   justify-content: center;
   font-size: 14px;
   font-weight: 900;
-  color: #FFD600;
+  color: var(--primary-orange);
   transition: all 0.3s;
   z-index: 2;
 }
@@ -2881,7 +2881,7 @@
 .benefit-card:hover .benefit-number {
   transform: scale(1.15);
   background: rgba(255, 214, 0, 0.3);
-  border-color: #FFD600;
+  border-color: var(--primary-orange);
 }
 
 @media (max-width: 768px) {
@@ -3011,14 +3011,14 @@
   transform: translateX(-50%);
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 32px;
   font-weight: 900;
-  color: #000050;
+  color: #0B0B0F;
   box-shadow: 
     0 8px 24px rgba(255, 214, 0, 0.5),
     inset 0 -2px 6px rgba(0, 0, 0, 0.2);
@@ -3040,7 +3040,7 @@
   right: -8px;
   width: 28px;
   height: 28px;
-  background: #22C55E;
+  background: var(--primary-green);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -3104,7 +3104,7 @@
 }
 
 .step-card:hover .step-title {
-  color: #FFD600;
+  color: var(--primary-orange);
 }
 
 .step-description {
@@ -3124,7 +3124,7 @@
   border-radius: 20px;
   font-size: 13px;
   font-weight: 600;
-  color: #22C55E;
+  color: var(--primary-green);
 }
 
 /* Connettori Frecce */
@@ -3339,7 +3339,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #22C55E;
+  color: var(--primary-green);
   margin-bottom: 24px;
 }
 
@@ -3385,7 +3385,7 @@
 .benefit-icon {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -3429,7 +3429,7 @@
 }
 
 .trust-icon {
-  color: #22C55E;
+  color: var(--primary-green);
   font-size: 18px;
 }
 
@@ -3546,7 +3546,7 @@
 .form-input:focus,
 .form-textarea:focus {
   background: rgba(0, 0, 80, 0.6);
-  border-color: #FFD600;
+  border-color: var(--primary-orange);
   box-shadow: 0 0 0 4px rgba(255, 214, 0, 0.1);
 }
 
@@ -3558,7 +3558,7 @@
   transform: none;
   left: 16px;
   font-size: 12px;
-  color: #FFD600;
+  color: var(--primary-orange);
   background: linear-gradient(
     to bottom,
     transparent 0%,
@@ -3596,10 +3596,10 @@
 .form-submit {
   width: 100%;
   padding: 20px;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   border: none;
   border-radius: 16px;
-  color: #000050;
+  color: #0B0B0F;
   font-size: 18px;
   font-weight: 800;
   text-transform: uppercase;
@@ -3730,7 +3730,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #FFD600;
+  color: var(--primary-orange);
   margin-bottom: 24px;
   animation: fadeInDown 0.6s ease-out;
 }
@@ -3770,7 +3770,7 @@
 }
 
 .blog-title .highlight {
-  background: linear-gradient(135deg, #FFD600, #22C55E);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-green));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -3819,7 +3819,7 @@
 .stat-number {
   font-size: 36px;
   font-weight: 900;
-  background: linear-gradient(135deg, #FFD600, #22C55E);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-green));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -3868,9 +3868,9 @@
 }
 
 .filter-tab.active {
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   border-color: transparent;
-  color: #000050;
+  color: #0B0B0F;
   font-weight: 800;
 }
 
@@ -3899,7 +3899,7 @@
 
 .search-input:focus {
   background: rgba(0, 0, 80, 0.6);
-  border-color: #FFD600;
+  border-color: var(--primary-orange);
   box-shadow: 0 0 0 4px rgba(255, 214, 0, 0.1);
 }
 
@@ -3914,10 +3914,10 @@
   transform: translateY(-50%);
   width: 44px;
   height: 44px;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
   border: none;
   border-radius: 12px;
-  color: #000050;
+  color: #0B0B0F;
   font-size: 18px;
   cursor: pointer;
   transition: all 0.3s;
@@ -3955,8 +3955,8 @@
 .scroll-arrow {
   width: 24px;
   height: 24px;
-  border-left: 2px solid #FFD600;
-  border-bottom: 2px solid #FFD600;
+  border-left: 2px solid var(--primary-orange);
+  border-bottom: 2px solid var(--primary-orange);
   transform: rotate(-45deg);
   animation: bounce 2s ease-in-out infinite;
 }
@@ -4010,4 +4010,11 @@
     padding: 10px 16px;
     font-size: 14px;
   }
+}
+
+/* Color variable definitions for Blog */
+:root {
+  --primary-orange: #FFD600;
+  --primary-orange-dark: #FF8C00;
+  --primary-green: #22C55E;
 }
