@@ -1,0 +1,78 @@
+Fix: Number Badge Completamente Fuori dalla Card
+Problema
+Il badge numero viene tagliato perché la card ha overflow: hidden.
+Soluzione
+1. Rimuovi overflow: hidden dalla card:
+css.step-card {
+  position: relative;
+  padding: 48px 40px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 214, 0, 0.04) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* RIMUOVI: overflow: hidden; */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInCard 0.6s ease-out forwards;
+}
+2. Aumenta il padding-top per fare spazio al badge:
+css.step-card {
+  position: relative;
+  padding: 60px 40px 48px 40px; /* Più spazio in alto */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 214, 0, 0.04) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* NO overflow: hidden */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInCard 0.6s ease-out forwards;
+}
+3. Aggiusta la posizione del number badge:
+css.step-number {
+  position: absolute;
+  top: -35px; /* Più fuori dalla card */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 900;
+  color: #000050;
+  box-shadow: 
+    0 8px 24px rgba(255, 214, 0, 0.5),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+  border: 4px solid rgba(0, 0, 80, 0.9);
+  z-index: 2;
+  transition: all 0.4s;
+}
+
+.step-card:hover .step-number {
+  transform: translateX(-50%) scale(1.15) rotate(10deg);
+  box-shadow: 
+    0 12px 32px rgba(255, 214, 0, 0.7),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+4. Aggiungi margin-top alla grid per fare spazio:
+css.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  position: relative;
+  margin-top: 50px; /* Spazio per i badge superiori */
+}

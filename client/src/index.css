@@ -2874,12 +2874,13 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   position: relative;
+  margin-top: 50px;
   margin-bottom: 60px;
 }
 
 .step-card {
   position: relative;
-  padding: 48px 40px;
+  padding: 60px 40px 48px 40px;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.08) 0%,
@@ -2889,7 +2890,6 @@
   border-radius: 28px;
   backdrop-filter: blur(20px);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInCard 0.6s ease-out forwards;
@@ -2936,7 +2936,7 @@
 
 .step-number {
   position: absolute;
-  top: -30px;
+  top: -35px;
   left: 50%;
   transform: translateX(-50%);
   width: 70px;
