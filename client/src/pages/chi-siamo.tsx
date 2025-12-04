@@ -222,7 +222,7 @@ export default function ChiSiamo() {
           </p>
 
           <div className="team-grid" ref={teamGridRef}>
-            {/* Team Member 1: Marco Rossi */}
+            {/* Team Member 1: Alessandro */}
             <div className="team-card">
               <div className="team-card-inner">
                 <div className="team-card-front">
@@ -230,17 +230,17 @@ export default function ChiSiamo() {
                     <span className="team-avatar-icon">👨‍💻</span>
                     <span className="team-badge">CEO</span>
                   </div>
-                  <h3 className="team-name">Marco Rossi</h3>
+                  <h3 className="team-name">Alessandro</h3>
                   <p className="team-role">Co-Founder & CEO</p>
                   <p className="team-tagline">"Il cinema è democrazia"</p>
                 </div>
                 <div className="team-card-back">
                   <p className="team-bio">
-                    Con 10+ anni di esperienza nel settore tech e una passione sfrenata per il cinema, Marco guida la visione strategica di Koinity.
+                    Creativo del progetto, guida la strategia, la ricerca utenti e lo sviluppo del modello di business, con un forte orientamento Lean.
                   </p>
                   <div className="team-social">
-                    <a href="https://linkedin.com" className="social-link" data-testid="link-marco-linkedin">🔗</a>
-                    <a href="https://twitter.com" className="social-link" data-testid="link-marco-twitter">𝕏</a>
+                    <a href="https://linkedin.com" className="social-link" data-testid="link-alessandro-linkedin">🔗</a>
+                    <a href="https://twitter.com" className="social-link" data-testid="link-alessandro-twitter">𝕏</a>
                   </div>
                 </div>
               </div>
