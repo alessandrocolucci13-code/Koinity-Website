@@ -1,0 +1,777 @@
+STEP 2: Miglioramento Layout Form + Info Cards
+Obiettivo
+Ridisegnare completamente il layout della pagina contatti, trasformando il design attuale (form a sinistra + info a destra) in un layout più moderno, professionale e user-friendly.
+Problema Attuale
+
+Layout a due colonne rigido poco flessibile
+Form box blu con bordo troppo prominente e invadente
+Info cards (Email, Sede, Supporto) troppo semplici
+Mappa troppo grande e poco integrata
+Mancanza di gerarchia visiva tra gli elementi
+Form fields standard senza floating labels
+Nessun feedback visivo durante la compilazione
+
+
+Nuovo Approccio: Layout Centrato con Form Premium
+Design Proposto
+┌────────────────────────────────────────┐
+│  Hero Section (Step 1)                 │
+└────────────────────────────────────────┘
+
+┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+│  📧 Email    │ │  📍 Sede     │ │  💬 Support  │
+│  Quick Info  │ │  Quick Info  │ │  Quick Info  │
+└──────────────┘ └──────────────┘ └──────────────┘
+
+┌────────────────────────────────────────┐
+│         Form Centrato Premium          │
+│         (max-width 700px)              │
+└────────────────────────────────────────┘
+
+┌────────────────────────────────────────┐
+│         Mappa (full-width)             │
+└────────────────────────────────────────┘
+
+Modifiche da implementare:
+1. Quick Info Cards (Sopra il Form)
+css.quick-info-section {
+  padding: 60px 40px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quick-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 968px) {
+  .quick-info-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+2. Quick Info Card Design
+css.info-card {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  padding: 32px 28px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 214, 0, 0.03) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info-card:hover {
+  border-color: rgba(255, 214, 0, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon container */
+.info-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.15), rgba(255, 140, 0, 0.1));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  transition: all 0.3s;
+}
+
+.info-card:hover .info-icon-wrapper {
+  transform: scale(1.1) rotate(-5deg);
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.25), rgba(255, 140, 0, 0.15));
+}
+
+/* Content */
+.info-content {
+  flex: 1;
+}
+
+.info-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.info-value {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0;
+}
+
+.info-value a {
+  color: #FFD600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.info-value a:hover {
+  color: #FF8C00;
+  text-decoration: underline;
+}
+
+.info-note {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 6px;
+  font-style: italic;
+}
+3. Form Section Centrato
+css.form-section {
+  padding: 60px 40px 80px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.form-subtitle {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+4. Form Container Premium
+css.contact-form-container {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 214, 0, 0.04) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  padding: 48px;
+  backdrop-filter: blur(30px);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine effect */
+.contact-form-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 70%
+  );
+  animation: shine 8s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-10%, -10%) rotate(45deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form-container {
+    padding: 36px 28px;
+  }
+}
+5. Form Fields con Floating Labels
+css.contact-form {
+  position: relative;
+  z-index: 1;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.form-label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 50, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  color: #fff;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  background: rgba(0, 0, 80, 0.6);
+  border-color: #FFD600;
+  box-shadow: 0 0 0 4px rgba(255, 214, 0, 0.1);
+}
+
+/* Floating label effect */
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label,
+.form-textarea:focus + .form-label,
+.form-textarea:not(:placeholder-shown) + .form-label {
+  top: -10px;
+  left: 16px;
+  font-size: 12px;
+  color: #FFD600;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 0, 60, 0.95) 50%,
+    rgba(0, 0, 60, 0.95) 100%
+  );
+  padding: 0 8px;
+  font-weight: 600;
+}
+
+.form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Placeholder invisible */
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: transparent;
+}
+6. Validation Icons
+css.form-group-icon {
+  position: relative;
+}
+
+.field-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  transition: color 0.3s;
+  z-index: 2;
+}
+
+.form-input:focus ~ .field-icon {
+  color: #FFD600;
+}
+
+.validation-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+.form-input.valid ~ .validation-icon.success {
+  opacity: 1;
+  color: #22C55E;
+}
+
+.form-input.invalid ~ .validation-icon.error {
+  opacity: 1;
+  color: #EF4444;
+}
+
+/* Per textarea */
+.form-textarea ~ .field-icon,
+.form-textarea ~ .validation-icon {
+  top: 24px;
+  transform: none;
+}
+
+.error-message {
+  display: none;
+  margin-top: 6px;
+  margin-left: 4px;
+  font-size: 13px;
+  color: #EF4444;
+  font-weight: 600;
+}
+
+.form-group.has-error .error-message {
+  display: block;
+}
+7. Submit Button Premium
+css.form-submit {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  border: none;
+  border-radius: 16px;
+  color: #000050;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(255, 214, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  margin-top: 32px;
+}
+
+.form-submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.form-submit:hover::before {
+  left: 100%;
+}
+
+.form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255, 214, 0, 0.6);
+}
+
+.form-submit:active {
+  transform: translateY(0);
+}
+
+.form-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading state */
+.form-submit.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #000050;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+8. Success/Error Messages
+css.form-message {
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s;
+}
+
+.form-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-message.success {
+  background: rgba(34, 197, 94, 0.2);
+  border: 2px solid rgba(34, 197, 94, 0.4);
+  color: #22C55E;
+}
+
+.form-message.error {
+  background: rgba(239, 68, 68, 0.2);
+  border: 2px solid rgba(239, 68, 68, 0.4);
+  color: #EF4444;
+}
+
+.message-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+9. Privacy Notice
+css.form-privacy {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-privacy a {
+  color: #FFD600;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.form-privacy a:hover {
+  color: #FF8C00;
+}
+10. Map Section
+css.map-section {
+  padding: 80px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.map-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.map-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.map-subtitle {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.map-container {
+  width: 100%;
+  height: 450px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.1), rgba(255, 140, 0, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.map-placeholder {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 350px;
+  }
+}
+
+Struttura HTML Completa
+html<!-- Quick Info Cards -->
+<section class="quick-info-section">
+  <div class="quick-info-grid">
+    
+    <!-- Email Card -->
+    <div class="info-card">
+      <div class="info-icon-wrapper">📧</div>
+      <div class="info-content">
+        <h3 class="info-title">Email</h3>
+        <p class="info-value">
+          <a href="mailto:info@koinity.it">info@koinity.it</a><br>
+          <a href="mailto:press@koinity.it">press@koinity.it</a>
+        </p>
+        <p class="info-note">(per la stampa)</p>
+      </div>
+    </div>
+    
+    <!-- Sede Card -->
+    <div class="info-card">
+      <div class="info-icon-wrapper">📍</div>
+      <div class="info-content">
+        <h3 class="info-title">Sede</h3>
+        <p class="info-value">
+          Milano, Italia
+        </p>
+      </div>
+    </div>
+    
+    <!-- Supporto Card -->
+    <div class="info-card">
+      <div class="info-icon-wrapper">💬</div>
+      <div class="info-content">
+        <h3 class="info-title">Supporto</h3>
+        <p class="info-value">
+          Disponibile via email
+        </p>
+        <p class="info-note">Risposta entro 24h</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Form Section -->
+<section class="form-section">
+  
+  <div class="form-header">
+    <h2 class="form-title">Invia un messaggio</h2>
+    <p class="form-subtitle">
+      Compila il modulo e ti risponderemo il prima possibile
+    </p>
+  </div>
+  
+  <div class="contact-form-container">
+    
+    <!-- Success/Error Message -->
+    <div class="form-message success" id="formMessage" style="display: none;">
+      <span class="message-icon">✓</span>
+      <span>Messaggio inviato con successo!</span>
+    </div>
+    
+    <form class="contact-form" id="contactForm">
+      
+      <!-- Nome -->
+      <div class="form-group form-group-icon">
+        <input 
+          type="text" 
+          id="name" 
+          class="form-input" 
+          placeholder=" "
+          required
+        >
+        <label for="name" class="form-label">Nome</label>
+        <span class="field-icon">👤</span>
+        <span class="validation-icon success">✓</span>
+        <span class="validation-icon error">✗</span>
+        <span class="error-message">Nome è richiesto</span>
+      </div>
+      
+      <!-- Email -->
+      <div class="form-group form-group-icon">
+        <input 
+          type="email" 
+          id="email" 
+          class="form-input" 
+          placeholder=" "
+          required
+        >
+        <label for="email" class="form-label">Email</label>
+        <span class="field-icon">✉️</span>
+        <span class="validation-icon success">✓</span>
+        <span class="validation-icon error">✗</span>
+        <span class="error-message">Email non valida</span>
+      </div>
+      
+      <!-- Messaggio -->
+      <div class="form-group form-group-icon">
+        <textarea 
+          id="message" 
+          class="form-textarea" 
+          placeholder=" "
+          required
+        ></textarea>
+        <label for="message" class="form-label">Messaggio</label>
+        <span class="field-icon">✍️</span>
+        <span class="validation-icon success">✓</span>
+        <span class="validation-icon error">✗</span>
+        <span class="error-message">Messaggio è richiesto</span>
+      </div>
+      
+      <!-- Submit -->
+      <button type="submit" class="form-submit">
+        Invia messaggio
+      </button>
+      
+      <!-- Privacy -->
+      <p class="form-privacy">
+        Inviando questo modulo accetti la nostra 
+        <a href="/privacy">Privacy Policy</a> e i 
+        <a href="/terms">Termini di Servizio</a>.
+      </p>
+      
+    </form>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section">
+  <div class="map-header">
+    <h2 class="map-title">Dove siamo</h2>
+    <p class="map-subtitle">La nostra sede a Milano</p>
+  </div>
+  
+  <div class="map-container">
+    <p class="map-placeholder">
+      Mappa interattiva disponibile a breve
+    </p>
+    <!-- Oppure integra Google Maps / Mapbox -->
+  </div>
+</section>
+
+JavaScript per Validazione
+javascriptconst form = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+const submitButton = form.querySelector('.form-submit');
+
+// Validation
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function validateField(input) {
+  const value = input.value.trim();
+  const errorMsg = input.closest('.form-group')?.querySelector('.error-message');
+  let isValid = false;
+  
+  if (input.type === 'email') {
+    isValid = validateEmail(value);
+    if (errorMsg && value.length > 0 && !isValid) {
+      errorMsg.textContent = 'Email non valida';
+    }
+  } else {
+    isValid = value.length > 0;
+    if (errorMsg && !isValid) {
+      errorMsg.textContent = `${input.labels[0]?.textContent || 'Campo'} è richiesto`;
+    }
+  }
+  
+  if (value.length === 0 && !input.hasAttribute('required')) {
+    input.classList.remove('valid', 'invalid');
+    input.closest('.form-group')?.classList.remove('has-error');
+    return true;
+  }
+  
+  if (isValid) {
+    input.classList.add('valid');
+    input.classList.remove('invalid');
+    input.closest('.form-group')?.classList.remove('has-error');
+  } else {
+    input.classList.add('invalid');
+    input.classList.remove('valid');
+    if (value.length > 0) {
+      input.closest('.form-group')?.classList.add('has-error');
+    }
+  }
+  
+  return isValid;
+}
+
+// Real-time validation
+const inputs = form.querySelectorAll('.form-input, .form-textarea');
+inputs.forEach(input => {
+  input.addEventListener('blur', () => validateField(input));
+  input.addEventListener('input', () => {
+    if (input.classList.contains('invalid')) {
+      validateField(input);
+    }
+  });
+});
+
+// Form submission
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  // Validate all fields
+  let isValid = true;
+  inputs.forEach(input => {
+    if (input.hasAttribute('required')) {
+      if (!validateField(input)) {
+        isValid = false;
+      }
+    }
+  });
+  
+  if (!isValid) {
+    showMessage('Compila tutti i campi correttamente', 'error');
+    return;
+  }
+  
+  // Loading state
+  submitButton.classList.add('loading');
+  submitButton.disabled = true;
+  submitButton.textContent = 'Invio in corso...';
+  
+  // Simulate API call
+  try {
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    // Success
+    showMessage('Messaggio inviato con successo! Ti risponderemo presto.', 'success');
+    form.reset();
+    
+    // Reset validation states
+    inputs.forEach(input => {
+      input.classList.remove('valid', 'invalid');
+    });
+    
+  } catch (error) {
+    showMessage('Errore nell\'invio. Riprova più tardi.', 'error');
+  } finally {
+    submitButton.classList.remove('loading');
+    submitButton.disabled = false;
+    submitButton.textContent = 'Invia messaggio';
+  }
+});
+
+function showMessage(text, type) {
+  formMessage.querySelector('span:last-child').textContent = text;
+  formMessage.className = `form-message ${type} show`;
+  formMessage.style.display = 'flex';
+  
+  setTimeout(() => {
+    formMessage.classList.remove('show');
+    setTimeout(() => {
+      formMessage.style.display = 'none';
+    }, 300);
+  }, 5000);
+}
