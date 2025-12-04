@@ -153,41 +153,6 @@ export default function ChiSiamo() {
           </div>
         </section>
 
-        <div ref={valuesRef} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 ${visibleValues ? '' : ''}`}>
-          <div className={`value-card p-8 rounded-2xl transition-all duration-300 ${visibleValues ? 'visible' : ''}`} style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)'}}>
-            <div className="value-icon flex items-center justify-center mx-auto mb-4">
-              <Heart className="h-8 w-8 text-primary" />
-            </div>
-            <h3 className="font-bold text-lg mb-3">Passione</h3>
-            <p className="text-sm text-muted-foreground">
-              Crediamo nel potere del cinema di ispirare, emozionare e unire le
-              persone.
-            </p>
-          </div>
-
-          <div className={`value-card p-8 rounded-2xl transition-all duration-300 ${visibleValues ? 'visible' : ''}`} style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)'}}>
-            <div className="value-icon flex items-center justify-center mx-auto mb-4">
-              <Target className="h-8 w-8 text-primary" />
-            </div>
-            <h3 className="font-bold text-lg mb-3">Innovazione</h3>
-            <p className="text-sm text-muted-foreground">
-              Usiamo la tecnologia per rendere il cinema più accessibile e
-              democratico.
-            </p>
-          </div>
-
-          <div className={`value-card p-8 rounded-2xl transition-all duration-300 ${visibleValues ? 'visible' : ''}`} style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)'}}>
-            <div className="value-icon flex items-center justify-center mx-auto mb-4">
-              <Users className="h-8 w-8 text-primary" />
-            </div>
-            <h3 className="font-bold text-lg mb-3">Community</h3>
-            <p className="text-sm text-muted-foreground">
-              La forza della nostra piattaforma è nella sua community
-              appassionata.
-            </p>
-          </div>
-        </div>
-
         <section className="story-section">
           <h2 className="section-title">La nostra storia</h2>
           <p className="section-subtitle">
