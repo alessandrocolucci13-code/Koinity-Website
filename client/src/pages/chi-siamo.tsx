@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Target, Users } from "lucide-react";
+import { Heart, Target, Users, Film, Lightbulb, Star } from "lucide-react";
 import { SEO } from "@/components/seo";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
@@ -94,24 +94,74 @@ export default function ChiSiamo() {
           </p>
         </div>
 
-        <div ref={missionRef} className={`mission-card mb-12 p-12 rounded-2xl transition-all duration-300 ${visibleMission ? 'visible' : ''}`} style={{background: 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,214,0,0.05))', border: '1px solid rgba(255,214,0,0.3)'}}>
-          <h2 className="mission-title font-serif mb-8 text-center">
-            La nostra mission
-          </h2>
-          <p className="mission-paragraph text-muted-foreground">
-            Koinity nasce dalla passione per il cinema e dalla convinzione che
-            le persone dovrebbero poter scegliere cosa vedere sul grande
-            schermo. Troppi film straordinari non raggiungono mai le sale
-            italiane, o vengono proiettati solo in poche città.
-          </p>
-          <p className="mission-paragraph text-muted-foreground">
-            La nostra piattaforma permette alla community di votare i film che
-            desidera vedere in sala e, quando la domanda è sufficiente,
-            coordiniamo proiezioni on-demand con i cinema locali. Non si tratta
-            solo di sconti—anche se quelli aiutano—ma di restituire il potere
-            di programmazione nelle mani degli spettatori.
-          </p>
-        </div>
+        <section ref={missionRef} className="mission-section">
+          <div className="mission-container">
+            {/* Visual Column */}
+            <div className="mission-visual">
+              <div className="visual-ring"></div>
+              <div className="visual-circle">
+                <Film className="visual-icon" />
+              </div>
+              <div className="visual-dot"></div>
+              <div className="visual-dot"></div>
+            </div>
+
+            {/* Content Column */}
+            <div className="mission-content">
+              <div className="mission-header">
+                <span className="mission-badge">
+                  <Star className="w-4 h-4" />
+                  <span>La nostra mission</span>
+                </span>
+                <h2 className="mission-title-new">La nostra mission</h2>
+              </div>
+
+              <p className="mission-text">
+                Koinity nasce dalla passione per il cinema e dalla convinzione che
+                le persone dovrebbero poter scegliere cosa vedere sul grande schermo.
+              </p>
+
+              <p className="mission-text">
+                Troppi film straordinari non raggiungono mai le sale italiane, 
+                o vengono proiettati solo in poche città.
+              </p>
+
+              <div className="mission-highlight">
+                La nostra piattaforma permette alla community di votare i film che desidera vedere in sala e, quando la domanda è sufficiente, coordiniamo proiezioni on-demand con i cinema locali.
+              </div>
+
+              {/* Key Points */}
+              <div className="mission-points">
+                <div className="point-item">
+                  <div className="point-icon">
+                    <Lightbulb className="w-5 h-5" />
+                  </div>
+                  <div className="point-text">
+                    <strong>Democrazia cinematografica:</strong> Il pubblico sceglie cosa vedere
+                  </div>
+                </div>
+
+                <div className="point-item">
+                  <div className="point-icon">
+                    <Users className="w-5 h-5" />
+                  </div>
+                  <div className="point-text">
+                    <strong>Potere alla community:</strong> Non solo sconti, ma programmazione reale
+                  </div>
+                </div>
+
+                <div className="point-item">
+                  <div className="point-icon">
+                    <Film className="w-5 h-5" />
+                  </div>
+                  <div className="point-text">
+                    <strong>Cinema per tutti:</strong> Film straordinari accessibili ovunque
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <div ref={valuesRef} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 ${visibleValues ? '' : ''}`}>
           <div className={`value-card p-8 rounded-2xl transition-all duration-300 ${visibleValues ? 'visible' : ''}`} style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)'}}>
