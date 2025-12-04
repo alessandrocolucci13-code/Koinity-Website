@@ -4904,3 +4904,514 @@
     font-size: 26px;
   }
 }
+
+/* ========================================
+   PROPONI UN FILM - MODERN FORM STYLES
+======================================== */
+
+.propose-page {
+  min-height: 100vh;
+  background: #06138A;
+}
+
+/* Hero Section */
+.propose-hero {
+  padding: 80px 40px 40px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.propose-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 214, 0, 0.15) 0%,
+    rgba(255, 140, 0, 0.1) 100%
+  );
+  border: 2px solid rgba(255, 214, 0, 0.3);
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #FFD600;
+  margin-bottom: 24px;
+}
+
+.propose-title {
+  font-size: 56px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  font-family: 'Playfair Display', serif;
+}
+
+.propose-subtitle {
+  font-size: 20px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Form Section */
+.propose-form-section {
+  padding: 40px 40px 100px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.propose-form-container {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 214, 0, 0.04) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 32px;
+  padding: 48px;
+  backdrop-filter: blur(30px);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.propose-form-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 70%
+  );
+  animation: proposeShine 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes proposeShine {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-10%, -10%) rotate(45deg);
+  }
+}
+
+/* Progress Indicator */
+.propose-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  padding: 20px;
+  background: rgba(0, 0, 50, 0.3);
+  border-radius: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.propose-progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.propose-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FFD600, #22C55E);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 214, 0, 0.5);
+}
+
+.propose-progress-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFD600;
+  white-space: nowrap;
+}
+
+/* Success/Error Messages */
+.propose-message {
+  padding: 20px 24px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.propose-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.propose-message.success {
+  background: rgba(34, 197, 94, 0.2);
+  border: 2px solid rgba(34, 197, 94, 0.4);
+  color: #22C55E;
+}
+
+.propose-message.error {
+  background: rgba(239, 68, 68, 0.2);
+  border: 2px solid rgba(239, 68, 68, 0.4);
+  color: #EF4444;
+}
+
+.propose-message-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.propose-message-sub {
+  display: block;
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* Section Headers */
+.propose-section-header {
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 214, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.propose-section-spacing {
+  margin-top: 48px;
+}
+
+.propose-section-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.propose-section-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.2), rgba(255, 140, 0, 0.15));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFD600;
+}
+
+.propose-section-description {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* Form Row (2 columns) */
+.propose-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Form Groups */
+.propose-form-group {
+  position: relative;
+  margin-bottom: 28px;
+  z-index: 1;
+}
+
+.propose-form-item {
+  position: relative;
+}
+
+/* Floating Labels */
+.propose-floating-label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.propose-textarea-group .propose-floating-label {
+  top: 20px;
+  transform: none;
+}
+
+.propose-required {
+  color: #FF8C00;
+  margin-left: 4px;
+}
+
+/* Input Styles */
+.propose-input,
+.propose-textarea,
+.propose-select {
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 50, 0.5) !important;
+  border: 2px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 16px !important;
+  color: #fff !important;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+  height: auto !important;
+}
+
+.propose-input:focus,
+.propose-textarea:focus,
+.propose-select:focus,
+.propose-select[data-state="open"] {
+  background: rgba(0, 0, 80, 0.6) !important;
+  border-color: #FFD600 !important;
+  box-shadow: 0 0 0 4px rgba(255, 214, 0, 0.1) !important;
+}
+
+/* Floating label animation */
+.propose-input:focus + .propose-floating-label,
+.propose-input:not(:placeholder-shown) + .propose-floating-label,
+.propose-textarea:focus + .propose-floating-label,
+.propose-textarea:not(:placeholder-shown) + .propose-floating-label {
+  top: -10px;
+  left: 16px;
+  transform: none;
+  font-size: 12px;
+  color: #FFD600;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 50%,
+    rgba(6, 19, 138, 0.95) 50%,
+    rgba(6, 19, 138, 0.95) 100%
+  );
+  padding: 0 8px;
+  font-weight: 600;
+}
+
+/* Select label always floated */
+.propose-select-label {
+  top: -10px;
+  left: 16px;
+  transform: none;
+  font-size: 12px;
+  color: #FFD600;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 50%,
+    rgba(6, 19, 138, 0.95) 50%,
+    rgba(6, 19, 138, 0.95) 100%
+  );
+  padding: 0 8px;
+  font-weight: 600;
+}
+
+/* Textarea specific */
+.propose-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.propose-textarea-small {
+  min-height: 100px;
+}
+
+/* Input placeholder invisible */
+.propose-input::placeholder,
+.propose-textarea::placeholder {
+  color: transparent;
+}
+
+/* Character Counter */
+.propose-char-counter {
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.propose-char-counter.warning {
+  color: #FF8C00;
+}
+
+.propose-char-counter.danger {
+  color: #EF4444;
+}
+
+/* Helper Text */
+.propose-helper {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
+.propose-helper-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: rgba(255, 214, 0, 0.7);
+}
+
+/* Submit Button */
+.propose-submit {
+  width: 100%;
+  padding: 22px;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  border: none;
+  border-radius: 16px;
+  color: #000050;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(255, 214, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.propose-submit-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s;
+}
+
+.propose-submit:hover .propose-submit-icon {
+  transform: translateX(4px);
+}
+
+.propose-submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.propose-submit:hover::before {
+  left: 100%;
+}
+
+.propose-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255, 214, 0, 0.6);
+}
+
+.propose-submit:active {
+  transform: translateY(0);
+}
+
+.propose-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.propose-submit.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #000050;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: proposeSpin 0.8s linear infinite;
+  margin-left: 12px;
+}
+
+@keyframes proposeSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .propose-hero {
+    padding: 60px 20px 30px;
+  }
+  
+  .propose-title {
+    font-size: 40px;
+  }
+  
+  .propose-subtitle {
+    font-size: 18px;
+  }
+  
+  .propose-form-section {
+    padding: 30px 20px 80px;
+  }
+  
+  .propose-form-container {
+    padding: 36px 28px;
+  }
+  
+  .propose-form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .propose-section-title {
+    font-size: 20px;
+  }
+  
+  .propose-section-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
