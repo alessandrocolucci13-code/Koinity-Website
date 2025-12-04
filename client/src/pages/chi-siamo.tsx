@@ -95,17 +95,7 @@ export default function ChiSiamo() {
         </div>
 
         <section ref={missionRef} className="mission-section">
-          <div className="mission-container">
-            {/* Visual Column */}
-            <div className="mission-visual">
-              <div className="visual-ring"></div>
-              <div className="visual-circle">
-                <Film className="visual-icon" />
-              </div>
-              <div className="visual-dot"></div>
-              <div className="visual-dot"></div>
-            </div>
-
+          <div className="mission-container" style={{gridTemplateColumns: '1fr'}}>
             {/* Content Column */}
             <div className="mission-content">
               <div className="mission-header">
