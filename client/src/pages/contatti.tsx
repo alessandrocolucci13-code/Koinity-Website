@@ -229,21 +229,6 @@ export default function Contatti() {
         </div>
       </section>
 
-      {/* MAP SECTION */}
-      <section className="map-section">
-        <div className="map-header">
-          <h2 className="map-title">Dove siamo</h2>
-          <p className="map-subtitle">La nostra sede si trova nel cuore di Milano</p>
-        </div>
-        <div className="map-container">
-          <div className="map-placeholder">
-            <div className="map-placeholder-icon">
-              <MapPin className="w-12 h-12 text-[#FFD600]" />
-            </div>
-            <p className="map-placeholder-text">Milano, Italia</p>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
