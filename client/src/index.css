@@ -5239,6 +5239,12 @@
   font-weight: 600;
 }
 
+/* Select options */
+.propose-select option {
+  background: #f5f5f5;
+  color: #000;
+}
+
 /* Textarea specific */
 .propose-textarea {
   min-height: 120px;
