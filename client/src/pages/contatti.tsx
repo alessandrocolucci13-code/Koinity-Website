@@ -44,16 +44,69 @@ export default function Contatti() {
         title="Contatti"
         description="Hai domande su Koinity? Contattaci e saremo felici di aiutarti. Trova i nostri recapiti e compila il modulo di contatto."
       />
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4" data-testid="text-page-title">
+      
+      {/* HERO SECTION */}
+      <section className="contact-hero">
+        <div className="hero-content">
+          {/* Badge Online/Available */}
+          <div className="hero-badge" data-testid="badge-support">
+            <span className="badge-icon"></span>
+            <span>Supporto Attivo</span>
+          </div>
+
+          {/* Title */}
+          <h1 className="contact-title" data-testid="text-page-title">
             Contatti
           </h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Hai domande o suggerimenti? Siamo qui per aiutarti.
+
+          {/* Subtitle */}
+          <p className="contact-subtitle">
+            Hai domande o suggerimenti? Siamo qui per aiutarti. 
+            Il nostro team risponde entro 24 ore.
           </p>
+
+          {/* Quick Stats */}
+          <div className="contact-stats">
+            <div className="stat-item">
+              <div className="stat-icon">⚡</div>
+              <span className="stat-value" data-testid="text-response-time">&lt; 24h</span>
+              <span className="stat-label">Tempo risposta</span>
+            </div>
+
+            <div className="stat-item">
+              <div className="stat-icon">📧</div>
+              <span className="stat-value" data-testid="text-email-response">100%</span>
+              <span className="stat-label">Email risposte</span>
+            </div>
+
+            <div className="stat-item">
+              <div className="stat-icon">😊</div>
+              <span className="stat-value" data-testid="text-satisfaction">4.8/5</span>
+              <span className="stat-label">Soddisfazione</span>
+            </div>
+          </div>
+
+          {/* Trust Indicators */}
+          <div className="trust-indicators">
+            <div className="trust-item">
+              <span className="trust-icon">✓</span>
+              <span>Supporto in italiano</span>
+            </div>
+            <div className="trust-item">
+              <span className="trust-icon">✓</span>
+              <span>Team dedicato</span>
+            </div>
+            <div className="trust-item">
+              <span className="trust-icon">✓</span>
+              <span>Risposta garantita</span>
+            </div>
+          </div>
         </div>
+      </section>
+
+      {/* CONTENT SECTION */}
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-5xl mx-auto">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div>

@@ -1,0 +1,268 @@
+Miglioramento Pagina "Contatti"
+STEP 1: Miglioramento Hero Section "Contatti"
+Obiettivo
+Rendere la hero section più accogliente, professionale e invitante, trasformandola da semplice intestazione a una sezione che comunichi supporto immediato e disponibilità.
+Problema Attuale
+
+Titolo e sottotitolo troppo semplici e freddi
+Nessun elemento visivo che comunichi supporto/disponibilità
+Mancanza di badge o indicatori di risposta rapida
+Layout piatto senza profondità
+Nessuna indicazione su tempi di risposta o disponibilità
+Mancanza di trust signals
+
+
+Modifiche da implementare:
+1. Hero Section con Badge Trust
+css.contact-hero {
+  padding: 80px 40px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background decorativo */
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 214, 0, 0.06) 0%,
+    transparent 70%
+  );
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+2. Badge Availability/Support
+css.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.15) 0%,
+    rgba(16, 185, 129, 0.1) 100%
+  );
+  border: 2px solid rgba(34, 197, 94, 0.3);
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #22C55E;
+  margin-bottom: 24px;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.badge-icon {
+  width: 10px;
+  height: 10px;
+  background: #22C55E;
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+3. Typography Migliorata
+css.contact-title {
+  font-size: 56px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  animation: fadeInUp 0.6s ease-out 0.2s backwards;
+}
+
+.contact-subtitle {
+  font-size: 20px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 40px;
+  animation: fadeInUp 0.6s ease-out 0.4s backwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 40px;
+  }
+  
+  .contact-subtitle {
+    font-size: 18px;
+  }
+}
+4. Quick Stats/Response Time
+css.contact-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 48px;
+  animation: fadeInUp 0.6s ease-out 0.6s backwards;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.15), rgba(255, 140, 0, 0.1));
+  border: 2px solid rgba(255, 214, 0, 0.3);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFD600;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .contact-stats {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+5. Trust Indicators
+css.trust-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  animation: fadeInUp 0.6s ease-out 0.8s backwards;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.trust-icon {
+  color: #22C55E;
+  font-size: 18px;
+}
+
+Struttura HTML Proposta
+html<section class="contact-hero">
+  
+  <div class="hero-content">
+    
+    <!-- Badge Online/Available -->
+    <div class="hero-badge">
+      <span class="badge-icon"></span>
+      <span>Supporto Attivo</span>
+    </div>
+    
+    <!-- Title -->
+    <h1 class="contact-title">Contatti</h1>
+    
+    <!-- Subtitle -->
+    <p class="contact-subtitle">
+      Hai domande o suggerimenti? Siamo qui per aiutarti. 
+      Il nostro team risponde entro 24 ore.
+    </p>
+    
+    <!-- Quick Stats -->
+    <div class="contact-stats">
+      <div class="stat-item">
+        <div class="stat-icon">⚡</div>
+        <span class="stat-value">&lt; 24h</span>
+        <span class="stat-label">Tempo risposta</span>
+      </div>
+      
+      <div class="stat-item">
+        <div class="stat-icon">📧</div>
+        <span class="stat-value">100%</span>
+        <span class="stat-label">Email risposte</span>
+      </div>
+      
+      <div class="stat-item">
+        <div class="stat-icon">😊</div>
+        <span class="stat-value">4.8/5</span>
+        <span class="stat-label">Soddisfazione</span>
+      </div>
+    </div>
+    
+    <!-- Trust Indicators -->
+    <div class="trust-indicators">
+      <div class="trust-item">
+        <span class="trust-icon">✓</span>
+        <span>Supporto in italiano</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">✓</span>
+        <span>Team dedicato</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">✓</span>
+        <span>Risposta garantita</span>
+      </div>
+    </div>
+    
+  </div>
+  
+</section>
