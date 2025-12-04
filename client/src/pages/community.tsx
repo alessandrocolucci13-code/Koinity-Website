@@ -13,7 +13,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, MessageSquare, Share2, Send, Instagram } from "lucide-react";
+import { Heart, MessageSquare, Share2, Send, Instagram, Users } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/seo";
 import { ambassadorFormSchema, type AmbassadorForm } from "@shared/schema";
@@ -118,7 +118,7 @@ export default function Community() {
             <div className="badge-ring"></div>
             <div className="badge-ring"></div>
             <div className="badge-ring"></div>
-            <span className="badge-icon">👥</span>
+            <Users className="badge-icon-lucide" />
           </div>
         </div>
 

@@ -1360,6 +1360,14 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
+.community-hero-badge .badge-icon-lucide {
+  width: 56px;
+  height: 56px;
+  color: #000050;
+  z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
 .badge-ring {
   position: absolute;
   top: 50%;
