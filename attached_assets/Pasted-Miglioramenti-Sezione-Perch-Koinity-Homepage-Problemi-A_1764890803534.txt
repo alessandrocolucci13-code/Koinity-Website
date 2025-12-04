@@ -1,0 +1,178 @@
+Miglioramenti Sezione "Perché Koinity" - Homepage
+Problemi Attuali
+
+Card troppo semplici - Solo bordo azzurro, nessuna profondità
+Icone piatte - Cerchi semplici poco distintivi
+Layout rigido - Grid statica senza dinamismo
+Mancanza di gerarchia visiva - Tutte le card hanno lo stesso peso
+Nessun hover effect interessante
+Testo troppo compatto - Poco respiro tra gli elementi
+
+
+Modifiche da implementare:
+1. Card Design Moderno con Gradient
+css.why-section {
+  padding: 100px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 56px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 1024px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+2. Card con Background Gradient e Glassmorphism
+css.why-card {
+  position: relative;
+  padding: 48px 40px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 214, 0, 0.04) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Gradient overlay al hover */
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 214, 0, 0.1) 0%,
+    rgba(255, 140, 0, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.why-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(255, 214, 0, 0.5);
+  box-shadow: 
+    0 24px 64px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(255, 214, 0, 0.2);
+}
+
+.why-card:hover::before {
+  opacity: 1;
+}
+
+/* Accent line top */
+.why-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD600, #FF8C00);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.why-card:hover::after {
+  opacity: 1;
+}
+3. Icon Container con Gradient e Animazioni
+css.icon-wrapper {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background circle gradient */
+.icon-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.2), rgba(255, 140, 0, 0.15));
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+
+.why-card:hover .icon-bg {
+  transform: scale(1.15) rotate(15deg);
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.3), rgba(255, 140, 0, 0.2));
+  box-shadow: 0 8px 32px rgba(255, 214, 0, 0.4);
+}
+
+/* Icon */
+.card-icon {
+  position: relative;
+  z-index: 2;
+  font-size: 56px;
+  filter: drop-shadow(0 4px 16px rgba(255, 214, 0, 0.3));
+  transition: all 0.4s;
+}
+
+.why-card:hover .card-icon {
+  transform: scale(1.1) rotate(-10deg);
+}
+
+/* Ring pulsante */
+.icon-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgba(255, 214, 0, 0.4);
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulse-ring-why 2.5s ease-out infinite;
+}
+
+@keyframes pulse-ring-why {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+4. Typography Migliorata

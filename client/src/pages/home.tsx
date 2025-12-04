@@ -69,53 +69,60 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4" data-testid="text-why-koinity-title">
-              Perché Koinity
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Un nuovo modo di vivere il cinema, guidato dalla community.
+      <section className="why-section bg-gradient-to-b from-background via-background to-background/95">
+        <div className="section-header">
+          <h2 className="section-title" data-testid="text-why-koinity-title">
+            Perché Koinity
+          </h2>
+          <p className="section-subtitle" data-testid="text-why-koinity-subtitle">
+            Un nuovo modo di vivere il cinema, guidato dalla community.
+          </p>
+        </div>
+
+        <div className="why-grid">
+          {/* Card 1: Community-led */}
+          <div className="why-card">
+            <div className="icon-wrapper">
+              <div className="icon-ring"></div>
+              <div className="icon-bg"></div>
+              <Users className="card-icon" data-testid="icon-community-led" />
+            </div>
+            <h3 className="why-card-title" data-testid="text-pillar-community-title">
+              Community-led
+            </h3>
+            <p className="why-card-description" data-testid="text-pillar-community-description">
+              La programmazione parte dalle persone.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="hover-elevate transition-all duration-300">
-              <CardContent className="p-8 text-center space-y-4">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                  <Users className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="font-bold text-xl" data-testid="text-pillar-community-title">Community-led</h3>
-                <p className="text-muted-foreground" data-testid="text-pillar-community-description">
-                  La programmazione parte dalle persone.
-                </p>
-              </CardContent>
-            </Card>
+          {/* Card 2: On-Demand */}
+          <div className="why-card">
+            <div className="icon-wrapper">
+              <div className="icon-ring"></div>
+              <div className="icon-bg"></div>
+              <Zap className="card-icon" data-testid="icon-on-demand" />
+            </div>
+            <h3 className="why-card-title" data-testid="text-pillar-ondemand-title">
+              On-Demand
+            </h3>
+            <p className="why-card-description" data-testid="text-pillar-ondemand-description">
+              Schermi pieni grazie a domanda reale.
+            </p>
+          </div>
 
-            <Card className="hover-elevate transition-all duration-300">
-              <CardContent className="p-8 text-center space-y-4">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                  <Zap className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="font-bold text-xl" data-testid="text-pillar-ondemand-title">On-Demand</h3>
-                <p className="text-muted-foreground" data-testid="text-pillar-ondemand-description">
-                  Schermi pieni grazie a domanda reale.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover-elevate transition-all duration-300">
-              <CardContent className="p-8 text-center space-y-4">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                  <MessageCircle className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="font-bold text-xl" data-testid="text-pillar-conversation-title">Conversazione</h3>
-                <p className="text-muted-foreground" data-testid="text-pillar-conversation-description">
-                  Thread leggeri per coordinarsi e invitare amici.
-                </p>
-              </CardContent>
-            </Card>
+          {/* Card 3: Conversazione */}
+          <div className="why-card">
+            <div className="icon-wrapper">
+              <div className="icon-ring"></div>
+              <div className="icon-bg"></div>
+              <MessageCircle className="card-icon" data-testid="icon-conversation" />
+            </div>
+            <h3 className="why-card-title" data-testid="text-pillar-conversation-title">
+              Conversazione
+            </h3>
+            <p className="why-card-description" data-testid="text-pillar-conversation-description">
+              Thread leggeri per coordinarsi e invitare amici.
+            </p>
           </div>
         </div>
       </section>
