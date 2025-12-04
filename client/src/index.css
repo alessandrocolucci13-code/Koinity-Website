@@ -5817,12 +5817,12 @@
 .mission-points {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 }
 
 .point-item {
   display: flex;
-  align-items: start;
+  align-items: center;
   gap: 16px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.03);
