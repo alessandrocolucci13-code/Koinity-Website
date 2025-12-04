@@ -240,7 +240,7 @@ export default function ChiSiamo() {
                   </p>
                   <div className="team-social">
                     <a href="https://linkedin.com" className="social-link" data-testid="link-alessandro-linkedin">🔗</a>
-                    <a href="https://twitter.com" className="social-link" data-testid="link-alessandro-twitter">𝕏</a>
+                    <a href="https://linkedin.com" className="social-link" data-testid="link-alessandro-linkedin-2">🔗</a>
                   </div>
                 </div>
               </div>
@@ -264,7 +264,7 @@ export default function ChiSiamo() {
                   </p>
                   <div className="team-social">
                     <a href="https://linkedin.com" className="social-link" data-testid="link-laura-linkedin">🔗</a>
-                    <a href="https://github.com" className="social-link" data-testid="link-laura-github">💻</a>
+                    <a href="https://linkedin.com" className="social-link" data-testid="link-laura-linkedin-2">🔗</a>
                   </div>
                 </div>
               </div>
@@ -287,8 +287,8 @@ export default function ChiSiamo() {
                     Critico cinematografico e community builder, Andrea coltiva le relazioni con cinefili e sale cinematografiche in tutta Italia.
                   </p>
                   <div className="team-social">
-                    <a href="https://instagram.com" className="social-link" data-testid="link-andrea-instagram">📷</a>
-                    <a href="https://twitter.com" className="social-link" data-testid="link-andrea-twitter">𝕏</a>
+                    <a href="https://linkedin.com" className="social-link" data-testid="link-andrea-linkedin">🔗</a>
+                    <a href="https://linkedin.com" className="social-link" data-testid="link-andrea-linkedin-2">🔗</a>
                   </div>
                 </div>
               </div>
