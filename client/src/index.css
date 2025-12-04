@@ -5239,10 +5239,25 @@
   font-weight: 600;
 }
 
-/* Select options */
-.propose-select option {
-  background: #f5f5f5;
-  color: #000;
+/* Select Content and Items */
+[class*="SelectContent"],
+[role="listbox"] {
+  background: #f5f5f5 !important;
+  color: #000 !important;
+}
+
+[class*="SelectItem"],
+[role="option"] {
+  color: #000 !important;
+  background: #f5f5f5 !important;
+}
+
+[class*="SelectItem"][data-highlighted],
+[role="option"][data-highlighted],
+[class*="SelectItem"]:hover,
+[role="option"]:hover {
+  background: #FFD600 !important;
+  color: #000 !important;
 }
 
 /* Textarea specific */
