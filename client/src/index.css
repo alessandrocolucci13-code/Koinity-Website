@@ -1354,8 +1354,8 @@
   overflow: hidden;
 }
 
-.badge-icon {
-  font-size: 56px;
+.community-hero-badge .badge-icon {
+  font-size: 72px;
   z-index: 2;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
