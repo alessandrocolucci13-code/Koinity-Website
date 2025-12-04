@@ -11,11 +11,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, MapPin, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/seo";
 import { contactFormSchema, type ContactForm } from "@shared/schema";
+import { Link } from "wouter";
+import { Mail, MapPin, MessageCircle, Zap, CheckCircle, Star } from "lucide-react";
 
 export default function Contatti() {
   const { toast } = useToast();
@@ -48,200 +48,202 @@ export default function Contatti() {
       {/* HERO SECTION */}
       <section className="contact-hero">
         <div className="hero-content">
-          {/* Badge Online/Available */}
           <div className="hero-badge" data-testid="badge-support">
             <span className="badge-icon"></span>
             <span>Supporto Attivo</span>
           </div>
 
-          {/* Title */}
           <h1 className="contact-title" data-testid="text-page-title">
             Contatti
           </h1>
 
-          {/* Subtitle */}
           <p className="contact-subtitle">
             Hai domande o suggerimenti? Siamo qui per aiutarti.
           </p>
 
-          {/* Quick Stats */}
           <div className="contact-stats">
             <div className="stat-item">
-              <div className="stat-icon">⚡</div>
+              <div className="stat-icon">
+                <Zap className="w-6 h-6 text-[#FFD600]" />
+              </div>
               <span className="stat-value" data-testid="text-response-time">&lt; 24h</span>
               <span className="stat-label">Tempo risposta</span>
             </div>
 
             <div className="stat-item">
-              <div className="stat-icon">📧</div>
+              <div className="stat-icon">
+                <Mail className="w-6 h-6 text-[#FFD600]" />
+              </div>
               <span className="stat-value" data-testid="text-email-response">100%</span>
               <span className="stat-label">Email risposte</span>
             </div>
 
             <div className="stat-item">
-              <div className="stat-icon">😊</div>
+              <div className="stat-icon">
+                <Star className="w-6 h-6 text-[#FFD600]" />
+              </div>
               <span className="stat-value" data-testid="text-satisfaction">4.8/5</span>
               <span className="stat-label">Soddisfazione</span>
             </div>
           </div>
 
-          {/* Trust Indicators */}
           <div className="trust-indicators">
             <div className="trust-item">
-              <span className="trust-icon">✓</span>
+              <CheckCircle className="w-4 h-4 text-[#22C55E]" />
               <span>Supporto in italiano</span>
             </div>
             <div className="trust-item">
-              <span className="trust-icon">✓</span>
+              <CheckCircle className="w-4 h-4 text-[#22C55E]" />
               <span>Team dedicato</span>
             </div>
             <div className="trust-item">
-              <span className="trust-icon">✓</span>
+              <CheckCircle className="w-4 h-4 text-[#22C55E]" />
               <span>Risposta garantita</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CONTENT SECTION */}
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="max-w-5xl mx-auto">
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div>
-            <Card className="mb-6">
-              <CardHeader>
-                <CardTitle>Invia un messaggio</CardTitle>
-                <CardDescription>
-                  Compila il modulo e ti risponderemo il prima possibile.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Nome</FormLabel>
-                          <FormControl>
-                            <Input
-                              placeholder="Mario Rossi"
-                              {...field}
-                              data-testid="input-name"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email</FormLabel>
-                          <FormControl>
-                            <Input
-                              type="email"
-                              placeholder="mario@example.com"
-                              {...field}
-                              data-testid="input-email"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Messaggio</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              placeholder="Come possiamo aiutarti?"
-                              {...field}
-                              rows={6}
-                              data-testid="input-message"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <Button type="submit" className="w-full" data-testid="button-submit">
-                      Invia messaggio
-                    </Button>
-                  </form>
-                </Form>
-              </CardContent>
-            </Card>
+      {/* QUICK INFO CARDS */}
+      <section className="quick-info-section">
+        <div className="quick-info-grid">
+          <div className="info-card" data-testid="card-email">
+            <div className="info-icon-wrapper">
+              <Mail className="w-6 h-6 text-[#FFD600]" />
+            </div>
+            <div className="info-content">
+              <h3 className="info-title">Email</h3>
+              <p className="info-value">
+                <a href="mailto:info@koinity.it">info@koinity.it</a>
+              </p>
+              <p className="info-note">Per la stampa: press@koinity.it</p>
+            </div>
           </div>
 
-          <div className="space-y-6">
-            <Card>
-              <CardContent className="p-6 space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-sm text-muted-foreground">
-                      info@koinity.it
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      press@koinity.it (per la stampa)
-                    </p>
-                  </div>
-                </div>
+          <div className="info-card" data-testid="card-sede">
+            <div className="info-icon-wrapper">
+              <MapPin className="w-6 h-6 text-[#FFD600]" />
+            </div>
+            <div className="info-content">
+              <h3 className="info-title">Sede</h3>
+              <p className="info-value">Milano, Italia</p>
+              <p className="info-note">Operativi in tutta Italia</p>
+            </div>
+          </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Sede</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Milano, Italia
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Supporto</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Disponibile via email
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="font-semibold mb-4">Mappa</h3>
-                <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                  <p className="text-muted-foreground text-sm">
-                    Mappa interattiva disponibile a breve
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="info-card" data-testid="card-support">
+            <div className="info-icon-wrapper">
+              <MessageCircle className="w-6 h-6 text-[#FFD600]" />
+            </div>
+            <div className="info-content">
+              <h3 className="info-title">Supporto</h3>
+              <p className="info-value">Disponibile via email</p>
+              <p className="info-note">Rispondiamo entro 24 ore</p>
+            </div>
           </div>
         </div>
-      </div>
-      </div>
+      </section>
+
+      {/* FORM SECTION */}
+      <section className="form-section">
+        <div className="form-header">
+          <h2 className="form-title">Invia un messaggio</h2>
+          <p className="form-subtitle">
+            Compila il modulo e ti risponderemo il prima possibile.
+          </p>
+        </div>
+
+        <div className="contact-form-container">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="contact-form">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem className="form-group">
+                    <FormLabel className="form-label-inline">Nome</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Mario Rossi"
+                        className="form-input"
+                        {...field}
+                        data-testid="input-name"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem className="form-group">
+                    <FormLabel className="form-label-inline">Email</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="email"
+                        placeholder="mario@example.com"
+                        className="form-input"
+                        {...field}
+                        data-testid="input-email"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem className="form-group">
+                    <FormLabel className="form-label-inline">Messaggio</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder="Come possiamo aiutarti?"
+                        className="form-textarea"
+                        rows={6}
+                        {...field}
+                        data-testid="input-message"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <Button type="submit" className="form-submit" data-testid="button-submit">
+                Invia messaggio
+              </Button>
+
+              <p className="form-privacy">
+                Inviando questo modulo accetti la nostra{" "}
+                <Link href="/privacy">Privacy Policy</Link> e i nostri{" "}
+                <Link href="/termini">Termini di Servizio</Link>.
+              </p>
+            </form>
+          </Form>
+        </div>
+      </section>
+
+      {/* MAP SECTION */}
+      <section className="map-section">
+        <div className="map-header">
+          <h2 className="map-title">Dove siamo</h2>
+          <p className="map-subtitle">La nostra sede si trova nel cuore di Milano</p>
+        </div>
+        <div className="map-container">
+          <div className="map-placeholder">
+            <div className="map-placeholder-icon">
+              <MapPin className="w-12 h-12 text-[#FFD600]" />
+            </div>
+            <p className="map-placeholder-text">Milano, Italia</p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

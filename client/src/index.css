@@ -4524,3 +4524,375 @@
     font-size: 16px;
   }
 }
+
+/* CONTACT PAGE - STEP 2: Quick Info Cards + Form + Map */
+
+/* Quick Info Section */
+.quick-info-section {
+  padding: 60px 40px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quick-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 968px) {
+  .quick-info-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Info Card Design */
+.info-card {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  padding: 32px 28px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 214, 0, 0.03) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info-card:hover {
+  border-color: rgba(255, 214, 0, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.info-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.15), rgba(255, 140, 0, 0.1));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  transition: all 0.3s;
+}
+
+.info-card:hover .info-icon-wrapper {
+  transform: scale(1.1) rotate(-5deg);
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.25), rgba(255, 140, 0, 0.15));
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.info-value {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0;
+}
+
+.info-value a {
+  color: #FFD600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.info-value a:hover {
+  color: #FF8C00;
+  text-decoration: underline;
+}
+
+.info-note {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* Form Section */
+.form-section {
+  padding: 60px 40px 80px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.form-subtitle {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+/* Form Container Premium */
+.contact-form-container {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 214, 0, 0.04) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  padding: 48px;
+  backdrop-filter: blur(30px);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 70%
+  );
+  animation: shine 8s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-10%, -10%) rotate(45deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form-container {
+    padding: 36px 28px;
+  }
+  
+  .form-section {
+    padding: 40px 20px 60px;
+  }
+  
+  .quick-info-section {
+    padding: 40px 20px;
+  }
+}
+
+/* Form Fields */
+.contact-form {
+  position: relative;
+  z-index: 1;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 50, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  color: #fff;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  background: rgba(0, 0, 80, 0.6);
+  border-color: #FFD600;
+  box-shadow: 0 0 0 4px rgba(255, 214, 0, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-label-inline {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Submit Button Premium */
+.form-submit {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  border: none;
+  border-radius: 16px;
+  color: #000050;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(255, 214, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  margin-top: 32px;
+}
+
+.form-submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.form-submit:hover::before {
+  left: 100%;
+}
+
+.form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255, 214, 0, 0.6);
+}
+
+.form-submit:active {
+  transform: translateY(0);
+}
+
+.form-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Privacy Notice */
+.form-privacy {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-privacy a {
+  color: #FFD600;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.form-privacy a:hover {
+  color: #FF8C00;
+}
+
+/* Map Section */
+.map-section {
+  padding: 80px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.map-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.map-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.map-subtitle {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.map-container {
+  width: 100%;
+  height: 450px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.1), rgba(255, 140, 0, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.map-placeholder-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.map-placeholder-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .map-section {
+    padding: 60px 20px;
+  }
+  
+  .map-container {
+    height: 300px;
+  }
+  
+  .map-title {
+    font-size: 26px;
+  }
+}
