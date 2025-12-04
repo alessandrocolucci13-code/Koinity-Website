@@ -5646,7 +5646,7 @@
 
 /* ===== MISSION SECTION - OPZIONE A ===== */
 .mission-section {
-  padding: 100px 40px;
+  padding: 40px 40px 100px 40px;
   max-width: 1300px;
   margin: 0 auto;
 }
