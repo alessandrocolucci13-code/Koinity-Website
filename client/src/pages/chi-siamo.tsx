@@ -190,7 +190,7 @@ export default function ChiSiamo() {
                 <h3 className="story-year">2025</h3>
                 <p className="story-label">Oggi</p>
                 <p className="story-text">
-                  Koinity sta crescendo in tutta Italia, portando film straordinari nelle sale e creando esperienze cinematografiche uniche guidate dalla community.
+                  Koinity è quasi pronta per essere lanciata. Stiamo costruendo una soluzione personalizzata per l'utente e che allo stesso tempo possa risollevare il settore cinematografico.
                 </p>
               </div>
 
