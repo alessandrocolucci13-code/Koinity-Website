@@ -31,8 +31,8 @@ export default function Home() {
         
         <div className="hero-content container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h1 className="hero-title font-serif font-bold tracking-tight" data-testid="text-hero-title">
-              Il cinema lo scegli tu.
+            <h1 className="blog-title" data-testid="text-hero-title">
+              Il cinema lo <span className="highlight">scegli tu</span>.
             </h1>
             <p className="hero-subtitle text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-hero-subtitle">
               Koinity è la piattaforma di cinema on-demand dove la community vota
