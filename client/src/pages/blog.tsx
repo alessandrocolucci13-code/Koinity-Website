@@ -57,7 +57,6 @@ export default function Blog() {
         <div className="hero-content">
           {/* Badge */}
           <div className="hero-badge">
-            <span className="badge-icon">🔥</span>
             <span>Sempre Aggiornato</span>
           </div>
 
