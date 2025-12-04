@@ -61,8 +61,7 @@ export default function Contatti() {
 
           {/* Subtitle */}
           <p className="contact-subtitle">
-            Hai domande o suggerimenti? Siamo qui per aiutarti. 
-            Il nostro team risponde entro 24 ore.
+            Hai domande o suggerimenti? Siamo qui per aiutarti.
           </p>
 
           {/* Quick Stats */}
