@@ -240,7 +240,6 @@ export default function ChiSiamo() {
                   </p>
                   <div className="team-social">
                     <a href="https://linkedin.com" className="social-link" data-testid="link-alessandro-linkedin">🔗</a>
-                    <a href="https://linkedin.com" className="social-link" data-testid="link-alessandro-linkedin-2">🔗</a>
                   </div>
                 </div>
               </div>
@@ -264,7 +263,6 @@ export default function ChiSiamo() {
                   </p>
                   <div className="team-social">
                     <a href="https://linkedin.com" className="social-link" data-testid="link-laura-linkedin">🔗</a>
-                    <a href="https://linkedin.com" className="social-link" data-testid="link-laura-linkedin-2">🔗</a>
                   </div>
                 </div>
               </div>
@@ -288,7 +286,6 @@ export default function ChiSiamo() {
                   </p>
                   <div className="team-social">
                     <a href="https://linkedin.com" className="social-link" data-testid="link-andrea-linkedin">🔗</a>
-                    <a href="https://linkedin.com" className="social-link" data-testid="link-andrea-linkedin-2">🔗</a>
                   </div>
                 </div>
               </div>
