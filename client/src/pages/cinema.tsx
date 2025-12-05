@@ -108,11 +108,8 @@ export default function Cinema() {
             </div>
 
             {/* Title */}
-            <h1 className="font-serif text-4xl md:text-6xl font-black text-foreground mb-6 leading-tight">
-              Riempi le tue sale con{' '}
-              <span className="text-primary">
-                eventi su misura
-              </span>
+            <h1 className="blog-title">
+              Riempi le tue sale con <span className="highlight">eventi su misura</span>
             </h1>
 
             {/* Subtitle */}
