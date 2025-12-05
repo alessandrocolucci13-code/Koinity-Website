@@ -1776,7 +1776,7 @@
 
 /* Community Rules Section */
 .community-rules {
-  padding: 20px 40px 80px 40px;
+  padding: 20px 40px 30px 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1991,7 +1991,7 @@
 
 /* Community Channels Section */
 .community-channels {
-  padding: 30px 30px 60px 30px;
+  padding: 20px 30px 60px 30px;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
