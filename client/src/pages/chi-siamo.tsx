@@ -245,24 +245,24 @@ export default function ChiSiamo() {
               </div>
             </div>
 
-            {/* Team Member 2: Laura Bianchi */}
+            {/* Team Member 2: Lai */}
             <div className="team-card">
               <div className="team-card-inner">
                 <div className="team-card-front">
                   <div className="team-avatar">
-                    <span className="team-avatar-icon">👩‍💻</span>
-                    <span className="team-badge">CTO</span>
+                    <span className="team-avatar-icon">👩‍💼</span>
+                    <span className="team-badge">CMO</span>
                   </div>
-                  <h3 className="team-name">Laura Bianchi</h3>
-                  <p className="team-role">Co-Founder & CTO</p>
-                  <p className="team-tagline">"La tecnologia al servizio dell'arte"</p>
+                  <h3 className="team-name">Lai</h3>
+                  <p className="team-role">Co-FOUNDER & CMO</p>
+                  <p className="team-tagline">"Ogni film merita il suo pubblico"</p>
                 </div>
                 <div className="team-card-back">
                   <p className="team-bio">
-                    Ex ingegnere software in Silicon Valley, Laura ha portato la sua expertise tecnica per costruire una piattaforma scalabile e innovativa.
+                    Focalizzato sull'espansione del network e sulle partnership con cinema e community, porta un approccio analitico e orientato alla crescita.
                   </p>
                   <div className="team-social">
-                    <a href="https://linkedin.com" className="social-link" data-testid="link-laura-linkedin">🔗</a>
+                    <a href="https://linkedin.com" className="social-link" data-testid="link-lai-linkedin">🔗</a>
                   </div>
                 </div>
               </div>
