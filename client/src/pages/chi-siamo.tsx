@@ -268,24 +268,24 @@ export default function ChiSiamo() {
               </div>
             </div>
 
-            {/* Team Member 3: Andrea Verdi */}
+            {/* Team Member 3: Christian */}
             <div className="team-card">
               <div className="team-card-inner">
                 <div className="team-card-front">
                   <div className="team-avatar">
-                    <span className="team-avatar-icon">🎬</span>
-                    <span className="team-badge">CMO</span>
+                    <span className="team-avatar-icon">👨‍💻</span>
+                    <span className="team-badge">CTO</span>
                   </div>
-                  <h3 className="team-name">Andrea Verdi</h3>
-                  <p className="team-role">Community Manager</p>
-                  <p className="team-tagline">"Ogni film merita il suo pubblico"</p>
+                  <h3 className="team-name">Christian</h3>
+                  <p className="team-role">Co-FOUNDER & CTO</p>
+                  <p className="team-tagline">"La tecnologia al servizio dell'arte"</p>
                 </div>
                 <div className="team-card-back">
                   <p className="team-bio">
-                    Critico cinematografico e community builder, Andrea coltiva le relazioni con cinefili e sale cinematografiche in tutta Italia.
+                    Sviluppatore con background in Intelligenza Artificiale, trasforma insight e feedback in soluzioni tecnologiche scalabili per la piattaforma.
                   </p>
                   <div className="team-social">
-                    <a href="https://linkedin.com" className="social-link" data-testid="link-andrea-linkedin">🔗</a>
+                    <a href="https://linkedin.com" className="social-link" data-testid="link-christian-linkedin">🔗</a>
                   </div>
                 </div>
               </div>
