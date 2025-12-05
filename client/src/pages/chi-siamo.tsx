@@ -239,7 +239,7 @@ export default function ChiSiamo() {
                     Creativo del progetto, guida la strategia, la ricerca utenti e lo sviluppo del modello di business, con un forte orientamento Lean.
                   </p>
                   <div className="team-social">
-                    <a href="https://linkedin.com" className="social-link" data-testid="link-alessandro-linkedin">🔗</a>
+                    <a href="https://www.linkedin.com/in/coluccialessandro/" className="social-link" data-testid="link-alessandro-linkedin">🔗</a>
                   </div>
                 </div>
               </div>
@@ -262,7 +262,7 @@ export default function ChiSiamo() {
                     Focalizzato sull'espansione del network e sulle partnership con cinema e community, porta un approccio analitico e orientato alla crescita.
                   </p>
                   <div className="team-social">
-                    <a href="https://linkedin.com" className="social-link" data-testid="link-lai-linkedin">🔗</a>
+                    <a href="https://www.linkedin.com/in/glaihang/" className="social-link" data-testid="link-lai-linkedin">🔗</a>
                   </div>
                 </div>
               </div>
@@ -285,7 +285,7 @@ export default function ChiSiamo() {
                     Sviluppatore con background in Intelligenza Artificiale, trasforma insight e feedback in soluzioni tecnologiche scalabili per la piattaforma.
                   </p>
                   <div className="team-social">
-                    <a href="https://linkedin.com" className="social-link" data-testid="link-christian-linkedin">🔗</a>
+                    <a href="https://www.linkedin.com/in/christian-fiore-joseph/" className="social-link" data-testid="link-christian-linkedin">🔗</a>
                   </div>
                 </div>
               </div>
