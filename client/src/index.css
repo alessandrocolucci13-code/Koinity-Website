@@ -1804,6 +1804,8 @@
 .rules-list {
   display: grid;
   gap: 24px;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 .rule-item {
