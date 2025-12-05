@@ -1322,7 +1322,7 @@
 
 /* Community Hero Section */
 .community-hero {
-  padding: 100px 20px 80px;
+  padding: 100px 20px 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1610,7 +1610,7 @@
 
 /* Community Values Section */
 .community-values {
-  padding: 80px 40px;
+  padding: 40px 40px 80px;
   max-width: 1400px;
   margin: 0 auto;
 }
