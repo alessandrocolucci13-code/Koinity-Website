@@ -155,10 +155,12 @@ export default function ChiSiamo() {
         </section>
 
         <section className="story-section">
-          <h2 className="h2">La nostra storia</h2>
-          <p className="section-subtitle">
-            Un viaggio che parte dalla passione e arriva nelle sale di tutta Italia
-          </p>
+          <div className="section-header">
+            <h2 className="h2">La nostra storia</h2>
+            <p className="section-subtitle">
+              Un viaggio che parte dalla passione e arriva nelle sale di tutta Italia
+            </p>
+          </div>
 
           <div className="story-wrapper">
             <button className="story-nav story-nav-left" onClick={() => scroll('left')} data-testid="button-scroll-left">←</button>
