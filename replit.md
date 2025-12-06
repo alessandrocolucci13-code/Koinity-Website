@@ -80,6 +80,13 @@ Preferred communication style: Simple, everyday language.
 - **Full Width**: .btn-block stretches to 100% container width
 - **Interactions**: Smooth 0.3s transitions, -2px translateY on hover, smooth active state
 
+**Media & Images** (STEP 7 - Consistenza Media):
+- **Image Containers**: .img-container with 24px border-radius, overflow hidden, dark blue background
+- **Image Styling**: object-fit cover, scale(1.05) on hover, smooth 0.6s transition
+- **Aspect Ratios**: .aspect-16-9, .aspect-4-3, .aspect-square for consistent proportions
+- **Border Radius Scale**: .radius-sm (12px) through .radius-3xl (32px), .radius-full for circles
+- **Applied**: All media uses consistent containers and aspect ratios for brand coherence
+
 **Component Architecture**:
 - Reusable UI primitives in `components/ui/` (shadcn pattern)
 - Feature components: `ProposalCard`, `Filters`, `ProgressBar`, `Stepper`

@@ -773,6 +773,69 @@
   width: 100%;
 }
 
+/* ====== MEDIA & IMAGES - STEP 7 ====== */
+
+/* IMAGE CONTAINERS */
+.img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(0, 0, 50, 0.5);
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.img-container:hover img {
+  transform: scale(1.05);
+}
+
+/* ASPECT RATIOS */
+.aspect-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* BORDER RADIUS STANDARD */
+.radius-sm {
+  border-radius: 12px;
+}
+
+.radius-md {
+  border-radius: 16px;
+}
+
+.radius-lg {
+  border-radius: 20px;
+}
+
+.radius-xl {
+  border-radius: 24px;
+}
+
+.radius-2xl {
+  border-radius: 28px;
+}
+
+.radius-3xl {
+  border-radius: 32px;
+}
+
+.radius-full {
+  border-radius: 9999px;
+}
+
 /* ====== GRID SYSTEM - STEP 5 ====== */
 
 /* GRID CONTAINER */
