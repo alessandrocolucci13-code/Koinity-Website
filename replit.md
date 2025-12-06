@@ -95,6 +95,13 @@ Preferred communication style: Simple, everyday language.
 - **Card Meta**: .blog-card-meta with flex layout, border-top separator, margin-top auto for spacing
 - **Progress Bar**: .progress-bar + .progress-fill with yellow gradient for film progress tracking
 
+**Section Headers** (STEP 9 - Template Unificato):
+- **Section Header**: .section-header (centered, max-width 900px, margin-bottom 64px)
+- **Section Badge**: .section-badge (yellow gradient, uppercase, 24px border-radius)
+- **Section Title**: .section-title (48px, 900 weight, white, line-height 1.1)
+- **Section Subtitle**: .section-subtitle (20px, 85% white opacity, line-height 1.7)
+- **Responsive**: Mobile breakpoint adjusts title to 36px, subtitle to 18px, margin to 48px
+
 **Component Architecture**:
 - Reusable UI primitives in `components/ui/` (shadcn pattern)
 - Feature components: `ProposalCard`, `Filters`, `ProgressBar`, `Stepper`
