@@ -130,7 +130,7 @@ export default function Home() {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-20">
-            <h2 className="h2 mb-2" data-testid="text-community-section-title">
+            <h2 className="h2 mb-2 text-center" data-testid="text-community-section-title">
               Ti suona <span className="highlight">familiare?</span>
             </h2>
             <p className="text-muted-foreground text-center text-lg">
