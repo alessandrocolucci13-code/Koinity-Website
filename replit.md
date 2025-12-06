@@ -58,6 +58,13 @@ Preferred communication style: Simple, everyday language.
 - **Heading Hierarchy**: h1/h2 (56-48px, weight 900), h3 (32px, weight 800), h4 (24px, weight 800), h5/h6 (20px, weight 700)
 - **Applied to Home Page**: All section titles use .h2 class for consistent 48px sizing
 
+**Card System** (STEP 4 - Design Unificato):
+- **Base Card**: .card-standard with glassmorphism (padding 32px, white-08 background, white-15 border)
+- **Card Variants**: .card-large (48px padding, 28px radius), .card-small (24px padding, 20px radius)
+- **Hover Effects**: -8px translateY, yellow border, 60px shadow
+- **Content Spacing**: 16px gaps, internal margin spacing for hierarchy
+- **Applied to Why Cards**: Perfect glassmorphism with gradient overlay, top accent line, hover animations
+
 **Component Architecture**:
 - Reusable UI primitives in `components/ui/` (shadcn pattern)
 - Feature components: `ProposalCard`, `Filters`, `ProgressBar`, `Stepper`

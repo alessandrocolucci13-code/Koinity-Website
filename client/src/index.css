@@ -604,6 +604,52 @@
   filter: drop-shadow(0 0 8px rgba(255, 214, 0, 0.5));
 }
 
+/* ====== CARD SYSTEM - STEP 4 ====== */
+
+/* BASE CARD STANDARD */
+.card-standard {
+  padding: 32px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 214, 0, 0.04) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-standard:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 214, 0, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* CARD VARIANTS */
+.card-large {
+  padding: 48px 40px;
+  border-radius: 28px;
+}
+
+.card-small {
+  padding: 24px 20px;
+  border-radius: 20px;
+}
+
+/* CARD CONTENT SPACING */
+.card-standard > * + * {
+  margin-top: 16px;
+}
+
+.card-title {
+  margin-bottom: 12px;
+}
+
+.card-description {
+  margin-bottom: 20px;
+}
+
 /* Proposal Card Animations */
 .proposal-card {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
