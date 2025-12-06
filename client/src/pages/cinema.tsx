@@ -300,12 +300,12 @@ export default function Cinema() {
         {/* COME FUNZIONA SECTION */}
         <section id="come-funziona" className="how-it-works-section">
           {/* Header */}
+          <div className="inline-flex items-center gap-2 px-5 py-2 mb-6 bg-primary/15 border border-primary/30 rounded-full justify-center w-full">
+            <Zap className="w-4 h-4 text-primary" />
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">Processo Semplice</span>
+          </div>
           <div className="section-header">
-            <div className="inline-flex items-center gap-2 px-5 py-2 mb-6 bg-primary/15 border border-primary/30 rounded-full">
-              <Zap className="w-4 h-4 text-primary" />
-              <span className="text-xs font-bold uppercase tracking-wider text-primary">Processo Semplice</span>
-            </div>
-            <h2 className="section-title">Come funziona</h2>
+            <h2 className="h2">Come <span className="highlight">funziona</span></h2>
             <p className="section-subtitle">Quattro semplici passaggi per riempire le tue sale</p>
           </div>
 
