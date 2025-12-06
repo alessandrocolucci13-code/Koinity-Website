@@ -87,6 +87,14 @@ Preferred communication style: Simple, everyday language.
 - **Border Radius Scale**: .radius-sm (12px) through .radius-3xl (32px), .radius-full for circles
 - **Applied**: All media uses consistent containers and aspect ratios for brand coherence
 
+**Featured Section** (STEP 8 - Unified Blog Card):
+- **Blog Card**: .blog-card with flex column layout, glassmorphism background, 24px border-radius
+- **Card Image**: .blog-card-image with 240px fixed height, object-fit cover, scale(1.08) hover
+- **Card Content**: .blog-card-content with 28px padding, flex layout for vertical stacking
+- **Card Title**: .blog-card-title with 22px font, 800 weight, max 2-line truncation
+- **Card Meta**: .blog-card-meta with flex layout, border-top separator, margin-top auto for spacing
+- **Progress Bar**: .progress-bar + .progress-fill with yellow gradient for film progress tracking
+
 **Component Architecture**:
 - Reusable UI primitives in `components/ui/` (shadcn pattern)
 - Feature components: `ProposalCard`, `Filters`, `ProgressBar`, `Stepper`
