@@ -152,41 +152,64 @@ export default function ChiSiamo() {
           </div>
         </section>
 
-        <section className="storia-section">
-          <h2 className="storia-title">La nostra <span className="highlight">storia</span></h2>
-          <p className="storia-subtitle">
+        <section className="story-section">
+          <h2 className="section-title">La nostra storia</h2>
+          <p className="section-subtitle">
             Un viaggio che parte dalla passione e arriva nelle sale di tutta Italia
           </p>
 
-          <div className="timeline-grid">
-            {/* Card 1: 2024 - L'Inizio */}
-            <div className="timeline-card" data-testid="card-timeline-1">
-              <div className="timeline-icon">🎬</div>
-              <span className="timeline-year">2024</span>
-              <p className="timeline-phase">L'Inizio</p>
-              <p className="timeline-description">
-                Koinity nasce dall'idea di un gruppo di cinefili frustrati dall'impossibilità di vedere certi film in sala. Una domanda enorme per un'esperienza unica.
-              </p>
+          <div className="story-wrapper">
+            <button className="story-nav story-nav-left" onClick={() => scroll('left')} data-testid="button-scroll-left">←</button>
+            <button className="story-nav story-nav-right" onClick={() => scroll('right')} data-testid="button-scroll-right">→</button>
+
+            <div className="story-container" ref={containerRef}>
+              {/* Card 1: 2024 */}
+              <div className="story-card">
+                <span className="story-icon">🎬</span>
+                <h3 className="story-year">2024</h3>
+                <p className="story-label">L'Inizio</p>
+                <p className="story-text">
+                  Koinity nasce dall'idea di un gruppo di cinefili frustrati dall'impossibilità di vedere certi film in sala. Una domanda enorme per un'esperienza unica.
+                </p>
+              </div>
+
+              {/* Card 2: Sviluppo */}
+              <div className="story-card">
+                <span className="story-icon">💡</span>
+                <h3 className="story-year">2024</h3>
+                <p className="story-label">Sviluppo</p>
+                <p className="story-text">
+                  Abbiamo deciso di costruire una piattaforma che potesse scalare questa idea, coordinando automaticamente con i cinema quando la domanda è sufficiente.
+                </p>
+              </div>
+
+              {/* Card 3: Oggi */}
+              <div className="story-card">
+                <span className="story-icon">🚀</span>
+                <h3 className="story-year">2025</h3>
+                <p className="story-label">Oggi</p>
+                <p className="story-text">
+                  Koinity è quasi pronta per essere lanciata. Stiamo costruendo una soluzione personalizzata per l'utente e che allo stesso tempo possa risollevare il settore cinematografico.
+                </p>
+              </div>
+
+              {/* Card 4: Futuro (CTA) */}
+              <div className="story-card story-card-cta">
+                <span className="story-icon">✨</span>
+                <h3 className="story-year">?</h3>
+                <p className="story-label">Il Futuro</p>
+                <p className="story-text">
+                  La prossima storia la scriviamo insieme. Unisciti e porta il cinema che ami nella tua città.
+                </p>
+                <Link href="/proponi">
+                  <button className="cta-button" data-testid="button-join-us">Unisciti a Noi</button>
+                </Link>
+              </div>
             </div>
 
-            {/* Card 2: 2024 - Sviluppo */}
-            <div className="timeline-card" data-testid="card-timeline-2">
-              <div className="timeline-icon">💡</div>
-              <span className="timeline-year">2024</span>
-              <p className="timeline-phase">Sviluppo</p>
-              <p className="timeline-description">
-                Abbiamo deciso di costruire una piattaforma che potesse scalare questa idea, coordinando automaticamente con i cinema quando la domanda è sufficiente.
-              </p>
-            </div>
-
-            {/* Card 3: 2025 - Oggi */}
-            <div className="timeline-card" data-testid="card-timeline-3">
-              <div className="timeline-icon">🚀</div>
-              <span className="timeline-year">2025</span>
-              <p className="timeline-phase">Oggi</p>
-              <p className="timeline-description">
-                Koinity è quasi pronta per essere lanciata. Stiamo costruendo una soluzione personalizzata per l'utente e che allo stesso tempo possa risollevare il settore cinematografico.
-              </p>
+            {/* Progress Bar */}
+            <div className="timeline-progress">
+              <div className="timeline-progress-fill" style={{ width: `${scrollProgress}%` }}></div>
             </div>
           </div>
         </section>
