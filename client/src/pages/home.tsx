@@ -131,7 +131,7 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-20">
             <h2 className="h2 mb-2" data-testid="text-community-section-title">
-              Ti suona familiare?
+              Ti suona <span className="highlight">familiare?</span>
             </h2>
             <p className="text-muted-foreground text-center text-lg">
               Leggi come Koinity risolve il problema che vivono ogni giorno cinefili come te.
