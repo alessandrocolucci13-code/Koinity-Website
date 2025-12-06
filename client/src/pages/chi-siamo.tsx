@@ -82,17 +82,18 @@ export default function ChiSiamo() {
         title="Chi Siamo"
         description="Scopri la missione di Koinity: rendere accessibile qualsiasi film in sala attraverso il potere della community. Scopri chi siamo e i nostri valori fondamentali."
       />
+      <section className="chi-siamo-hero">
+        <h1 className="hero-title" data-testid="text-page-title">
+          Chi <span className="highlight">Siamo</span>
+        </h1>
+        <p className="hero-subtitle">
+          La nostra missione è ridare potere alla community cinematografica,
+          rendendo accessibile qualsiasi film in sala.
+        </p>
+      </section>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="blog-title" data-testid="text-page-title">
-            Chi <span className="highlight">Siamo</span>
-          </h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            La nostra missione è ridare potere alla community cinematografica,
-            rendendo accessibile qualsiasi film in sala.
-          </p>
-        </div>
 
         <section ref={missionRef} className="mission-section">
           <div className="mission-container" style={{gridTemplateColumns: '1fr'}}>
