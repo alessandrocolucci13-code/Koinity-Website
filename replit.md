@@ -45,6 +45,12 @@ Preferred communication style: Simple, everyday language.
 - **Gradient**: 135deg linear gradient from #FFD600 to #FF8C00 for CTAs
 - **Application**: Unified background (blue-900), consistent button gradients, white text hierarchy
 
+**Spacing System** (STEP 2 - Consistent Vertical Rhythm):
+- **8pt Scale**: --space-xs (8px) through --space-5xl (120px)
+- **Section Padding**: Desktop 100px 40px, Tablet 80px 40px, Mobile 60px 24px
+- **Component Spacing**: Card padding 32px, gaps 24px/16px
+- **Applied to Home Page**: All sections use py-20, consistent mb-20 headers, mt-20 CTAs
+
 **Component Architecture**:
 - Reusable UI primitives in `components/ui/` (shadcn pattern)
 - Feature components: `ProposalCard`, `Filters`, `ProgressBar`, `Stepper`

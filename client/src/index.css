@@ -30,6 +30,27 @@
   --white-10: rgba(255, 255, 255, 0.1);
   --white-05: rgba(255, 255, 255, 0.05);
 
+  /* SPACING SCALE - 8pt system */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 80px;
+  --space-4xl: 96px;
+  --space-5xl: 120px;
+
+  /* SECTION SPACING */
+  --section-padding-mobile: 60px 24px;
+  --section-padding-tablet: 80px 40px;
+  --section-padding-desktop: 100px 40px;
+
+  /* COMPONENT SPACING */
+  --card-padding: 32px;
+  --card-gap: 24px;
+  --element-gap: 16px;
+
   --background: 240 100% 15.7%;
 
   --foreground: 0deg 0% 100%;
@@ -169,6 +190,27 @@
   --white-15: rgba(255, 255, 255, 0.15);
   --white-10: rgba(255, 255, 255, 0.1);
   --white-05: rgba(255, 255, 255, 0.05);
+
+  /* SPACING SCALE - 8pt system */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 80px;
+  --space-4xl: 96px;
+  --space-5xl: 120px;
+
+  /* SECTION SPACING */
+  --section-padding-mobile: 60px 24px;
+  --section-padding-tablet: 80px 40px;
+  --section-padding-desktop: 100px 40px;
+
+  /* COMPONENT SPACING */
+  --card-padding: 32px;
+  --card-gap: 24px;
+  --element-gap: 16px;
 
   --background: 240 100% 15.7%;
 

@@ -56,7 +56,7 @@ export default function Home() {
 
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4" data-testid="text-how-it-works-title">
               Come funziona
             </h2>
@@ -127,9 +127,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-8">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
+          <div className="mb-20">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center mb-2" data-testid="text-community-section-title">
               Ti suona familiare?
             </h2>
@@ -247,7 +247,7 @@ export default function Home() {
 
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-20">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4" data-testid="text-featured-title">
               In evidenza vicino a te
             </h2>
@@ -270,7 +270,7 @@ export default function Home() {
             </div>
           )}
 
-          <div className="mt-12 text-center">
+          <div className="mt-20 text-center">
             <Link href="/vota">
               <Button size="lg" data-testid="button-view-all-proposals">
                 Vedi tutte le proposte
