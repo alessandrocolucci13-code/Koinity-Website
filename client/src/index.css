@@ -6530,15 +6530,127 @@
   }
 }
 
-/* ===== MISSION SECTION - STEP 2 ===== */
+/* ===== MISSION SECTION - OPZIONE A ===== */
 .mission-section {
-  padding: 100px 40px;
-  max-width: 1200px;
+  padding: 40px 40px 100px 40px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
-/* Badge sopra */
-.section-badge {
+.mission-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Colonna Sinistra: Visual Element */
+.mission-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.visual-circle {
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 214, 0, 0.15) 0%,
+    rgba(255, 140, 0, 0.1) 100%
+  );
+  border: 3px solid rgba(255, 214, 0, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 
+    0 8px 32px rgba(255, 214, 0, 0.2),
+    inset 0 0 60px rgba(255, 214, 0, 0.05);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.visual-icon {
+  font-size: 100px;
+  filter: drop-shadow(0 4px 20px rgba(255, 214, 0, 0.4));
+}
+
+/* Ring decorativo esterno */
+.visual-ring {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border: 2px solid rgba(255, 214, 0, 0.2);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dots decorativi */
+.visual-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 214, 0, 0.6);
+}
+
+.visual-dot:nth-child(1) {
+  top: 10%;
+  right: 20%;
+  animation: pulse-dot 3s ease-in-out infinite;
+}
+
+.visual-dot:nth-child(2) {
+  bottom: 15%;
+  left: 15%;
+  animation: pulse-dot 3s ease-in-out infinite 1s;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.6;
+  }
+}
+
+/* Colonna Destra: Content Area */
+.mission-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.mission-header {
+  margin-bottom: 8px;
+}
+
+.mission-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -6546,63 +6658,60 @@
   background: rgba(255, 214, 0, 0.15);
   border: 2px solid rgba(255, 214, 0, 0.3);
   border-radius: 24px;
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 13px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #FFD600;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
-.mission-title {
+.mission-title-new {
   font-size: 48px;
   font-weight: 900;
   color: #fff;
-  margin-bottom: 32px;
+  margin-bottom: 12px;
   line-height: 1.1;
 }
 
 .mission-text {
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
-/* Highlighted box */
+/* Evidenzia frase importante */
 .mission-highlight {
-  padding: 32px;
+  display: block;
+  margin-top: 24px;
+  padding: 24px;
   background: linear-gradient(
     135deg,
-    rgba(255, 214, 0, 0.08) 0%,
-    rgba(255, 140, 0, 0.04) 100%
+    rgba(255, 214, 0, 0.1) 0%,
+    rgba(255, 140, 0, 0.05) 100%
   );
   border-left: 4px solid #FFD600;
-  border-radius: 16px;
-  margin: 40px 0;
-}
-
-.mission-highlight-text {
+  border-radius: 12px;
   font-size: 18px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.7;
 }
 
-/* Key Points */
+/* Key Points con Icone */
 .mission-points {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-top: 48px;
+  gap: 12px;
 }
 
 .point-item {
   display: flex;
-  align-items: start;
-  gap: 20px;
-  padding: 24px;
-  background: rgba(255, 255, 255, 0.04);
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   transition: all 0.3s;
@@ -6615,51 +6724,65 @@
 }
 
 .point-icon {
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 214, 0, 0.2),
-    rgba(255, 140, 0, 0.15)
-  );
-  border-radius: 14px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.2), rgba(255, 140, 0, 0.15));
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
+  font-size: 24px;
   flex-shrink: 0;
+  transition: transform 0.3s;
+  color: #FFD600;
 }
 
-.point-content {
+.point-item:hover .point-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.point-text {
   flex: 1;
-  padding-top: 4px;
-}
-
-.point-title {
-  font-size: 18px;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 6px;
-}
-
-.point-description {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
 }
 
-@media (max-width: 768px) {
-  .mission-section {
-    padding: 80px 24px;
+.point-text strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+@media (max-width: 968px) {
+  .mission-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
   }
   
-  .mission-title {
+  .mission-visual {
+    display: none;
+  }
+  
+  .mission-title-new {
     font-size: 36px;
   }
   
-  .point-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 22px;
+  .mission-text {
+    font-size: 17px;
+  }
+  
+  .visual-circle {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .visual-icon {
+    font-size: 70px;
+  }
+  
+  .visual-ring {
+    width: 240px;
+    height: 240px;
   }
 }

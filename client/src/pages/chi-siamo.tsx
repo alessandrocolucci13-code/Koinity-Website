@@ -96,57 +96,59 @@ export default function ChiSiamo() {
       <div className="max-w-4xl mx-auto">
 
         <section ref={missionRef} className="mission-section">
-          <span className="section-badge">
-            <Star className="w-4 h-4" />
-            <span>La nostra mission</span>
-          </span>
-          <h2 className="mission-title">La nostra mission</h2>
-
-          <p className="mission-text">
-            Koinity nasce dalla passione per il cinema e dalla convinzione che
-            le persone dovrebbero poter scegliere cosa vedere sul grande schermo.
-          </p>
-
-          <p className="mission-text">
-            Troppi film straordinari non raggiungono mai le sale italiane, 
-            o vengono proiettati solo in poche città.
-          </p>
-
-          <div className="mission-highlight">
-            <div className="mission-highlight-text">
-              La nostra piattaforma permette alla community di votare i film che desidera vedere in sala e, quando la domanda è sufficiente, coordiniamo proiezioni on-demand con i cinema locali.
-            </div>
-          </div>
-
-          {/* Key Points */}
-          <div className="mission-points">
-            <div className="point-item">
-              <div className="point-icon">
-                <Lightbulb className="w-5 h-5" />
+          <div className="mission-container" style={{gridTemplateColumns: '1fr'}}>
+            {/* Content Column */}
+            <div className="mission-content">
+              <div className="mission-header">
+                <span className="mission-badge">
+                  <Star className="w-4 h-4" />
+                  <span>La nostra mission</span>
+                </span>
+                <h2 className="mission-title-new">La nostra mission</h2>
               </div>
-              <div className="point-content">
-                <div className="point-title">Democrazia cinematografica</div>
-                <div className="point-description">Il pubblico sceglie cosa vedere</div>
-              </div>
-            </div>
 
-            <div className="point-item">
-              <div className="point-icon">
-                <Users className="w-5 h-5" />
-              </div>
-              <div className="point-content">
-                <div className="point-title">Potere alla community</div>
-                <div className="point-description">Non solo sconti, ma programmazione reale</div>
-              </div>
-            </div>
+              <p className="mission-text">
+                Koinity nasce dalla passione per il cinema e dalla convinzione che
+                le persone dovrebbero poter scegliere cosa vedere sul grande schermo.
+              </p>
 
-            <div className="point-item">
-              <div className="point-icon">
-                <Film className="w-5 h-5" />
+              <p className="mission-text">
+                Troppi film straordinari non raggiungono mai le sale italiane, 
+                o vengono proiettati solo in poche città.
+              </p>
+
+              <div className="mission-highlight">
+                La nostra piattaforma permette alla community di votare i film che desidera vedere in sala e, quando la domanda è sufficiente, coordiniamo proiezioni on-demand con i cinema locali.
               </div>
-              <div className="point-content">
-                <div className="point-title">Cinema per tutti</div>
-                <div className="point-description">Film straordinari accessibili ovunque</div>
+
+              {/* Key Points */}
+              <div className="mission-points">
+                <div className="point-item">
+                  <div className="point-icon">
+                    <Lightbulb className="w-5 h-5" />
+                  </div>
+                  <div className="point-text">
+                    <strong>Democrazia cinematografica:</strong> Il pubblico sceglie cosa vedere
+                  </div>
+                </div>
+
+                <div className="point-item">
+                  <div className="point-icon">
+                    <Users className="w-5 h-5" />
+                  </div>
+                  <div className="point-text">
+                    <strong>Potere alla community:</strong> Non solo sconti, ma programmazione reale
+                  </div>
+                </div>
+
+                <div className="point-item">
+                  <div className="point-icon">
+                    <Film className="w-5 h-5" />
+                  </div>
+                  <div className="point-text">
+                    <strong>Cinema per tutti:</strong> Film straordinari accessibili ovunque
+                  </div>
+                </div>
               </div>
             </div>
           </div>
