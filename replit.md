@@ -31,11 +31,19 @@ Preferred communication style: Simple, everyday language.
 - **Build Tool**: Vite
 
 **Design System**:
-- Dark-first theme with cinema-inspired palette (`#0B0B0F` background, `#FF6B00` accent)
-- Typography: Inter (UI), Playfair Display (headlines/titles)
-- Card-based layouts with `2xl` rounded corners and soft shadows
+- Dark-first theme with new brand palette (Deep Blue #000050 background, Yellow #FFD600 / Orange #FF8C00 accents)
+- Typography: Inter (UI), Playfair Display (headlines/titles) with blog-title class for consistency
+- Card-based layouts with glassmorphism effect (white opacity layers)
 - Custom CSS variables for theming in `index.css`
 - Responsive breakpoints: mobile (768px), tablet (1024px), desktop (1440px+)
+
+**New Color System** (STEP 1 - Brand Consistency):
+- **Primary Blues**: --blue-900 (#000050 background), --blue-800 (#00006b sections), --blue-700 (#000085 hover)
+- **Accent Colors**: --yellow-500 (#FFD600 primary), --yellow-600 (#FF8C00 gradient end)
+- **Neutral Scale**: White opacity variants (90%, 80%, 70%, 50%, 30%, 15%, 10%, 5%)
+- **Glassmorphism**: Cards use white-05 to white-10 with backdrop blur
+- **Gradient**: 135deg linear gradient from #FFD600 to #FF8C00 for CTAs
+- **Application**: Unified background (blue-900), consistent button gradients, white text hierarchy
 
 **Component Architecture**:
 - Reusable UI primitives in `components/ui/` (shadcn pattern)

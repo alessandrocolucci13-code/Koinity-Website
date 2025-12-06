@@ -57,6 +57,11 @@ export default {
           DEFAULT: "hsl(var(--yellow) / <alpha-value>)",
           border: "hsl(var(--yellow-border) / <alpha-value>)",
         },
+        "blue-900": "hsl(var(--blue-900) / <alpha-value>)",
+        "blue-800": "hsl(var(--blue-800) / <alpha-value>)",
+        "blue-700": "hsl(var(--blue-700) / <alpha-value>)",
+        "yellow-500": "hsl(var(--yellow-500) / <alpha-value>)",
+        "yellow-600": "hsl(var(--yellow-600) / <alpha-value>)",
         "dialog-light": "var(--dialog-light)",
         "dialog-dark": "var(--dialog-dark)",
         chart: {
