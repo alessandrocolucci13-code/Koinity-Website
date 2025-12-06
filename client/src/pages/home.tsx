@@ -56,11 +56,11 @@ export default function Home() {
 
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="h2 mb-4" data-testid="text-how-it-works-title">
-              Come funziona
+          <div className="section-header">
+            <h2 className="h2" data-testid="text-how-it-works-title">
+              Come <span className="highlight">funziona</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="section-subtitle">
               Porta il cinema che ami nelle sale della tua città in quattro
               semplici passi.
             </p>
