@@ -102,6 +102,15 @@ Preferred communication style: Simple, everyday language.
 - **Section Subtitle**: .section-subtitle (20px, 85% white opacity, line-height 1.7)
 - **Responsive**: Mobile breakpoint adjusts title to 36px, subtitle to 18px, margin to 48px
 
+**Mobile Optimization** (STEP 10 - Spacing Fix):
+- **Section Padding**: Mobile 60px 24px (consistent breathing room)
+- **Container Padding**: 24px on mobile devices
+- **Card Padding**: 28px 24px for standard cards, 24px 20px for blog cards
+- **Grid Gap**: 24px consistently across all grids on mobile
+- **Button Touch Targets**: min-height 44px for accessibility, adjusted padding for mobile
+- **Form Spacing**: 24px margin-bottom on form groups
+- **Applied**: Ensures proper spacing, readability, and touch target sizes across all mobile devices
+
 **Component Architecture**:
 - Reusable UI primitives in `components/ui/` (shadcn pattern)
 - Feature components: `ProposalCard`, `Filters`, `ProgressBar`, `Stepper`

@@ -1036,6 +1036,56 @@
   }
 }
 
+/* ====== MOBILE OPTIMIZATION - STEP 10 ====== */
+
+/* Mobile-First Spacing Fix */
+@media (max-width: 768px) {
+  /* Sezioni */
+  section {
+    padding: 60px 24px;
+  }
+  
+  /* Container */
+  .container {
+    padding: 0 24px;
+  }
+  
+  /* Card Standard */
+  .card-standard {
+    padding: 28px 24px;
+  }
+  
+  /* Blog Card */
+  .blog-card-content {
+    padding: 24px 20px;
+  }
+  
+  /* Section header */
+  .section-header {
+    margin-bottom: 48px;
+  }
+  
+  /* Form fields */
+  .form-group {
+    margin-bottom: 24px;
+  }
+  
+  /* Button sizing for touch */
+  .btn {
+    padding: 16px 28px;
+    font-size: 15px;
+    min-height: 44px;
+  }
+  
+  .btn-small {
+    padding: 12px 20px;
+  }
+  
+  .btn-large {
+    padding: 18px 32px;
+  }
+}
+
 /* ====== RESPONSIVE DESIGN ====== */
 
 /* Hero Section Responsive */
