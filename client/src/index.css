@@ -1096,23 +1096,11 @@
   margin: 0 auto;
 }
 
-.hero-title {
-  font-size: 64px;
-  font-weight: 900;
-  color: #fff;
+.chi-siamo-hero .blog-title {
   margin-bottom: 24px;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
 }
 
-.hero-title .highlight {
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-subtitle {
+.chi-siamo-hero .hero-subtitle {
   font-size: 22px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.85);
@@ -1124,11 +1112,11 @@
     padding: 80px 24px 60px;
   }
   
-  .hero-title {
+  .chi-siamo-hero .blog-title {
     font-size: 44px;
   }
   
-  .hero-subtitle {
+  .chi-siamo-hero .hero-subtitle {
     font-size: 18px;
   }
 }

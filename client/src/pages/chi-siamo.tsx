@@ -83,7 +83,7 @@ export default function ChiSiamo() {
         description="Scopri la missione di Koinity: rendere accessibile qualsiasi film in sala attraverso il potere della community. Scopri chi siamo e i nostri valori fondamentali."
       />
       <section className="chi-siamo-hero">
-        <h1 className="hero-title" data-testid="text-page-title">
+        <h1 className="blog-title" data-testid="text-page-title">
           Chi <span className="highlight">Siamo</span>
         </h1>
         <p className="hero-subtitle">
