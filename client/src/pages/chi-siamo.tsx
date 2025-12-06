@@ -155,7 +155,7 @@ export default function ChiSiamo() {
         </section>
 
         <section className="story-section">
-          <h2 className="section-title">La nostra storia</h2>
+          <h2 className="h2">La nostra storia</h2>
           <p className="section-subtitle">
             Un viaggio che parte dalla passione e arriva nelle sale di tutta Italia
           </p>
