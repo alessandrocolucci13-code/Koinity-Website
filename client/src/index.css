@@ -701,6 +701,73 @@
   animation: pulse 1.5s ease-in-out infinite;
 }
 
+/* ====== GRID SYSTEM - STEP 5 ====== */
+
+/* GRID CONTAINER */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+/* SYMMETRIC GRIDS */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ASYMMETRIC GRIDS */
+.grid-60-40 {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+}
+
+/* GRID RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-60-40 {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .grid-60-40 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
 /* ====== RESPONSIVE DESIGN ====== */
 
 /* Hero Section Responsive */

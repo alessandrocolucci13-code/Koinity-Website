@@ -65,6 +65,13 @@ Preferred communication style: Simple, everyday language.
 - **Content Spacing**: 16px gaps, internal margin spacing for hierarchy
 - **Applied to Why Cards**: Perfect glassmorphism with gradient overlay, top accent line, hover animations
 
+**Grid System** (STEP 5 - Layout Consistenza):
+- **Grid Container**: .container with max-width 1400px, padding 40px desktop / 24px mobile
+- **Symmetric Grids**: .grid-2 (2 columns, 32px gap), .grid-3 (3 columns, 32px gap), .grid-4 (4 columns, 24px gap)
+- **Asymmetric Grid**: .grid-60-40 (1.5fr / 1fr columns, 60px gap)
+- **Responsive**: 1024px breakpoint (grid-4 → 2 cols), 768px breakpoint (all grids → 1 col, 24px gap)
+- **Applied**: Why section uses grid-3, community dialogs use grid-60-40
+
 **Component Architecture**:
 - Reusable UI primitives in `components/ui/` (shadcn pattern)
 - Feature components: `ProposalCard`, `Filters`, `ProgressBar`, `Stepper`
