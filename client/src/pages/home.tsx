@@ -57,7 +57,7 @@ export default function Home() {
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4" data-testid="text-how-it-works-title">
+            <h2 className="h2 mb-4" data-testid="text-how-it-works-title">
               Come funziona
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -71,7 +71,7 @@ export default function Home() {
 
       <section className="why-section bg-gradient-to-b from-background via-background to-background/95">
         <div className="section-header">
-          <h2 className="section-title" data-testid="text-why-koinity-title">
+          <h2 className="h2" data-testid="text-why-koinity-title">
             Perché Koinity
           </h2>
           <p className="section-subtitle" data-testid="text-why-koinity-subtitle">
@@ -130,7 +130,7 @@ export default function Home() {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-20">
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center mb-2" data-testid="text-community-section-title">
+            <h2 className="h2 mb-2" data-testid="text-community-section-title">
               Ti suona familiare?
             </h2>
             <p className="text-muted-foreground text-center text-lg">
@@ -248,7 +248,7 @@ export default function Home() {
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4" data-testid="text-featured-title">
+            <h2 className="h2 mb-4" data-testid="text-featured-title">
               In evidenza vicino a te
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -284,7 +284,7 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20 overflow-hidden">
             <CardContent className="p-12 text-center">
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4">
+              <h2 className="h2 mb-4">
                 Unisciti alla community
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto mb-8">

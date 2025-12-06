@@ -51,6 +51,13 @@ Preferred communication style: Simple, everyday language.
 - **Component Spacing**: Card padding 32px, gaps 24px/16px
 - **Applied to Home Page**: All sections use py-20, consistent mb-20 headers, mt-20 CTAs
 
+**Typography System** (STEP 3 - Gerarchia Chiara):
+- **Font Sizes**: --text-xs (12px) through --text-8xl (64px)
+- **Line Heights**: tight (1.1), snug (1.3), normal (1.5), relaxed (1.7), loose (1.8)
+- **Font Weights**: normal (400), medium (500), semibold (600), bold (700), extrabold (800), black (900)
+- **Heading Hierarchy**: h1/h2 (56-48px, weight 900), h3 (32px, weight 800), h4 (24px, weight 800), h5/h6 (20px, weight 700)
+- **Applied to Home Page**: All section titles use .h2 class for consistent 48px sizing
+
 **Component Architecture**:
 - Reusable UI primitives in `components/ui/` (shadcn pattern)
 - Feature components: `ProposalCard`, `Filters`, `ProgressBar`, `Stepper`
