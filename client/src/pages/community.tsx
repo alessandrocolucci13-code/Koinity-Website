@@ -122,7 +122,7 @@ export default function Community() {
           </div>
         </div>
 
-        <h1 className="blog-title" data-testid="text-page-title">Community Koinity</h1>
+        <h1 className="blog-title" data-testid="text-page-title">Community <span className="highlight">Koinity</span></h1>
         <p className="community-subtitle">
           Siamo una community di appassionati di cinema che credono nel potere della 
           scelta collettiva. Insieme, portiamo in sala i film che amiamo.
