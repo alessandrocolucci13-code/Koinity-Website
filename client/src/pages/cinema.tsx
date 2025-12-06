@@ -220,6 +220,7 @@ export default function Cinema() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Card 1: Domanda locale */}
             <div className="benefit-card benefit-card-green">
+              <span className="benefit-number" data-testid="badge-1">1</span>
               <div className="benefit-icon-wrapper">
                 <span className="benefit-icon">📈</span>
               </div>
@@ -237,6 +238,7 @@ export default function Cinema() {
 
             {/* Card 2: Programmazione mirata */}
             <div className="benefit-card benefit-card-blue">
+              <span className="benefit-number" data-testid="badge-2">2</span>
               <div className="benefit-icon-wrapper">
                 <span className="benefit-icon">📅</span>
               </div>
@@ -254,6 +256,7 @@ export default function Cinema() {
 
             {/* Card 3: Rischio ridotto */}
             <div className="benefit-card benefit-card-yellow">
+              <span className="benefit-number" data-testid="badge-3">3</span>
               <div className="benefit-icon-wrapper">
                 <span className="benefit-icon">💰</span>
               </div>
@@ -271,6 +274,7 @@ export default function Cinema() {
 
             {/* Card 4: Eventi speciali */}
             <div className="benefit-card benefit-card-purple">
+              <span className="benefit-number" data-testid="badge-4">4</span>
               <div className="benefit-icon-wrapper">
                 <span className="benefit-icon">🎪</span>
               </div>
