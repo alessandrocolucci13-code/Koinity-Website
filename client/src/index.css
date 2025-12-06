@@ -2282,16 +2282,6 @@
   }
 }
 
-.community-title {
-  font-size: 64px;
-  font-weight: 900;
-  color: #fff;
-  margin-bottom: 24px;
-  line-height: 1.1;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  animation: slideInDown 0.8s ease-out 0.2s forwards;
-}
 
 .community-subtitle {
   font-size: 20px;
