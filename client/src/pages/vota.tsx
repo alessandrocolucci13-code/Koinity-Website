@@ -75,8 +75,8 @@ export default function Vota() {
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-12 text-center">
-        <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4" data-testid="text-page-title">
-          Vota & Partecipa
+        <h1 className="blog-title" data-testid="text-page-title">
+          Vota & <span className="highlight">Partecipa</span>
         </h1>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           Esplora le proposte della community e vota per i film che vorresti
