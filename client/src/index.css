@@ -1715,146 +1715,207 @@
   box-shadow: 0 0 10px rgba(255, 214, 0, 0.6);
 }
 
-/* === TEAM SECTION - STEP 4 === */
+/* Team Section - Flip Effect Cards */
 .team-section {
-  padding: 100px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 40px 40px;
 }
 
-.team-title {
-  font-size: 48px;
-  font-weight: 900;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.team-subtitle {
-  font-size: 18px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  margin-bottom: 64px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Team Grid */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-/* Team Card - MIGLIORATA */
 .team-card {
-  padding: 40px 32px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.06) 0%,
-    rgba(255, 214, 0, 0.03) 100%
-  );
-  border: 2px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+  height: 360px;
+  perspective: 1000px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-card:nth-child(1) { transition-delay: 0.1s; }
+.team-card:nth-child(2) { transition-delay: 0.2s; }
+.team-card:nth-child(3) { transition-delay: 0.3s; }
+.team-card:nth-child(4) { transition-delay: 0.4s; }
+
+.team-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.team-card:hover .team-card-inner {
+  transform: rotateY(180deg);
+}
+
+.team-card-front,
+.team-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   border-radius: 24px;
-  backdrop-filter: blur(10px);
-  text-align: center;
-  transition: all 0.3s;
+  padding: 40px 32px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 214, 0, 0.05) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.team-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 214, 0, 0.4);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+.team-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, rgba(255, 214, 0, 0.15) 0%, rgba(0, 0, 80, 0.6) 100%);
+  border-color: rgba(255, 214, 0, 0.3);
 }
 
-/* Avatar - PIÙ GRANDE E DISTINTIVO */
 .team-avatar {
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 44px;
-  margin: 0 auto 24px;
-  box-shadow: 
-    0 8px 24px rgba(255, 214, 0, 0.4),
-    inset 0 -4px 8px rgba(0, 0, 0, 0.2);
-  border: 4px solid rgba(0, 0, 50, 0.8);
+  margin-bottom: 16px;
   position: relative;
-  transition: all 0.3s;
+  box-shadow: 0 8px 32px rgba(255, 214, 0, 0.4), inset 0 -4px 8px rgba(0, 0, 0, 0.2);
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
 }
 
 .team-card:hover .team-avatar {
-  transform: scale(1.05);
-  box-shadow: 
-    0 12px 32px rgba(255, 214, 0, 0.6),
-    inset 0 -4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 40px rgba(255, 214, 0, 0.6);
 }
 
-/* Badge ruolo sull'avatar */
+.team-avatar-icon {
+  font-size: 52px;
+}
+
 .team-badge {
   position: absolute;
-  bottom: -8px;
-  right: -8px;
-  width: 32px;
-  height: 32px;
-  background: #22C55E;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  border: 3px solid rgba(0, 0, 50, 0.9);
-  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+  bottom: -10px;
+  background: #FFD600;
+  color: #000050;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(255, 214, 0, 0.5);
 }
 
 .team-name {
   font-size: 22px;
   font-weight: 800;
   color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.team-card:hover .team-name {
+  color: #FFD600;
 }
 
 .team-role {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 13px;
   color: rgba(255, 214, 0, 0.9);
-  margin-bottom: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
-.team-description {
-  font-size: 14px;
-  line-height: 1.6;
+.team-tagline {
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.7);
+  text-align: center;
   font-style: italic;
+  line-height: 1.5;
 }
 
-@media (max-width: 968px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
+.team-bio {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-bottom: 24px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.team-social {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 214, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFD600;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background: rgba(255, 214, 0, 0.2);
+  border-color: #FFD600;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 16px rgba(255, 214, 0, 0.4);
 }
 
 @media (max-width: 768px) {
-  .team-section {
-    padding: 80px 24px;
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
-  
-  .team-title {
-    font-size: 36px;
+
+  .team-card {
+    height: 340px;
   }
-  
+
   .team-avatar {
-    width: 90px;
-    height: 90px;
-    font-size: 40px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .team-avatar-icon {
+    font-size: 48px;
+  }
+
+  .team-name {
+    font-size: 20px;
+  }
+
+  .team-section {
+    padding: 60px 20px;
   }
 }
 

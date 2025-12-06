@@ -215,49 +215,79 @@ export default function ChiSiamo() {
         </section>
 
         <section className="team-section">
-          <h2 className="team-title">Il team</h2>
-          <p className="team-subtitle">
+          <h2 className="section-title">Il team</h2>
+          <p className="section-subtitle">
             Siamo un team appassionato di cinema, tecnologia e community building
           </p>
 
           <div className="team-grid" ref={teamGridRef}>
             {/* Team Member 1: Alessandro */}
             <div className="team-card">
-              <div className="team-avatar">
-                <Heart className="w-12 h-12 text-white" />
-                <span className="team-badge">CEO</span>
+              <div className="team-card-inner">
+                <div className="team-card-front">
+                  <div className="team-avatar">
+                    <span className="team-avatar-icon">👨‍💻</span>
+                    <span className="team-badge">CEO</span>
+                  </div>
+                  <h3 className="team-name">Alessandro</h3>
+                  <p className="team-role">Co-Founder & CEO</p>
+                  <p className="team-tagline">"Il cinema è democrazia"</p>
+                </div>
+                <div className="team-card-back">
+                  <p className="team-bio">
+                    Creativo del progetto, guida la strategia, la ricerca utenti e lo sviluppo del modello di business, con un forte orientamento Lean.
+                  </p>
+                  <div className="team-social">
+                    <a href="https://www.linkedin.com/in/coluccialessandro/" className="social-link" data-testid="link-alessandro-linkedin">🔗</a>
+                  </div>
+                </div>
               </div>
-              <h3 className="team-name">Alessandro</h3>
-              <p className="team-role">Co-Founder & CEO</p>
-              <p className="team-description">
-                Creativo del progetto, guida la strategia, la ricerca utenti e lo sviluppo del modello di business, con un forte orientamento Lean.
-              </p>
             </div>
 
             {/* Team Member 2: Lai */}
             <div className="team-card">
-              <div className="team-avatar">
-                <Target className="w-12 h-12 text-white" />
-                <span className="team-badge">CMO</span>
+              <div className="team-card-inner">
+                <div className="team-card-front">
+                  <div className="team-avatar">
+                    <span className="team-avatar-icon">👩‍💼</span>
+                    <span className="team-badge">CMO</span>
+                  </div>
+                  <h3 className="team-name">Lai</h3>
+                  <p className="team-role">Co-FOUNDER & CMO</p>
+                  <p className="team-tagline">"Ogni film merita il suo pubblico"</p>
+                </div>
+                <div className="team-card-back">
+                  <p className="team-bio">
+                    Focalizzato sull'espansione del network e sulle partnership con cinema e community, porta un approccio analitico e orientato alla crescita.
+                  </p>
+                  <div className="team-social">
+                    <a href="https://www.linkedin.com/in/glaihang/" className="social-link" data-testid="link-lai-linkedin">🔗</a>
+                  </div>
+                </div>
               </div>
-              <h3 className="team-name">Lai</h3>
-              <p className="team-role">Co-Founder & CMO</p>
-              <p className="team-description">
-                Focalizzato sull'espansione del network e sulle partnership con cinema e community, porta un approccio analitico e orientato alla crescita.
-              </p>
             </div>
 
             {/* Team Member 3: Christian */}
             <div className="team-card">
-              <div className="team-avatar">
-                <Lightbulb className="w-12 h-12 text-white" />
-                <span className="team-badge">CTO</span>
+              <div className="team-card-inner">
+                <div className="team-card-front">
+                  <div className="team-avatar">
+                    <span className="team-avatar-icon">👨‍💻</span>
+                    <span className="team-badge">CTO</span>
+                  </div>
+                  <h3 className="team-name">Christian</h3>
+                  <p className="team-role">Co-FOUNDER & CTO</p>
+                  <p className="team-tagline">"La tecnologia al servizio dell'arte"</p>
+                </div>
+                <div className="team-card-back">
+                  <p className="team-bio">
+                    Sviluppatore con background in Intelligenza Artificiale, trasforma insight e feedback in soluzioni tecnologiche scalabili per la piattaforma.
+                  </p>
+                  <div className="team-social">
+                    <a href="https://www.linkedin.com/in/christian-fiore-joseph/" className="social-link" data-testid="link-christian-linkedin">🔗</a>
+                  </div>
+                </div>
               </div>
-              <h3 className="team-name">Christian</h3>
-              <p className="team-role">Co-Founder & CTO</p>
-              <p className="team-description">
-                Sviluppatore con background in Intelligenza Artificiale, trasforma insight e feedback in soluzioni tecnologiche scalabili per la piattaforma.
-              </p>
             </div>
 
           </div>
