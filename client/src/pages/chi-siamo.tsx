@@ -219,10 +219,12 @@ export default function ChiSiamo() {
         </section>
 
         <section className="team-section">
-          <h2 className="section-title">Il team</h2>
-          <p className="section-subtitle">
-            Siamo un team appassionato di cinema, tecnologia e community building
-          </p>
+          <div className="section-header">
+            <h2 className="h2">Il team</h2>
+            <p className="section-subtitle">
+              Siamo un team appassionato di cinema, tecnologia e community building
+            </p>
+          </div>
 
           <div className="team-grid" ref={teamGridRef}>
             {/* Team Member 1: Alessandro */}
