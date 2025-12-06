@@ -302,11 +302,13 @@ export default function ChiSiamo() {
         <section className="press-section">
           <div className="press-container-centered">
             <div className="press-content-centered">
-              <h2 className="press-title">Press Kit</h2>
-              <p className="press-subtitle">
-                Materiali per la stampa, loghi e informazioni sulla company. 
-                Per interviste, partnership o richieste media, contattaci.
-              </p>
+              <div className="section-header">
+                <h2 className="h2">Press Kit</h2>
+                <p className="press-subtitle">
+                  Materiali per la stampa, loghi e informazioni sulla company. 
+                  Per interviste, partnership o richieste media, contattaci.
+                </p>
+              </div>
 
               <div className="press-contact">
                 <div className="press-contact-icon">✉️</div>
