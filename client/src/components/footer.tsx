@@ -29,149 +29,108 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t border-border bg-card mt-auto">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          <div>
+    <footer className="footer">
+      <div className="footer-content">
+        
+        {/* Grid Principale */}
+        <div className="footer-grid">
+          
+          {/* Colonna 1: Brand */}
+          <div className="footer-column footer-brand">
             <Link href="/">
-              <a className="flex items-center gap-2 mb-4">
-                <img src={koinityLogo} alt="Koinity" className="h-8 w-auto" />
+              <a className="footer-logo" data-testid="link-footer-logo">
+                <img src={koinityLogo} alt="Koinity" className="h-10 w-auto" />
               </a>
             </Link>
-            <p className="text-sm text-muted-foreground mb-4">
-              La piattaforma di cinema on-demand dove la community sceglie cosa
-              vedere in sala.
+            <p className="footer-tagline">
+              La piattaforma di cinema on-demand dove la community sceglie cosa vedere in sala.
             </p>
-            <div className="flex gap-3">
-              <a href="https://t.me/+9G_y3W8Lt_g4ZTg0" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  data-testid="button-social-telegram"
-                  aria-label="Telegram"
-                >
-                  <Send className="h-4 w-4" />
-                </Button>
+            <div className="footer-social">
+              <a href="https://t.me/+9G_y3W8Lt_g4ZTg0" className="social-link" target="_blank" rel="noopener noreferrer" data-testid="button-social-telegram" aria-label="Telegram">
+                <Send className="h-5 w-5" />
               </a>
-              <a href="https://www.linkedin.com/company/koinity/?viewAsMember=true" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  data-testid="button-social-linkedin"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-4 w-4" />
-                </Button>
+              <a href="https://www.linkedin.com/company/koinity/?viewAsMember=true" className="social-link" target="_blank" rel="noopener noreferrer" data-testid="button-social-linkedin" aria-label="LinkedIn">
+                <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/koinity/" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  data-testid="button-social-instagram"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-4 w-4" />
-                </Button>
+              <a href="https://www.instagram.com/koinity/" className="social-link" target="_blank" rel="noopener noreferrer" data-testid="button-social-instagram" aria-label="Instagram">
+                <Instagram className="h-5 w-5" />
               </a>
             </div>
           </div>
-
-          <div>
-            <h3 className="font-semibold mb-4">Esplora</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/vota">
-                  <a className="text-muted-foreground hover:text-foreground transition-colors hover-elevate px-2 py-1 -ml-2 rounded-md inline-block" data-testid="link-footer-vota">
-                    Vota & Partecipa
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/proponi">
-                  <a className="text-muted-foreground hover:text-foreground transition-colors hover-elevate px-2 py-1 -ml-2 rounded-md inline-block" data-testid="link-footer-proponi">
-                    Proponi un Film
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/community">
-                  <a className="text-muted-foreground hover:text-foreground transition-colors hover-elevate px-2 py-1 -ml-2 rounded-md inline-block" data-testid="link-footer-community">
-                    Community
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog">
-                  <a className="text-muted-foreground hover:text-foreground transition-colors hover-elevate px-2 py-1 -ml-2 rounded-md inline-block" data-testid="link-footer-blog">
-                    Blog
-                  </a>
-                </Link>
-              </li>
-            </ul>
+          
+          {/* Colonna 2: Esplora */}
+          <div className="footer-column">
+            <h3 className="footer-title">Esplora</h3>
+            <nav className="footer-links">
+              <Link href="/vota">
+                <a className="footer-link" data-testid="link-footer-vota">Vota & Partecipa</a>
+              </Link>
+              <Link href="/proponi">
+                <a className="footer-link" data-testid="link-footer-proponi">Proponi un Film</a>
+              </Link>
+              <Link href="/community">
+                <a className="footer-link" data-testid="link-footer-community">Community</a>
+              </Link>
+              <Link href="/blog">
+                <a className="footer-link" data-testid="link-footer-blog">Blog</a>
+              </Link>
+            </nav>
           </div>
-
-          <div>
-            <h3 className="font-semibold mb-4">Azienda</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/chi-siamo">
-                  <a className="text-muted-foreground hover:text-foreground transition-colors hover-elevate px-2 py-1 -ml-2 rounded-md inline-block" data-testid="link-footer-chi-siamo">
-                    Chi Siamo
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/cinema">
-                  <a className="text-muted-foreground hover:text-foreground transition-colors hover-elevate px-2 py-1 -ml-2 rounded-md inline-block" data-testid="link-footer-cinema">
-                    Per i Cinema
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contatti">
-                  <a className="text-muted-foreground hover:text-foreground transition-colors hover-elevate px-2 py-1 -ml-2 rounded-md inline-block" data-testid="link-footer-contatti">
-                    Contatti
-                  </a>
-                </Link>
-              </li>
-            </ul>
+          
+          {/* Colonna 3: Azienda */}
+          <div className="footer-column">
+            <h3 className="footer-title">Azienda</h3>
+            <nav className="footer-links">
+              <Link href="/chi-siamo">
+                <a className="footer-link" data-testid="link-footer-chi-siamo">Chi Siamo</a>
+              </Link>
+              <Link href="/cinema">
+                <a className="footer-link" data-testid="link-footer-cinema">Per i Cinema</a>
+              </Link>
+              <Link href="/contatti">
+                <a className="footer-link" data-testid="link-footer-contatti">Contatti</a>
+              </Link>
+            </nav>
           </div>
-
-          <div>
-            <h3 className="font-semibold mb-4">Newsletter</h3>
-            <p className="text-sm text-muted-foreground mb-4">
+          
+          {/* Colonna 4: Newsletter */}
+          <div className="footer-column newsletter-column">
+            <h3 className="footer-title">Newsletter</h3>
+            <p className="newsletter-description">
               Ricevi aggiornamenti su nuove proiezioni e eventi.
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="space-y-2">
-              <Input
+            <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
+              <input
                 type="email"
+                className="newsletter-input"
                 placeholder="La tua email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 data-testid="input-newsletter-email"
               />
-              <Button type="submit" className="w-full" data-testid="button-newsletter-submit">
+              <button type="submit" className="newsletter-button" data-testid="button-newsletter-submit">
                 Iscriviti
-              </Button>
+              </button>
             </form>
           </div>
+          
         </div>
-
-        <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Koinity. Tutti i diritti riservati.</p>
-          <div className="flex gap-4">
+        
+        {/* Bottom Bar */}
+        <div className="footer-bottom">
+          <p className="footer-copyright">
+            © {new Date().getFullYear()} Koinity. Tutti i diritti riservati.
+          </p>
+          <nav className="footer-legal">
             <Link href="/privacy">
-              <a className="hover:text-foreground transition-colors hover-elevate px-2 py-1 rounded-md" data-testid="link-footer-privacy">
-                Privacy
-              </a>
+              <a className="footer-legal-link" data-testid="link-footer-privacy">Privacy</a>
             </Link>
             <Link href="/termini">
-              <a className="hover:text-foreground transition-colors hover-elevate px-2 py-1 rounded-md" data-testid="link-footer-termini">
-                Termini
-              </a>
+              <a className="footer-legal-link" data-testid="link-footer-termini">Termini</a>
             </Link>
-          </div>
+          </nav>
         </div>
+        
       </div>
     </footer>
   );

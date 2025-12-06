@@ -1,0 +1,394 @@
+Fix Footer - Spacing e Allineamento
+Problema Attuale
+
+Spacing inconsistente tra colonne
+Allineamento verticale non corretto
+Padding generale da migliorare
+Newsletter input/button poco spaziati
+
+
+✅ SOLUZIONE: Footer CSS Corretto
+css/* === FOOTER CONTAINER === */
+.footer {
+  background: #000050;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 80px 40px 40px;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* === FOOTER GRID === */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.3fr;
+  gap: 80px;
+  margin-bottom: 60px;
+}
+
+/* === FOOTER COLUMN === */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo Column */
+.footer-brand {
+  max-width: 280px;
+}
+
+.footer-logo {
+  margin-bottom: 24px;
+  display: block;
+}
+
+.footer-tagline {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 32px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background: rgba(255, 214, 0, 0.15);
+  border-color: rgba(255, 214, 0, 0.4);
+  color: #FFD600;
+  transform: translateY(-2px);
+}
+
+/* === FOOTER TITLES === */
+.footer-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+/* === FOOTER LINKS === */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: #FFD600;
+  transform: translateX(4px);
+}
+
+/* === NEWSLETTER COLUMN === */
+.newsletter-column {
+  max-width: 400px;
+}
+
+.newsletter-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 24px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(0, 0, 50, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-input:focus {
+  background: rgba(0, 0, 80, 0.6);
+  border-color: #FFD600;
+  box-shadow: 0 0 0 4px rgba(255, 214, 0, 0.1);
+}
+
+.newsletter-button {
+  width: 100%;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #FFD600, #FF8C00);
+  border: none;
+  border-radius: 12px;
+  color: #000050;
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 16px rgba(255, 214, 0, 0.3);
+}
+
+.newsletter-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 214, 0, 0.5);
+}
+
+/* === FOOTER BOTTOM === */
+.footer-bottom {
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copyright {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 32px;
+}
+
+.footer-legal-link {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.footer-legal-link:hover {
+  color: #FFD600;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 40px;
+  }
+  
+  .newsletter-column {
+    grid-column: span 2;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 24px 32px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .footer-brand {
+    max-width: 100%;
+  }
+  
+  .newsletter-column {
+    grid-column: span 1;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-legal {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+HTML Struttura Corretta
+html<footer class="footer">
+  <div class="footer-content">
+    
+    <!-- Grid Principale -->
+    <div class="footer-grid">
+      
+      <!-- Colonna 1: Brand -->
+      <div class="footer-column footer-brand">
+        <a href="/" class="footer-logo">
+          <img src="logo.svg" alt="Koinity" width="100" height="40">
+        </a>
+        <p class="footer-tagline">
+          La piattaforma di cinema on-demand dove la community 
+          sceglie cosa vedere in sala.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Telegram">
+            ✈️
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            💼
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            📸
+          </a>
+        </div>
+      </div>
+      
+      <!-- Colonna 2: Esplora -->
+      <div class="footer-column">
+        <h3 class="footer-title">Esplora</h3>
+        <nav class="footer-links">
+          <a href="/vota" class="footer-link">Vota & Partecipa</a>
+          <a href="/proponi-film" class="footer-link">Proponi un Film</a>
+          <a href="/community" class="footer-link">Community</a>
+          <a href="/blog" class="footer-link">Blog</a>
+        </nav>
+      </div>
+      
+      <!-- Colonna 3: Azienda -->
+      <div class="footer-column">
+        <h3 class="footer-title">Azienda</h3>
+        <nav class="footer-links">
+          <a href="/chi-siamo" class="footer-link">Chi Siamo</a>
+          <a href="/per-i-cinema" class="footer-link">Per i Cinema</a>
+          <a href="/contatti" class="footer-link">Contatti</a>
+        </nav>
+      </div>
+      
+      <!-- Colonna 4: Newsletter -->
+      <div class="footer-column newsletter-column">
+        <h3 class="footer-title">Newsletter</h3>
+        <p class="newsletter-description">
+          Ricevi aggiornamenti su nuove proiezioni e eventi.
+        </p>
+        <form class="newsletter-form">
+          <input 
+            type="email" 
+            class="newsletter-input" 
+            placeholder="La tua email"
+            required
+          >
+          <button type="submit" class="newsletter-button">
+            Iscriviti
+          </button>
+        </form>
+      </div>
+      
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © 2025 Koinity. Tutti i diritti riservati.
+      </p>
+      <nav class="footer-legal">
+        <a href="/privacy" class="footer-legal-link">Privacy</a>
+        <a href="/termini" class="footer-legal-link">Termini</a>
+      </nav>
+    </div>
+    
+  </div>
+</footer>
+
+Key Improvements
+✅ Spacing Corretto
+
+Padding footer: 80px top, 40px bottom
+Gap colonne: 80px (desktop), 48px (tablet), 40px (mobile)
+Gap elementi interni: 16px (links), 24px (sections)
+Margin bottom grid: 60px
+
+✅ Newsletter Migliorato
+
+Form gap: 16px tra input e button
+Input padding: 16px 20px (height 52px)
+Button padding: 16px 24px (height 52px)
+Border radius: 12px uniforme
+
+✅ Social Icons
+
+Size: 44x44px
+Gap: 16px
+Border radius: 12px
+Hover: translateY(-2px)
+
+✅ Responsive
+
+Desktop: 4 colonne
+Tablet (< 1024px): 2x2 grid, newsletter span 2
+Mobile (< 768px): 1 colonna stack
+
+
+Quick Fixes Specifici
+Fix 1: Allinea Verticalmente le Colonne
+css.footer-column {
+  align-self: start; /* Allinea tutto in alto */
+}
+Fix 2: Più Spazio Colonne Centrali
+css.footer-grid {
+  gap: 80px; /* Era probabilmente 40px o meno */
+}
+Fix 3: Newsletter Form Spacing
+css.newsletter-form {
+  gap: 16px; /* Spazio tra input e button */
+}
+Fix 4: Social Icons Spacing
+css.footer-social {
+  gap: 16px; /* Spazio uniforme tra icon */
+}
+Fix 5: Footer Bottom Padding
+css.footer-bottom {
+  padding-top: 32px;
+  margin-top: 60px; /* Spazio da content sopra */
+}
+
+Verifica Visiva
+Dopo aver applicato il CSS, verifica:
+
+ ✅ Colonne allineate in alto
+ ✅ Spacing 80px tra colonne desktop
+ ✅ Newsletter input e button ben spaziati (16px)
+ ✅ Social icons 44x44px con gap 16px
+ ✅ Footer bottom separato da content (60px margin-top)
+ ✅ Link hover funzionano con translateX(4px)
+ ✅ Responsive corretto su mobile

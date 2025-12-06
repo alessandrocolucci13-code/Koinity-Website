@@ -111,6 +111,15 @@ Preferred communication style: Simple, everyday language.
 - **Form Spacing**: 24px margin-bottom on form groups
 - **Applied**: Ensures proper spacing, readability, and touch target sizes across all mobile devices
 
+**Footer** (STEP 11 - Spacing e Allineamento):
+- **Footer Container**: Background #000050, padding 80px 40px desktop / 60px 24px mobile
+- **Footer Grid**: 4-column desktop (1.2fr 1fr 1fr 1.3fr), 2-column tablet, 1-column mobile
+- **Column Spacing**: 80px gap desktop (reduced responsive), align-self start for vertical alignment
+- **Newsletter Form**: 16px gap between input/button, both 44px min-height for touch targets
+- **Social Icons**: 44x44px, 16px gap, hover translateY(-2px), border-radius 12px
+- **Footer Links**: 16px vertical gap, hover translateX(4px) with yellow gradient
+- **Footer Bottom**: 32px top padding, centered on mobile with flex-direction column
+
 **Component Architecture**:
 - Reusable UI primitives in `components/ui/` (shadcn pattern)
 - Feature components: `ProposalCard`, `Filters`, `ProgressBar`, `Stepper`
