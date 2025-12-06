@@ -1,0 +1,134 @@
+STEP 2: Sezione Mission - Redesign Completo
+css/* === MISSION SECTION === */
+.mission-section {
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Badge sopra */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(255, 214, 0, 0.15);
+  border: 2px solid rgba(255, 214, 0, 0.3);
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #FFD600;
+  margin-bottom: 24px;
+}
+
+.mission-title {
+  font-size: 48px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 32px;
+  line-height: 1.1;
+}
+
+.mission-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 24px;
+}
+
+/* Highlighted box - MENO INVADENTE */
+.mission-highlight {
+  padding: 32px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 214, 0, 0.08) 0%,
+    rgba(255, 140, 0, 0.04) 100%
+  );
+  border-left: 4px solid #FFD600;
+  border-radius: 16px;
+  margin: 40px 0;
+}
+
+.mission-highlight-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* Key Points - PIÙ SPAZIO */
+.mission-points {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.point-item {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s;
+}
+
+.point-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 214, 0, 0.3);
+  transform: translateX(8px);
+}
+
+.point-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 214, 0, 0.2),
+    rgba(255, 140, 0, 0.15)
+  );
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.point-content {
+  flex: 1;
+  padding-top: 4px;
+}
+
+.point-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.point-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 768px) {
+  .mission-section {
+    padding: 80px 24px;
+  }
+  
+  .mission-title {
+    font-size: 36px;
+  }
+  
+  .point-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+}
