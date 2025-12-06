@@ -204,16 +204,14 @@ export default function Cinema() {
       <section className="py-20 md:py-32 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           {/* Header */}
-          <div className="text-center mb-16 md:mb-24">
-            <h2 className="font-serif text-4xl md:text-5xl font-black text-foreground mb-6">
+          <div className="section-header">
+            <h2 className="h2">
               Il valore per gli{' '}
-              <span className="text-primary">esercenti</span>
+              <span className="highlight">esercenti</span>
             </h2>
-            <div className="bg-gradient-to-r from-foreground/5 to-primary/5 border border-primary/20 rounded-2xl backdrop-blur-sm p-6 md:p-8 max-w-3xl mx-auto">
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Koinity ti permette di programmare proiezioni basate sulla domanda reale del tuo pubblico locale. Riduci il rischio di sale vuote e scopri quali film la tua community vuole davvero vedere.
-              </p>
-            </div>
+            <p className="section-subtitle">
+              Koinity ti permette di programmare proiezioni basate sulla domanda reale del tuo pubblico locale. Riduci il rischio di sale vuote e scopri quali film la tua community vuole davvero vedere.
+            </p>
           </div>
 
           {/* Benefits Grid */}
