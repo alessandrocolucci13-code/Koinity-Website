@@ -72,6 +72,14 @@ Preferred communication style: Simple, everyday language.
 - **Responsive**: 1024px breakpoint (grid-4 → 2 cols), 768px breakpoint (all grids → 1 col, 24px gap)
 - **Applied**: Why section uses grid-3, community dialogs use grid-60-40
 
+**Button System** (STEP 6 - Consistenza CTA):
+- **Base Button**: .btn with 18px vertical padding, 32px horizontal, 16px font, 800 weight, uppercase, 16px radius
+- **Primary Variant**: .btn-primary with yellow gradient (#FFD600 → #FF8C00), dark text, yellow shadow, -2px hover lift
+- **Secondary Variant**: .btn-secondary with transparent bg, white border, blur, yellow border on hover
+- **Size Variants**: .btn-small (14px font, 14px v-pad), .btn-large (18px font, 22px v-pad)
+- **Full Width**: .btn-block stretches to 100% container width
+- **Interactions**: Smooth 0.3s transitions, -2px translateY on hover, smooth active state
+
 **Component Architecture**:
 - Reusable UI primitives in `components/ui/` (shadcn pattern)
 - Feature components: `ProposalCard`, `Filters`, `ProgressBar`, `Stepper`
