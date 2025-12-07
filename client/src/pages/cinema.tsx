@@ -19,7 +19,6 @@ import { demoRequestSchema, type DemoRequest } from "@shared/schema";
 import { useEffect, useRef, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import trustLogos from "@assets/Gemini_Generated_Image_gtkdy8gtkdy8gtkd-removebg-preview_1764741275758.png";
 import almaLogo from "@assets/image_1765066171128.png";
 import unicornLogo from "@assets/image_1765066182463.png";
 import repubblica from "@assets/image_1765066188916.png";
@@ -190,17 +189,6 @@ export default function Cinema() {
                 <span>Scopri Come Funziona</span>
                 <ChevronDown className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform" />
               </Button>
-            </div>
-
-            {/* Trust section */}
-            <div className="text-center">
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Si fidano di noi</p>
-              <img
-                src={trustLogos}
-                alt="Partner logos"
-                className="w-full max-w-4xl mx-auto"
-                data-testid="trust-logos"
-              />
             </div>
 
             {/* Partner Logos Box */}
