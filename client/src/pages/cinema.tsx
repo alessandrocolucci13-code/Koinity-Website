@@ -126,7 +126,7 @@ export default function Cinema() {
             {/* Stats Section */}
             <div
               ref={statsRef}
-              className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 mb-12 p-6 md:p-8 bg-gradient-to-r from-foreground/5 to-primary/5 border border-primary/20 rounded-2xl backdrop-blur-md"
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 mb-12 p-6 md:p-8 bg-gradient-to-r from-foreground/5 to-primary/5 border border-primary/20 rounded-2xl backdrop-blur-md"
             >
               <div className="text-center py-2">
                 <div className={`text-4xl md:text-5xl font-black text-primary transition-all duration-1000 ${animated ? 'opacity-100' : 'opacity-0'}`}>
@@ -136,26 +136,6 @@ export default function Cinema() {
                   Tasso di Riempimento
                 </div>
                 <div className="text-xs text-muted-foreground/70 mt-1">Sale mediamente piene</div>
-              </div>
-
-              <div className="text-center py-2 md:border-l md:border-primary/20">
-                <div className={`text-4xl md:text-5xl font-black text-primary transition-all duration-1000 ${animated ? 'opacity-100' : 'opacity-0'}`}>
-                  {animated ? '200+' : '0+'}
-                </div>
-                <div className="text-xs md:text-sm font-bold uppercase tracking-wider text-muted-foreground mt-2">
-                  Eventi Organizzati
-                </div>
-                <div className="text-xs text-muted-foreground/70 mt-1">Nell'ultimo anno</div>
-              </div>
-
-              <div className="text-center py-2 md:border-l md:border-primary/20">
-                <div className={`text-4xl md:text-5xl font-black text-primary transition-all duration-1000 ${animated ? 'opacity-100' : 'opacity-0'}`}>
-                  {animated ? '50+' : '0+'}
-                </div>
-                <div className="text-xs md:text-sm font-bold uppercase tracking-wider text-muted-foreground mt-2">
-                  Cinema Partner
-                </div>
-                <div className="text-xs text-muted-foreground/70 mt-1">In tutta Italia</div>
               </div>
 
               <div className="text-center py-2 md:border-l md:border-primary/20">
