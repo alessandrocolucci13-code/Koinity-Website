@@ -3390,19 +3390,15 @@
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: transparent;
+  transition: opacity 0.2s ease;
 }
 
 .form-input:focus::placeholder,
-.form-textarea:focus::placeholder {
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
-
+.form-textarea:focus::placeholder,
 .form-input:not(:placeholder-shown)::placeholder,
 .form-textarea:not(:placeholder-shown)::placeholder {
-  opacity: 0 !important;
-  visibility: hidden !important;
+  opacity: 0;
 }
 
 .form-label {

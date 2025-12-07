@@ -373,7 +373,7 @@ export default function Community() {
                       <input 
                         {...field} 
                         type="text"
-                        placeholder="Nome completo"
+                        placeholder=" "
                         className="form-input" 
                         data-testid="input-name" 
                       />
@@ -390,7 +390,7 @@ export default function Community() {
                       <input 
                         {...field} 
                         type="email"
-                        placeholder="Email"
+                        placeholder=" "
                         className="form-input" 
                         data-testid="input-email" 
                       />
@@ -407,7 +407,7 @@ export default function Community() {
                       <input 
                         {...field} 
                         type="text"
-                        placeholder="Città"
+                        placeholder=" "
                         className="form-input" 
                         data-testid="input-city" 
                       />
@@ -423,7 +423,7 @@ export default function Community() {
                     <div className="form-group">
                       <textarea 
                         {...field} 
-                        placeholder="Perché vuoi diventare ambassador?"
+                        placeholder=" "
                         className="form-textarea" 
                         data-testid="input-motivation"
                       />

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidatura Ambassador</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #1a1a5e;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .form-container {
+            max-width: 550px;
+            width: 100%;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-header h1 {
+            color: white;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .form-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 18px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .input-group textarea {
+            min-height: 130px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        /* Nascondi il placeholder quando l'input è attivo o ha contenuto */
+        .input-group input:focus::placeholder,
+        .input-group textarea:focus::placeholder,
+        .input-group input:not(:placeholder-shown)::placeholder,
+        .input-group textarea:not(:placeholder-shown)::placeholder {
+            opacity: 0;
+        }
+
+        /* Placeholder iniziale */
+        .input-group input::placeholder,
+        .input-group textarea::placeholder {
+            color: transparent;
+            transition: opacity 0.2s ease;
+        }
+
+        /* Label floating */
+        .input-group label {
+            position: absolute;
+            top: 18px;
+            left: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            background: transparent;
+        }
+
+        /* Label quando l'input è attivo o ha contenuto */
+        .input-group input:focus ~ label,
+        .input-group textarea:focus ~ label,
+        .input-group input:not(:placeholder-shown) ~ label,
+        .input-group textarea:not(:placeholder-shown) ~ label {
+            top: -12px;
+            left: 16px;
+            font-size: 13px;
+            color: #FFB800;
+            background: #1a1a5e;
+            padding: 0 6px;
+        }
+
+        /* Bordo giallo quando attivo */
+        .input-group input:focus,
+        .input-group textarea:focus {
+            border-color: #FFB800;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(90deg, #FFB800 0%, #FF8C00 100%);
+            border: none;
+            border-radius: 12px;
+            color: #000;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 184, 0, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .form-header h1 {
+                font-size: 28px;
+            }
+
+            .form-header p {
+                font-size: 14px;
+            }
+
+            .input-group input,
+            .input-group textarea {
+                padding: 16px 18px;
+            }
+
+            .input-group label {
+                top: 16px;
+                left: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Candidatura</h1>
+            <p>Compila il modulo per candidarti al programma ambassador.</p>
+        </div>
+
+        <form id="candidaturaForm">
+            <div class="input-group">
+                <input type="text" id="nome" placeholder=" " required>
+                <label for="nome">Nome completo</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" placeholder=" " required>
+                <label for="email">Email</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="citta" placeholder=" " required>
+                <label for="citta">Città</label>
+            </div>
+
+            <div class="input-group">
+                <textarea id="motivazione" placeholder=" " required></textarea>
+                <label for="motivazione">Perché vuoi diventare ambassador?</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Invia Candidatura</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('candidaturaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const citta = document.getElementById('citta').value;
+            const motivazione = document.getElementById('motivazione').value;
+
+            // Qui puoi aggiungere la logica per inviare i dati
+            console.log({
+                nome,
+                email,
+                citta,
+                motivazione
+            });
+
+            alert('Candidatura inviata con successo!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
