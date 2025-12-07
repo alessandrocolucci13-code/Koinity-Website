@@ -20,6 +20,12 @@ import { useEffect, useRef, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import trustLogos from "@assets/Gemini_Generated_Image_gtkdy8gtkdy8gtkd-removebg-preview_1764741275758.png";
+import almaLogo from "@assets/image_1765066171128.png";
+import unicornLogo from "@assets/image_1765066182463.png";
+import repubblica from "@assets/image_1765066188916.png";
+import utsApple from "@assets/image_1765066194828.png";
+import almacube from "@assets/image_1765066201011.png";
+import cineteca from "@assets/image_1765066207172.png";
 
 export default function Cinema() {
   const { toast } = useToast();
@@ -195,6 +201,33 @@ export default function Cinema() {
                 className="w-full max-w-4xl mx-auto"
                 data-testid="trust-logos"
               />
+            </div>
+
+            {/* Partner Logos Box */}
+            <div className="mt-16 bg-white rounded-2xl p-12 max-w-4xl mx-auto">
+              <div className="grid grid-cols-3 gap-8">
+                {/* Row 1 */}
+                <div className="flex items-center justify-center">
+                  <img src={almaLogo} alt="Alma Mater Studiorum" className="h-24 object-contain" data-testid="logo-alma" />
+                </div>
+                <div className="flex items-center justify-center">
+                  <img src={unicornLogo} alt="Unicorn Factory Lisboa" className="h-24 object-contain" data-testid="logo-unicorn" />
+                </div>
+                <div className="flex items-center justify-center">
+                  <img src={repubblica} alt="la Repubblica" className="h-24 object-contain" data-testid="logo-repubblica" />
+                </div>
+                
+                {/* Row 2 */}
+                <div className="flex items-center justify-center">
+                  <img src={utsApple} alt="UTS Apple Foundation" className="h-24 object-contain" data-testid="logo-uts" />
+                </div>
+                <div className="flex items-center justify-center">
+                  <img src={almacube} alt="ALMACUBE" className="h-24 object-contain" data-testid="logo-almacube" />
+                </div>
+                <div className="flex items-center justify-center">
+                  <img src={cineteca} alt="Cineteca Bologna" className="h-24 object-contain" data-testid="logo-cineteca" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
