@@ -438,138 +438,140 @@ export default function Cinema() {
             </div>
 
             {/* RIGHT COLUMN - Premium Form */}
-            <div className="demo-form-container">
-              <div className="form-header">
-                <h3 className="form-title">Richiedi la Tua Demo</h3>
-                <p className="form-subtitle">Compila il form e sarai contattato entro 24 ore</p>
-              </div>
+            <div className="demo-form-wrapper">
+              <div className="demo-form-container">
+                <div className="form-header">
+                  <h3 className="form-title">Richiedi la Tua Demo</h3>
+                  <p className="form-subtitle">Compila il form e sarai contattato entro 24 ore</p>
+                </div>
 
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="demo-form">
-                  <div className="form-row">
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="demo-form">
+                    <div className="form-row">
+                      <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem className="form-group">
+                            <FormControl>
+                              <Input 
+                                placeholder=" " 
+                                {...field} 
+                                data-testid="input-name"
+                                className="form-input"
+                              />
+                            </FormControl>
+                            <FormLabel className="form-label">Nome completo</FormLabel>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem className="form-group">
+                            <FormControl>
+                              <Input
+                                type="email"
+                                placeholder=" "
+                                {...field}
+                                data-testid="input-email"
+                                className="form-input"
+                              />
+                            </FormControl>
+                            <FormLabel className="form-label">Email</FormLabel>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="form-row">
+                      <FormField
+                        control={form.control}
+                        name="cinemaNome"
+                        render={({ field }) => (
+                          <FormItem className="form-group">
+                            <FormControl>
+                              <Input
+                                placeholder=" "
+                                {...field}
+                                data-testid="input-cinema-name"
+                                className="form-input"
+                              />
+                            </FormControl>
+                            <FormLabel className="form-label">Nome del cinema</FormLabel>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="città"
+                        render={({ field }) => (
+                          <FormItem className="form-group">
+                            <FormControl>
+                              <Input 
+                                placeholder=" " 
+                                {...field} 
+                                data-testid="input-city"
+                                className="form-input"
+                              />
+                            </FormControl>
+                            <FormLabel className="form-label">Città</FormLabel>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
                     <FormField
                       control={form.control}
-                      name="name"
+                      name="message"
                       render={({ field }) => (
                         <FormItem className="form-group">
                           <FormControl>
-                            <Input 
-                              placeholder=" " 
-                              {...field} 
-                              data-testid="input-name"
-                              className="form-input"
-                            />
-                          </FormControl>
-                          <FormLabel className="form-label">Nome completo</FormLabel>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem className="form-group">
-                          <FormControl>
-                            <Input
-                              type="email"
+                            <Textarea
                               placeholder=" "
                               {...field}
-                              data-testid="input-email"
-                              className="form-input"
+                              data-testid="input-message"
+                              className="form-textarea"
                             />
                           </FormControl>
-                          <FormLabel className="form-label">Email</FormLabel>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-
-                  <div className="form-row">
-                    <FormField
-                      control={form.control}
-                      name="cinemaNome"
-                      render={({ field }) => (
-                        <FormItem className="form-group">
-                          <FormControl>
-                            <Input
-                              placeholder=" "
-                              {...field}
-                              data-testid="input-cinema-name"
-                              className="form-input"
-                            />
-                          </FormControl>
-                          <FormLabel className="form-label">Nome del cinema</FormLabel>
+                          <FormLabel className="form-label">Messaggio (opzionale)</FormLabel>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
 
-                    <FormField
-                      control={form.control}
-                      name="città"
-                      render={({ field }) => (
-                        <FormItem className="form-group">
-                          <FormControl>
-                            <Input 
-                              placeholder=" " 
-                              {...field} 
-                              data-testid="input-city"
-                              className="form-input"
-                            />
-                          </FormControl>
-                          <FormLabel className="form-label">Città</FormLabel>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem className="form-group">
-                        <FormControl>
-                          <Textarea
-                            placeholder=" "
-                            {...field}
-                            data-testid="input-message"
-                            className="form-textarea"
-                          />
-                        </FormControl>
-                        <FormLabel className="form-label">Messaggio (opzionale)</FormLabel>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <Button 
-                    type="submit" 
-                    data-testid="button-submit"
-                    className="form-submit"
-                  >
-                    Richiedi Demo Gratuita
-                  </Button>
-                </form>
-              </Form>
-            </div>
-
-            {/* Trust signals - Outside the form container */}
-            <div className="demo-trust">
-              <div className="trust-item">
-                <Shield className="w-4 h-4 trust-icon" />
-                <span>100% Gratuito</span>
+                    <Button 
+                      type="submit" 
+                      data-testid="button-submit"
+                      className="form-submit"
+                    >
+                      Richiedi Demo Gratuita
+                    </Button>
+                  </form>
+                </Form>
               </div>
-              <div className="trust-item">
-                <Clock className="w-4 h-4 trust-icon" />
-                <span>30 minuti</span>
-              </div>
-              <div className="trust-item">
-                <Headphones className="w-4 h-4 trust-icon" />
-                <span>Supporto dedicato</span>
+
+              {/* Trust signals - Below the form box */}
+              <div className="demo-trust">
+                <div className="trust-item">
+                  <Shield className="w-4 h-4 trust-icon" />
+                  <span>100% Gratuito</span>
+                </div>
+                <div className="trust-item">
+                  <Clock className="w-4 h-4 trust-icon" />
+                  <span>30 minuti</span>
+                </div>
+                <div className="trust-item">
+                  <Headphones className="w-4 h-4 trust-icon" />
+                  <span>Supporto dedicato</span>
+                </div>
               </div>
             </div>
           </div>
