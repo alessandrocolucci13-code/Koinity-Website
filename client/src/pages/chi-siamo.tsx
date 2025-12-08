@@ -329,21 +329,6 @@ export default function ChiSiamo() {
                   </p>
                 </div>
               </div>
-
-              <div className="press-stats">
-                <div className="stat-item">
-                  <div className="stat-number">50K+</div>
-                  <div className="stat-label">Utenti</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-number">200+</div>
-                  <div className="stat-label">Film Proiettati</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-number">30+</div>
-                  <div className="stat-label">Città</div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
