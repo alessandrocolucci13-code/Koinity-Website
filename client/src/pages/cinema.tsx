@@ -205,7 +205,7 @@ export default function Cinema() {
       </div>
 
       {/* BENEFITS SECTION */}
-      <section className="py-20 md:py-32 bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           {/* Header */}
           <div className="section-header">
