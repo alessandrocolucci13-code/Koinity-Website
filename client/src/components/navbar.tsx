@@ -34,7 +34,7 @@ export function Navbar() {
                 <a
                   className={`text-sm font-medium transition-colors hover-elevate active-elevate-2 px-3 py-2 rounded-md ${
                     location === item.href
-                      ? "text-foreground"
+                      ? "text-yellow-500 font-semibold"
                       : "text-muted-foreground"
                   }`}
                   data-testid={`link-nav-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
@@ -80,7 +80,7 @@ export function Navbar() {
                 <a
                   className={`block px-3 py-2 rounded-md text-sm font-medium hover-elevate active-elevate-2 ${
                     location === item.href
-                      ? "text-foreground bg-accent"
+                      ? "text-yellow-500 font-semibold"
                       : "text-muted-foreground"
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
