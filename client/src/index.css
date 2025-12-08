@@ -3410,6 +3410,8 @@
   font-family: inherit;
   transition: all 0.3s ease;
   outline: none;
+  line-height: 1.5;
+  vertical-align: middle;
 }
 
 .form-input:focus,
