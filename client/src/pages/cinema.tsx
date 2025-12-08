@@ -555,21 +555,21 @@ export default function Cinema() {
                   </Button>
                 </form>
               </Form>
+            </div>
 
-              {/* Trust signals */}
-              <div className="demo-trust">
-                <div className="trust-item">
-                  <Shield className="w-4 h-4 trust-icon" />
-                  <span>100% Gratuito</span>
-                </div>
-                <div className="trust-item">
-                  <Clock className="w-4 h-4 trust-icon" />
-                  <span>30 minuti</span>
-                </div>
-                <div className="trust-item">
-                  <Headphones className="w-4 h-4 trust-icon" />
-                  <span>Supporto dedicato</span>
-                </div>
+            {/* Trust signals - Outside the form container */}
+            <div className="demo-trust">
+              <div className="trust-item">
+                <Shield className="w-4 h-4 trust-icon" />
+                <span>100% Gratuito</span>
+              </div>
+              <div className="trust-item">
+                <Clock className="w-4 h-4 trust-icon" />
+                <span>30 minuti</span>
+              </div>
+              <div className="trust-item">
+                <Headphones className="w-4 h-4 trust-icon" />
+                <span>Supporto dedicato</span>
               </div>
             </div>
           </div>
