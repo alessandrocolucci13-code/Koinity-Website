@@ -73,16 +73,17 @@ export default function Vota() {
         title="Vota & Partecipa"
         description="Esplora le proposte della community Koinity e vota per i film che vorresti vedere in sala. Ogni voto ci avvicina alla proiezione. Scopri i film più votati nella tua città."
       />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="mb-12 text-center">
+      <section className="page-hero">
         <h1 className="blog-title" data-testid="text-page-title">
           Vota & <span className="highlight">Partecipa</span>
         </h1>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
+        <p className="hero-subtitle">
           Esplora le proposte della community e vota per i film che vorresti
           vedere in sala. Ogni voto ci avvicina alla proiezione!
         </p>
-      </div>
+      </section>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
       <div className="mb-8">
         <Filters

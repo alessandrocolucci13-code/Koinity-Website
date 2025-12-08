@@ -1086,7 +1086,26 @@
   }
 }
 
-/* ====== CHI SIAMO PAGE - HERO SECTION ====== */
+/* ====== PAGE HERO SECTIONS ====== */
+
+/* Base Hero Section */
+.page-hero {
+  padding: 120px 40px 80px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-hero .blog-title {
+  margin-bottom: 24px;
+}
+
+.page-hero .hero-subtitle {
+  font-size: 22px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0;
+}
 
 /* Hero Chi Siamo */
 .chi-siamo-hero {
@@ -1108,6 +1127,18 @@
 }
 
 @media (max-width: 768px) {
+  .page-hero {
+    padding: 80px 24px 60px;
+  }
+  
+  .page-hero .blog-title {
+    font-size: 44px;
+  }
+  
+  .page-hero .hero-subtitle {
+    font-size: 18px;
+  }
+
   .chi-siamo-hero {
     padding: 80px 24px 60px;
   }
