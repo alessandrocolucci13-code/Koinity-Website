@@ -4214,7 +4214,7 @@
 }
 
 .demo-container {
-  max-width: calc(100% - 80px);
+  max-width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
