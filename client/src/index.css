@@ -4026,6 +4026,7 @@
 
 /* Connettori Frecce */
 .step-connector-h {
+  display: none;
   position: absolute;
   top: 50%;
   width: 40px;
@@ -4068,6 +4069,7 @@
 }
 
 .step-connector-v {
+  display: none;
   position: absolute;
   left: 50%;
   width: 2px;
