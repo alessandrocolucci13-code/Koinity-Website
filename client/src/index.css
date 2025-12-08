@@ -4934,7 +4934,7 @@
   padding: 80px 40px 100px;
   max-width: 1400px;
   margin: 0 auto;
-  background: linear-gradient(180deg, #06138A 0%, #06138A 100%);
+  background: transparent;
 }
 
 .section-header {
