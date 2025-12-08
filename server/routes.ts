@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertProposalSchema, contactFormSchema, demoRequestSchema, ambassadorFormSchema, newsletterSchema } from "@shared/schema";
+import { addSubscriberToMailchimp } from "./mailchimp";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/proposals", async (_req, res) => {
@@ -55,6 +56,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = contactFormSchema.parse(req.body);
       await storage.submitContactForm(validatedData);
+      
+      await addSubscriberToMailchimp({
+        email: validatedData.email,
+        firstName: validatedData.name?.split(" ")[0],
+        lastName: validatedData.name?.split(" ").slice(1).join(" "),
+        source: "contact_form",
+      });
+      
       res.status(200).json({ success: true });
     } catch (error) {
       res.status(400).json({ error: "Invalid contact form data" });
@@ -74,6 +83,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = demoRequestSchema.parse(req.body);
       const saved = await storage.submitDemoRequest(validatedData);
+      
+      await addSubscriberToMailchimp({
+        email: validatedData.email,
+        firstName: validatedData.name?.split(" ")[0],
+        lastName: validatedData.name?.split(" ").slice(1).join(" "),
+        source: "demo_request",
+      });
+      
       res.status(201).json(saved);
     } catch (error) {
       if (error instanceof Error) {
@@ -88,6 +105,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = ambassadorFormSchema.parse(req.body);
       await storage.submitAmbassadorForm(validatedData);
+      
+      await addSubscriberToMailchimp({
+        email: validatedData.email,
+        firstName: validatedData.name?.split(" ")[0],
+        lastName: validatedData.name?.split(" ").slice(1).join(" "),
+        source: "ambassador_form",
+      });
+      
       res.status(200).json({ success: true });
     } catch (error) {
       res.status(400).json({ error: "Invalid ambassador form data" });
@@ -98,6 +123,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = newsletterSchema.parse(req.body);
       await storage.subscribeNewsletter(validatedData);
+      
+      await addSubscriberToMailchimp({
+        email: validatedData.email,
+        source: "newsletter",
+      });
+      
       res.status(200).json({ success: true });
     } catch (error) {
       res.status(400).json({ error: "Invalid newsletter data" });
