@@ -1,20 +1,58 @@
+import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Stepper } from "@/components/stepper";
 import { ProposalCard } from "@/components/proposal-card";
 import { SkeletonProposalCard } from "@/components/skeleton-proposal-card";
+import { PreBookingModal } from "@/components/pre-booking-modal";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Zap, MessageCircle, Send } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
 import { SEO } from "@/components/seo";
 import type { Proposal } from "@shared/schema";
 import cinemaSeatsImage from "@assets/image_1764560979384.png";
 import friendsImage from "@assets/generated_images/two_friends_talking_together.png";
 
 export default function Home() {
+  const [selectedProposal, setSelectedProposal] = useState<Proposal | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const { toast } = useToast();
+  const queryClient = useQueryClient();
+
   const { data: proposals, isLoading } = useQuery<Proposal[]>({
     queryKey: ["/api/proposals"],
   });
+
+  const voteMutation = useMutation({
+    mutationFn: async (proposalId: string) => {
+      return await apiRequest("PATCH", `/api/proposals/${proposalId}/vote`, {});
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/proposals"] });
+      toast({
+        title: "Voto registrato!",
+        description: "Grazie per aver votato. La tua voce conta!",
+      });
+      setModalOpen(false);
+      setSelectedProposal(null);
+    },
+  });
+
+  const handleVoteClick = (proposalId: string) => {
+    const proposal = proposals?.find((p) => p.id === proposalId);
+    if (proposal) {
+      setSelectedProposal(proposal);
+      setModalOpen(true);
+    }
+  };
+
+  const handleConfirmVote = () => {
+    if (selectedProposal) {
+      voteMutation.mutate(selectedProposal.id);
+    }
+  };
 
   const featuredProposals = proposals?.slice(0, 6) || [];
 
@@ -265,7 +303,7 @@ export default function Home() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {featuredProposals.map((proposal) => (
-                <ProposalCard key={proposal.id} proposal={proposal} />
+                <ProposalCard key={proposal.id} proposal={proposal} onVote={handleVoteClick} />
               ))}
             </div>
           )}
@@ -301,6 +339,13 @@ export default function Home() {
           </Card>
         </div>
       </section>
+      
+      <PreBookingModal
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+        proposal={selectedProposal}
+        onConfirm={handleConfirmVote}
+      />
       </div>
     </>
   );
