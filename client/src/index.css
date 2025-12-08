@@ -3367,7 +3367,7 @@
   );
   border: 2px solid rgba(255, 255, 255, 0.15);
   border-radius: 32px;
-  padding: 48px;
+  padding: 36px;
   backdrop-filter: blur(20px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
@@ -3391,7 +3391,7 @@
 .ambassador-form {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 16px;
 }
 
 .form-group {
@@ -3401,7 +3401,7 @@
 .form-input,
 .form-textarea {
   width: 100%;
-  padding: 20px;
+  padding: 16px;
   background: rgba(0, 0, 50, 0.4);
   border: 2px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
@@ -3412,6 +3412,11 @@
   outline: none;
   line-height: 1.5;
   vertical-align: middle;
+}
+
+.form-textarea {
+  min-height: 80px;
+  resize: vertical;
 }
 
 .form-input:focus,
