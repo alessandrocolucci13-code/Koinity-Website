@@ -435,22 +435,6 @@ export default function Cinema() {
                   </div>
                 </div>
               </div>
-
-              {/* Trust signals */}
-              <div className="demo-trust">
-                <div className="trust-item">
-                  <Shield className="w-4 h-4 trust-icon" />
-                  <span>100% Gratuito</span>
-                </div>
-                <div className="trust-item">
-                  <Clock className="w-4 h-4 trust-icon" />
-                  <span>30 minuti</span>
-                </div>
-                <div className="trust-item">
-                  <Headphones className="w-4 h-4 trust-icon" />
-                  <span>Supporto dedicato</span>
-                </div>
-              </div>
             </div>
 
             {/* RIGHT COLUMN - Premium Form */}
@@ -571,6 +555,22 @@ export default function Cinema() {
                   </Button>
                 </form>
               </Form>
+
+              {/* Trust signals */}
+              <div className="demo-trust">
+                <div className="trust-item">
+                  <Shield className="w-4 h-4 trust-icon" />
+                  <span>100% Gratuito</span>
+                </div>
+                <div className="trust-item">
+                  <Clock className="w-4 h-4 trust-icon" />
+                  <span>30 minuti</span>
+                </div>
+                <div className="trust-item">
+                  <Headphones className="w-4 h-4 trust-icon" />
+                  <span>Supporto dedicato</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
