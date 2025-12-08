@@ -137,7 +137,7 @@ export default function ProposalDetail() {
           </div>
         </div>
 
-        <div className="lg:col-span-2 space-y-8">
+        <div className="lg:col-span-2 space-y-8 pt-0 lg:pt-4">
           <div>
             <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4" data-testid="text-title">
               {proposal.title}
