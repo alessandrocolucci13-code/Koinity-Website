@@ -4218,8 +4218,8 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
+  gap: 20px;
+  align-items: flex-start;
   position: relative;
   z-index: 1;
 }
